@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-11-16T00:57:43.153377+00:00",
+  "timestamp": "2023-11-19T01:01:19.461271+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -1627,7 +1627,7 @@
       "id": "I_kwDOJZ2aqs5zvTOw",
       "title": "Slight difference in compression result",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/issues/67",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "TimoGlastra",
       "authorAssociation": "NONE",
       "assignees": [
@@ -1636,8 +1636,8 @@
       "labels": [],
       "body": "I'm working on a TypeScript implementation of this spec, and have the encoding / decoding of the status list implemented. It seems to work based on the example in the spec and the example python scripts, with one slight difference.\r\n\r\nWhen I encode either the 1 or 2 bit example it will output one character difference `_`, while mine outputs an `A`. The decoding seems to work fine, and maybe this is a gzip thing, but I'm wondering if the examples use certain gzip features to get this output?\r\n\r\nI've adapted my implementation to use compression level 9 (default for python `gzip` lib) and set the mtime to the same value\r\n\r\nThe input byte array is the same as for the python implementation and the examples in the spec, so it's really something that is happening during the gzip encoding (the output byte array here is different)\r\n\r\n```\r\nH4sIAMo_jGQCA9u5GABc9QE7AgAAAA\r\nH4sIAMo_jGQCAzvp8hMAZLRLMQMAAAA\r\n```\r\n\r\n```\r\nH4sIAMoAjGQCA9u5GABc9QE7AgAAAA\r\nH4sIAMoAjGQCAzvp8hMAZLRLMQMAAAA\r\n```\r\n\r\n\r\nany idea what is going on here? \r\n\r\nThe implementation and tests can be found here: https://github.com/TimoGlastra/jwt-status-list-ts",
       "createdAt": "2023-10-13T11:36:37Z",
-      "updatedAt": "2023-10-20T09:03:50Z",
-      "closedAt": null,
+      "updatedAt": "2023-11-16T08:47:52Z",
+      "closedAt": "2023-11-16T08:47:52Z",
       "comments": [
         {
           "author": "c2bo",
@@ -1861,7 +1861,7 @@
       "labels": [],
       "body": "I noticed the draft was renamed from the name it previously had at the last IETF meeting where it was adopted. The previous name was \"JWT and CWT Status List\" and the new name is \"OAuth Status List\".\r\n\r\nI understand not wanting to have \"JWT\" and \"CWT\" in the name, but the new name is somewhat confusing, since it makes it sound like there is a status of OAuth itself somehow.\r\n\r\nI suggest renaming this to \"OAuth Token Status List\" to avoid confusion.",
       "createdAt": "2023-10-23T14:26:44Z",
-      "updatedAt": "2023-10-25T06:24:51Z",
+      "updatedAt": "2023-11-16T14:34:44Z",
       "closedAt": null,
       "comments": [
         {
@@ -1905,6 +1905,13 @@
           "body": "I already stated in the ML, but I support `Token Status List\"",
           "createdAt": "2023-10-25T06:24:50Z",
           "updatedAt": "2023-10-25T06:24:50Z"
+        },
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "\"Token Status List\" seems the most supported option, if there is no objection, we would rename next week.",
+          "createdAt": "2023-11-16T14:34:43Z",
+          "updatedAt": "2023-11-16T14:34:43Z"
         }
       ]
     },
@@ -1913,15 +1920,15 @@
       "id": "I_kwDOJZ2aqs51W_XI",
       "title": "typo/mixup in Status List JWT Format and Processing Requirements",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/issues/78",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "bc-pi",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "The [second bullet](https://www.ietf.org/archive/id/draft-ietf-oauth-status-list-00.html#section-4.1-2.2.1) in the \"Status List JWT Format and Processing Requirements\" section has 'The JWT MUST contain a \"sub\" (subject) claim that contains an unique string identifier for that **Referenced Token.**' but I believe it should be \"... unique string identifier for that **Status List Token**.\"",
       "createdAt": "2023-10-30T18:17:01Z",
-      "updatedAt": "2023-11-01T08:50:52Z",
-      "closedAt": null,
+      "updatedAt": "2023-11-16T07:50:04Z",
+      "closedAt": "2023-11-16T07:50:04Z",
       "comments": [
         {
           "author": "paulbastian",
@@ -1940,11 +1947,13 @@
       "state": "OPEN",
       "author": "paulbastian",
       "authorAssociation": "CONTRIBUTOR",
-      "assignees": [],
+      "assignees": [
+        "c2bo"
+      ],
       "labels": [],
       "body": "Aaron says that there are zero mentions of the term access token and proposes to mention JWT accesstokens as a possible usecase",
       "createdAt": "2023-11-10T17:42:45Z",
-      "updatedAt": "2023-11-10T17:42:45Z",
+      "updatedAt": "2023-11-16T07:31:54Z",
       "closedAt": null,
       "comments": []
     },
@@ -1976,9 +1985,17 @@
       "labels": [],
       "body": "George asks to describe under which circumstances / contexts the StatusList works best/is helpful compared to other mechanisms. David asks under which conditions this should not be used, expected revocation rates might be very high",
       "createdAt": "2023-11-10T17:51:23Z",
-      "updatedAt": "2023-11-10T17:53:13Z",
+      "updatedAt": "2023-11-16T07:40:27Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "consider this for implementation considerations or annex",
+          "createdAt": "2023-11-16T07:40:27Z",
+          "updatedAt": "2023-11-16T07:40:27Z"
+        }
+      ]
     },
     {
       "number": 85,
@@ -1990,11 +2007,33 @@
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
-      "body": "Leif asked to leave some space for future revocation mechanisms as StatusList might be only one approach.\r\nThe Structure in the Referenced Token should convey some kind of type, that enables other mechanisms reusing the \"status\" claim.\r\n\r\nRelated to #21 ",
+      "body": "Leif asked to leave some space for future revocation mechanisms as StatusList might be only one approach.\r\nThe Structure in the Referenced Token should convey some kind of type, that enables other mechanisms reusing the \"status\" claim.\r\n\r\nRelated to #21 \r\nRelated to #40 ",
       "createdAt": "2023-11-10T17:59:14Z",
-      "updatedAt": "2023-11-10T17:59:14Z",
+      "updatedAt": "2023-11-16T07:48:01Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Option 1:\r\n```\r\n\"status_bitstring\": {\r\n    \"idx\": 0,\r\n    \"uri\": \"https://example.com/statuslists/1\"\r\n  }\r\n```\r\n\r\nOption 2:\r\n```\r\n\"status\": {\r\n    \"typ\":\"bitstring\"\r\n    \"idx\": 0,\r\n    \"uri\": \"https://example.com/statuslists/1\"\r\n  }\r\n```\r\n\r\nOption 3:\r\n```\r\n\"status\": {\r\n    \"idx\": 0,\r\n    \"bitstring\": \"https://example.com/statuslists/1\"\r\n  }\r\n```",
+          "createdAt": "2023-11-16T07:46:37Z",
+          "updatedAt": "2023-11-16T07:46:37Z"
+        },
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "We favor Option#2 currently",
+          "createdAt": "2023-11-16T07:46:50Z",
+          "updatedAt": "2023-11-16T07:46:50Z"
+        },
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "We need text for extension points",
+          "createdAt": "2023-11-16T07:48:01Z",
+          "updatedAt": "2023-11-16T07:48:01Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -3847,7 +3886,7 @@
       "labels": [],
       "body": "## \ud83d\udcd1 Description\r\nadds support for `ttl` instructions for consumers/verifiers - this is important, especially with signed lists to separate the requirement to sign and reissue from when a client or cdn needs to fetch a fresh copy of the list",
       "createdAt": "2023-08-02T18:46:01Z",
-      "updatedAt": "2023-11-01T23:42:49Z",
+      "updatedAt": "2023-11-16T09:25:05Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "70e860b9cd190741593d92cd0b8e27394137bda9",
@@ -3907,6 +3946,13 @@
           "body": "If you duplicate the information, the list can be delivered by the holder in an internet denied environment.\n\nAssuming the verifier has network, or had network, might make sense for some use cases... Other use cases might assume burnt in trust roots and no network ever.",
           "createdAt": "2023-11-01T23:42:49Z",
           "updatedAt": "2023-11-01T23:42:49Z"
+        },
+        {
+          "author": "c2bo",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "> If you duplicate the information, the list can be delivered by the holder in an internet denied environment.\r\n> \r\n> Assuming the verifier has network, or had network, might make sense for some use cases... Other use cases might assume burnt in trust roots and no network ever.\r\n\r\nPerhaps I am missing something but in my mind the caching information is not relevant for the verifier, only for the system fetching the updates (if they are separate entities). The verifier has `iat` and `exp` to figure out if status list should be trusted/used. The entity fetching the updates needs the information when to try fetching again for possible updates.\r\n\r\nWould you be up for a short call on this topic so we can better understand your point of view?",
+          "createdAt": "2023-11-16T09:25:04Z",
+          "updatedAt": "2023-11-16T09:25:04Z"
         }
       ],
       "reviews": [
@@ -4466,18 +4512,26 @@
       "labels": [],
       "body": "<!-- If this pull request closes an issue, please mention the issue number below -->\r\nCloses #54 \r\n\r\n## \ud83d\udcd1 Description\r\nThis PR adds a section on design considerations.\r\n\r\n<!-- You can also choose to add a list of changes and if they have been completed or not by using the markdown to-do list syntax\r\n- [ ] Not Completed\r\n- [x] Completed\r\n-->\r\n\r\n## Preview Link\r\n\r\n<!-- Update the link below to provide reviewers with a convenient link to view a rendered version of the PR-->\r\n<!-- In general the link should be of the form https://github.com/<repo-name>/<branch-name>/<draft-name>.html-->\r\n\r\n[click here for rendered preview of PR](https://github.com/<repo-name>/<branch-name>/<draft-name>.html)",
       "createdAt": "2023-10-22T19:38:19Z",
-      "updatedAt": "2023-11-01T22:00:59Z",
+      "updatedAt": "2023-11-16T15:56:43Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
-      "baseRefOid": "58c91091c080b59860732bea8bc95c140c304473",
+      "baseRefOid": "2323f53751e542f5edf5448fa4f522693f1b09aa",
       "headRepository": "vcstuff/draft-ietf-oauth-status-list",
       "headRefName": "pb/introduction",
-      "headRefOid": "19479065b198378fe1f9c0c43ae823cd88ab78fa",
+      "headRefOid": "e9a108277d528958bf4381f030c8f0bc28394da7",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I had to force push changes as the branch originated before the renaming of the file and my git merge messed things up",
+          "createdAt": "2023-11-16T15:56:43Z",
+          "updatedAt": "2023-11-16T15:56:43Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOJZ2aqs5l2lj3",
@@ -4493,9 +4547,9 @@
           "comments": [
             {
               "originalPosition": 16,
-              "body": "```suggestion\r\n* the specification shall support JSON and CBOR based tokens\r\n* the specification shall not specify token specific mechanisms like validation or key resolution\r\n```",
+              "body": "```suggestion\r\n* the specification shall support JSON and CBOR based tokens\r\n* the specification shall not specify key resolution or trust frameworks\r\n```",
               "createdAt": "2023-11-01T18:36:57Z",
-              "updatedAt": "2023-11-01T18:39:27Z"
+              "updatedAt": "2023-11-16T07:55:56Z"
             }
           ]
         },
@@ -4516,6 +4570,46 @@
               "body": "I agree with key resolution, but token specific mechanisms may be an overstatement, as we define JWT and CWT specific representations",
               "createdAt": "2023-11-01T22:00:59Z",
               "updatedAt": "2023-11-01T22:01:00Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5nZHls",
+          "commit": {
+            "abbreviatedOid": "1947906"
+          },
+          "author": "c2bo",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-11-16T14:58:23Z",
+          "updatedAt": "2023-11-16T14:58:23Z",
+          "comments": [
+            {
+              "originalPosition": 16,
+              "body": "updated it - does this version look better for you?",
+              "createdAt": "2023-11-16T14:58:23Z",
+              "updatedAt": "2023-11-16T14:58:23Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5nZvyt",
+          "commit": {
+            "abbreviatedOid": "a979909"
+          },
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-11-16T15:55:36Z",
+          "updatedAt": "2023-11-16T15:55:36Z",
+          "comments": [
+            {
+              "originalPosition": 16,
+              "body": "```suggestion\r\n* the specification shall support JSON and CBOR based tokens\r\n* the specification shall not specify key resolution or trust frameworks\r\n```",
+              "createdAt": "2023-11-16T15:55:36Z",
+              "updatedAt": "2023-11-16T15:55:36Z"
             }
           ]
         }
@@ -4568,24 +4662,26 @@
       "id": "PR_kwDOJZ2aqs5eT-CL",
       "title": "Change typo in Status List Token sub claim description",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/79",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "paulbastian",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "<!-- If this pull request closes an issue, please mention the issue number below -->\r\nCloses #78 \r\n\r\n## \ud83d\udcd1 Description\r\nChange typo in Status List Token sub claim description\r\n\r\n<!-- You can also choose to add a list of changes and if they have been completed or not by using the markdown to-do list syntax\r\n- [ ] Not Completed\r\n- [x] Completed\r\n-->\r\n\r\n## Preview Link\r\n\r\n<!-- Update the link below to provide reviewers with a convenient link to view a rendered version of the PR-->\r\n<!-- In general the link should be of the form https://github.com/<repo-name>/<branch-name>/<draft-name>.html-->\r\n\r\n[click here for rendered preview of PR](https://github.com/<repo-name>/<branch-name>/<draft-name>.html)",
       "createdAt": "2023-11-01T08:54:20Z",
-      "updatedAt": "2023-11-01T19:16:52Z",
+      "updatedAt": "2023-11-16T07:50:06Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "85fa6f499ae1ec612552c428e5ef77d2d1260e50",
       "headRepository": "vcstuff/draft-ietf-oauth-status-list",
       "headRefName": "78-typomixup-in-status-list-jwt-format-and-processing-requirements",
       "headRefOid": "8fb0ca6506c57df7adf3130566ca661068ed844f",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2023-11-16T07:50:02Z",
+      "mergedAt": "2023-11-16T07:50:02Z",
+      "mergedBy": "tplooker",
+      "mergeCommit": {
+        "oid": "4c646d4611112c74ffec04c4b1d539af9ba543d6"
+      },
       "comments": [],
       "reviews": [
         {
@@ -4613,6 +4709,19 @@
           "createdAt": "2023-11-01T19:16:52Z",
           "updatedAt": "2023-11-01T19:16:52Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5nVlTl",
+          "commit": {
+            "abbreviatedOid": "8fb0ca6"
+          },
+          "author": "tplooker",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-11-16T07:49:56Z",
+          "updatedAt": "2023-11-16T07:49:56Z",
+          "comments": []
         }
       ]
     },
@@ -4621,24 +4730,26 @@
       "id": "PR_kwDOJZ2aqs5eXYqz",
       "title": "switch to deflate + zlib instead of gzip",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/80",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "c2bo",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "Closes #67 and #39.\r\n\r\n## \ud83d\udcd1 Description\r\nSwitches to zlib instead of gzip encoding and adds the recommendation to use the best available compression.\r\n\r\n## Preview Link\r\n[click here for rendered preview of PR](https://github.com/<repo-name>/<branch-name>/<draft-name>.html)",
       "createdAt": "2023-11-01T19:22:50Z",
-      "updatedAt": "2023-11-01T21:58:22Z",
+      "updatedAt": "2023-11-16T08:47:52Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "85fa6f499ae1ec612552c428e5ef77d2d1260e50",
       "headRepository": "vcstuff/draft-ietf-oauth-status-list",
       "headRefName": "feature/zlib",
-      "headRefOid": "504fa5e85e0c86f49f57f4cc044c8f68356bb430",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "e39314207eff122c8d6c9193203372bf14324ea6",
+      "closedAt": "2023-11-16T08:47:51Z",
+      "mergedAt": "2023-11-16T08:47:51Z",
+      "mergedBy": "paulbastian",
+      "mergeCommit": {
+        "oid": "2323f53751e542f5edf5448fa4f522693f1b09aa"
+      },
       "comments": [],
       "reviews": [
         {
@@ -4666,6 +4777,19 @@
               "updatedAt": "2023-11-01T21:52:09Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5nVwyf",
+          "commit": {
+            "abbreviatedOid": "504fa5e"
+          },
+          "author": "tplooker",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-11-16T08:17:02Z",
+          "updatedAt": "2023-11-16T08:17:02Z",
+          "comments": []
         }
       ]
     },
@@ -4674,26 +4798,117 @@
       "id": "PR_kwDOJZ2aqs5e5qZT",
       "title": "VALID does not precede J/CWT processing rules",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/81",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "panva",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "This feedback comes from applying the Status List to an implementation of a general OAuth 2.x server issuing JWT Access Tokens.\r\n\r\nSuch implementation will typically not keep record of any issued JWT Access Tokens (their claims, expiry, etc) until they need to be revoked due any reason, e.g. getting leaked or just being explicitly revoked by the client.\r\n\r\nIn such cases the issuer considers the token as VALID when issuing the Status List but this state will not necessarily reflect the token's validity as per the JWT validation rules for claims like nbf or exp. This is important to point out so that the status list is not mistaken for an alternative to actually validating the referenced token's claim set.",
       "createdAt": "2023-11-08T09:15:05Z",
-      "updatedAt": "2023-11-08T09:15:06Z",
+      "updatedAt": "2023-11-16T20:10:21Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "85fa6f499ae1ec612552c428e5ef77d2d1260e50",
       "headRepository": "panva/draft-ietf-oauth-status-list",
       "headRefName": "note-on-valid",
-      "headRefOid": "56d03d4c63f3bbb179d9883a9bca175580beb184",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
-      "reviews": []
+      "headRefOid": "d79ea7cbc01289f079970f3c31c524c0bd75c85b",
+      "closedAt": "2023-11-16T19:41:35Z",
+      "mergedAt": "2023-11-16T19:41:35Z",
+      "mergedBy": "tplooker",
+      "mergeCommit": {
+        "oid": "5e89ba2bea20e16e8d6f1533bd4e5745758866d4"
+      },
+      "comments": [
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@panva could you merge with main and add a line to the document history please",
+          "createdAt": "2023-11-16T15:24:04Z",
+          "updatedAt": "2023-11-16T15:24:04Z"
+        },
+        {
+          "author": "panva",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Not a member, cannot merge.",
+          "createdAt": "2023-11-16T16:25:53Z",
+          "updatedAt": "2023-11-16T16:25:53Z"
+        },
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I meant sync, sry. But I can add the history on main also.",
+          "createdAt": "2023-11-16T16:27:06Z",
+          "updatedAt": "2023-11-16T16:27:45Z"
+        },
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@tplooker Please review and merge if you approve",
+          "createdAt": "2023-11-16T16:28:03Z",
+          "updatedAt": "2023-11-16T16:28:03Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJZ2aqs5nVdQC",
+          "commit": {
+            "abbreviatedOid": "56d03d4"
+          },
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "Looks good to me. It might be better positioned in a dedicated Verification Processing section once we have that but its good for now",
+          "createdAt": "2023-11-16T07:28:14Z",
+          "updatedAt": "2023-11-16T07:28:14Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5nVwRB",
+          "commit": {
+            "abbreviatedOid": "56d03d4"
+          },
+          "author": "tplooker",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-11-16T08:16:10Z",
+          "updatedAt": "2023-11-16T08:16:11Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "```suggestion\r\nThe processing rules for JWT or CWT precede any evaluation of a referenced tokens status. For example if a token is evaluated as being expired through the \"exp\" (Expiration Time) but also has a status of 0x00 (\"VALID\"), the token is considered expired.\r\n```\r\n\r\nThanks @panva the tweak I'm trying to make with this language is that even if an issuer is tracking a tokens status, once it expires, even if they don't revoke it, it should be considered expired. I think that is what you meant too, I've just taken another stab at this language.\r\n\r\ncc @paulbastian @c2bo ",
+              "createdAt": "2023-11-16T08:16:10Z",
+              "updatedAt": "2023-11-16T08:16:11Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5nZGuJ",
+          "commit": {
+            "abbreviatedOid": "d79ea7c"
+          },
+          "author": "c2bo",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-11-16T14:57:00Z",
+          "updatedAt": "2023-11-16T14:57:00Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5nbsOu",
+          "commit": {
+            "abbreviatedOid": "d79ea7c"
+          },
+          "author": "tplooker",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-11-16T19:41:22Z",
+          "updatedAt": "2023-11-16T19:41:22Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
