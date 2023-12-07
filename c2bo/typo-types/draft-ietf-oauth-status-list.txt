@@ -5,9 +5,9 @@
 Network Working Group                                          T. Looker
 Internet-Draft                                                     MATTR
 Intended status: Informational                                P. Bastian
-Expires: 4 May 2024                                                     
+Expires: 9 June 2024                                                    
                                                               C. Bormann
-                                                         1 November 2023
+                                                         7 December 2023
 
 
                            OAuth Status List
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 May 2024.
+   This Internet-Draft will expire on 9 June 2024.
 
 Copyright Notice
 
@@ -245,7 +245,7 @@ Table of Contents
      "iss": "https://example.com",
      "status_list": {
        "bits": 2,
-       "lst": "H4sIAOpbjGQC_zvp8hMAZLRLMQMAAAA"
+       "lst": "eNo76fITAAPfAgc"
      },
      "sub": "https://example.com/statuslists/1"
    }
@@ -286,9 +286,12 @@ Table of Contents
        bit ("7").  All bits of the byte array at a particular index are
        set to a status value.
 
-   2.  The complete byte array is compressed using gZIP [RFC1952].
+   2.  The complete byte array is compressed using the "DEFLATE"
+       [RFC1951] compression method and stored using the "ZLIB"
+       [RFC1950] data format.  Implementations are RECOMMENDED to use
+       the highest compression level available.
 
-   3.  The result of the gZIP compression is then base64url-encoded, as
+   3.  The result of the compression is then base64url-encoded, as
        defined in Section 2 of [RFC7515].
 
 4.2.  Referenced Token Format and Processing Requirements
@@ -359,16 +362,26 @@ Table of Contents
    A status describes the state, mode, condition or stage of an entity
    that is described by the status list.  Status Types MUST be numeric
    values between 0 and 255.  Status types described by this
-   specification comprise: - 0x00 - "VALID" - The status of the Token is
-   valid, correct or legal.  - 0x01 - "INVALID" - The status of the
-   Token is revoked, annulled, taken back, recalled or cancelled.  This
-   state is irreversible.  - 0x02 - "SUSPENDED" - The status of the
-   Token is temporarily invalid, hanging, debarred from privilege.  This
-   state is reversible.
+   specification comprise:
+
+   *  0x00 - "VALID" - The status of the Token is valid, correct or
+      legal.
+
+   *  0x01 - "INVALID" - The status of the Token is revoked, annulled,
+      taken back, recalled or cancelled.  This state is irreversible.
+
+   *  0x02 - "SUSPENDED" - The status of the Token is temporarily
+      invalid, hanging, debarred from privilege.  This state is
+      reversible.
 
    The issuer of the Status List Token MUST choose an adequate "bits"
    (bit size) to be able to describe the required Status Types for the
    application.
+
+   The processing rules for JWT or CWT precede any evaluation of a
+   referenced tokens status.  For example if a token is evaluated as
+   being expired through the "exp" (Expiration Time) but also has a
+   status of 0x00 ("VALID"), the token is considered expired.
 
 6.  Example JWT Status Lists
 
@@ -413,7 +426,7 @@ Table of Contents
    list:
 
    byte_array = [0xb9, 0xa3]
-   encoded = "H4sIAOpbjGQC_9u5GABc9QE7AgAAAA"
+   encoded = "eNrbuRgAAhcBXQ"
 
 6.2.  Example Status List with 2-Bit Status Values
 
@@ -454,7 +467,7 @@ Table of Contents
    list:
 
    byte_array = [0xc9, 0x44, 0xf9]
-   encoded = "H4sIAOpbjGQC_zvp8hMAZLRLMQMAAAA"
+   encoded = "eNo76fITAAPfAgc"
 
 7.  Verification and Processing
 
@@ -749,9 +762,14 @@ Table of Contents
 
 13.  Normative References
 
-   [RFC1952]  Deutsch, P., "GZIP file format specification version 4.3",
-              RFC 1952, DOI 10.17487/RFC1952, May 1996,
-              <https://www.rfc-editor.org/rfc/rfc1952>.
+   [RFC1950]  Deutsch, P. and J. Gailly, "ZLIB Compressed Data Format
+              Specification version 3.3", RFC 1950,
+              DOI 10.17487/RFC1950, May 1996,
+              <https://www.rfc-editor.org/rfc/rfc1950>.
+
+   [RFC1951]  Deutsch, P., "DEFLATE Compressed Data Format Specification
+              version 1.3", RFC 1951, DOI 10.17487/RFC1951, May 1996,
+              <https://www.rfc-editor.org/rfc/rfc1951>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
@@ -798,14 +816,20 @@ Table of Contents
 
 Acknowledgments
 
-   We would like to thank Brian Campbell, Francesco Marino, Guiseppe De
-   Marco, Kristina Yasuda, Michael B.  Jones, Mike Prorock, Orie Steele,
-   Timo Glastra and Torsten Lodderstedt
+   We would like to thank Brian Campbell, Filip Skokan, Francesco
+   Marino, Guiseppe De Marco, Kristina Yasuda, Michael B.  Jones, Mike
+   Prorock, Orie Steele, Timo Glastra and Torsten Lodderstedt
 
    for their valuable contributions, discussions and feedback to this
    specification.
 
 Document History
+
+   -01
+
+   *  Changing compression from gzip to zlib
+
+   *  Change typo in Status List Token sub claim description
 
    -00
 
