@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-12-05T00:58:19.401843+00:00",
+  "timestamp": "2023-12-07T00:57:42.279507+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -2009,7 +2009,7 @@
       "labels": [],
       "body": "Leif asked to leave some space for future revocation mechanisms as StatusList might be only one approach.\r\nThe Structure in the Referenced Token should convey some kind of type, that enables other mechanisms reusing the \"status\" claim.\r\n\r\nRelated to #21 \r\nRelated to #40 ",
       "createdAt": "2023-11-10T17:59:14Z",
-      "updatedAt": "2023-11-16T07:48:01Z",
+      "updatedAt": "2023-12-06T20:54:50Z",
       "closedAt": null,
       "comments": [
         {
@@ -2032,8 +2032,45 @@
           "body": "We need text for extension points",
           "createdAt": "2023-11-16T07:48:01Z",
           "updatedAt": "2023-11-16T07:48:01Z"
+        },
+        {
+          "author": "awoie",
+          "authorAssociation": "NONE",
+          "body": "I'm still not convinced since I think new status methods could register a new claim. \r\n\r\nBut if people want this, then there is another option which is similar to `cnf`:\r\n\r\n```\r\n\"status\": {\r\n  \"list\": { ... }, \r\n  \"ocsp\": { ... },\r\n  ...\r\n}\r\n```",
+          "createdAt": "2023-12-06T20:10:45Z",
+          "updatedAt": "2023-12-06T20:10:45Z"
+        },
+        {
+          "author": "tlodderstedt",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "new ways for doing status management can introduce new claims, so I prefer option 1 or 3.",
+          "createdAt": "2023-12-06T20:54:00Z",
+          "updatedAt": "2023-12-06T20:54:00Z"
+        },
+        {
+          "author": "bc-pi",
+          "authorAssociation": "NONE",
+          "body": "> I'm still not convinced since I think new status methods could register a new claim.\r\n\r\nI tend to agree with this (effectively option 1). There is already the extension point of defining a new claim for other revocation mechanisms. This draft doesn't need to accommodate extensibility. ",
+          "createdAt": "2023-12-06T20:54:49Z",
+          "updatedAt": "2023-12-06T20:54:49Z"
         }
       ]
+    },
+    {
+      "number": 86,
+      "id": "I_kwDOJZ2aqs549Z0j",
+      "title": "Consider making `status` a JWT header instead of a JWT claim",
+      "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/issues/86",
+      "state": "OPEN",
+      "author": "awoie",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "`status` is not really a claim about a subject and is never selectively disclosed, so it would makes sense to make it a JWT header. It would also work well with the existing `crit` JOSE header that can then mark `status` as critical.\r\n\r\nSee https://github.com/oauth-wg/oauth-sd-jwt-vc/issues/192",
+      "createdAt": "2023-12-06T20:51:53Z",
+      "updatedAt": "2023-12-06T20:51:53Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
