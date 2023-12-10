@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-12-07T00:57:42.279507+00:00",
+  "timestamp": "2023-12-10T01:01:43.255484+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -2009,7 +2009,7 @@
       "labels": [],
       "body": "Leif asked to leave some space for future revocation mechanisms as StatusList might be only one approach.\r\nThe Structure in the Referenced Token should convey some kind of type, that enables other mechanisms reusing the \"status\" claim.\r\n\r\nRelated to #21 \r\nRelated to #40 ",
       "createdAt": "2023-11-10T17:59:14Z",
-      "updatedAt": "2023-12-06T20:54:50Z",
+      "updatedAt": "2023-12-08T07:17:03Z",
       "closedAt": null,
       "comments": [
         {
@@ -2036,9 +2036,9 @@
         {
           "author": "awoie",
           "authorAssociation": "NONE",
-          "body": "I'm still not convinced since I think new status methods could register a new claim. \r\n\r\nBut if people want this, then there is another option which is similar to `cnf`:\r\n\r\n```\r\n\"status\": {\r\n  \"list\": { ... }, \r\n  \"ocsp\": { ... },\r\n  ...\r\n}\r\n```",
+          "body": "I'm still not convinced since I think new status methods could register a new claim. \r\n\r\nBut if people want this, then there is another option which is similar to `cnf`:\r\n\r\n```\r\n\"status\": {\r\n  \"status_bitstring\": { \"idx\": ..., \"uri\": ... }, \r\n  \"ocsp\": { ... },\r\n  ...\r\n}\r\n```",
           "createdAt": "2023-12-06T20:10:45Z",
-          "updatedAt": "2023-12-06T20:10:45Z"
+          "updatedAt": "2023-12-07T04:07:37Z"
         },
         {
           "author": "tlodderstedt",
@@ -2053,6 +2053,13 @@
           "body": "> I'm still not convinced since I think new status methods could register a new claim.\r\n\r\nI tend to agree with this (effectively option 1). There is already the extension point of defining a new claim for other revocation mechanisms. This draft doesn't need to accommodate extensibility. ",
           "createdAt": "2023-12-06T20:54:49Z",
           "updatedAt": "2023-12-06T20:54:49Z"
+        },
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@paulbastian and @c2bo favoring Oliver's option and will make an PR",
+          "createdAt": "2023-12-08T07:17:03Z",
+          "updatedAt": "2023-12-08T07:17:03Z"
         }
       ]
     },
@@ -2068,9 +2075,24 @@
       "labels": [],
       "body": "`status` is not really a claim about a subject and is never selectively disclosed, so it would makes sense to make it a JWT header. It would also work well with the existing `crit` JOSE header that can then mark `status` as critical.\r\n\r\nSee https://github.com/oauth-wg/oauth-sd-jwt-vc/issues/192",
       "createdAt": "2023-12-06T20:51:53Z",
-      "updatedAt": "2023-12-06T20:51:53Z",
+      "updatedAt": "2023-12-08T15:07:17Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I like the idea, but I think we need more input from others",
+          "createdAt": "2023-12-08T07:20:50Z",
+          "updatedAt": "2023-12-08T07:20:50Z"
+        },
+        {
+          "author": "peppelinux",
+          "authorAssociation": "MEMBER",
+          "body": "Using JSON serialization or COSE Sign Document (as mdoc cbor MSO) would give the benefit to allow the update of the status object without breaking the signature of the JWS.\r\n\r\nWhile having a compact-serialization not.\r\n\r\nI'd see benefits in having it in the unprotected header, while in the protected header not.\r\n\r\nI believe that there may be use cases or situations where the status key may be disclosable, then it makes sense to me to keep it in the payload and allow the issuers to make it disclosable or not.\r\n\r\na least, even if I really don't like this argument, there are some implementations that have issues with custom/unsupported header parameters. This may have huge impact on the implementation -> not a good argument, but something.\r\n\r\ndefinitively, I would like to have the status in the payload, as the credential type and anything in the payload related to the payload.",
+          "createdAt": "2023-12-08T15:07:15Z",
+          "updatedAt": "2023-12-08T15:07:15Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -4549,7 +4571,7 @@
       "labels": [],
       "body": "<!-- If this pull request closes an issue, please mention the issue number below -->\r\nCloses #54 \r\n\r\n## \ud83d\udcd1 Description\r\nThis PR adds a section on design considerations.\r\n\r\n<!-- You can also choose to add a list of changes and if they have been completed or not by using the markdown to-do list syntax\r\n- [ ] Not Completed\r\n- [x] Completed\r\n-->\r\n\r\n## Preview Link\r\n\r\n<!-- Update the link below to provide reviewers with a convenient link to view a rendered version of the PR-->\r\n<!-- In general the link should be of the form https://github.com/<repo-name>/<branch-name>/<draft-name>.html-->\r\n\r\n[click here for rendered preview of PR](https://github.com/<repo-name>/<branch-name>/<draft-name>.html)",
       "createdAt": "2023-10-22T19:38:19Z",
-      "updatedAt": "2023-11-16T15:56:43Z",
+      "updatedAt": "2023-12-08T07:30:37Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "2323f53751e542f5edf5448fa4f522693f1b09aa",
@@ -4567,6 +4589,13 @@
           "body": "I had to force push changes as the branch originated before the renaming of the file and my git merge messed things up",
           "createdAt": "2023-11-16T15:56:43Z",
           "updatedAt": "2023-11-16T15:56:43Z"
+        },
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@tplooker could you please review this",
+          "createdAt": "2023-12-08T07:30:35Z",
+          "updatedAt": "2023-12-08T07:30:35Z"
         }
       ],
       "reviews": [
@@ -4943,6 +4972,46 @@
           "body": "",
           "createdAt": "2023-11-16T19:41:22Z",
           "updatedAt": "2023-11-16T19:41:22Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 87,
+      "id": "PR_kwDOJZ2aqs5hbSsf",
+      "title": "Typo: status types list",
+      "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/87",
+      "state": "OPEN",
+      "author": "c2bo",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Adds a new line before the pre-defined status types so it renders properly as a list",
+      "createdAt": "2023-12-07T14:02:27Z",
+      "updatedAt": "2023-12-07T16:01:02Z",
+      "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
+      "baseRefName": "main",
+      "baseRefOid": "5e89ba2bea20e16e8d6f1533bd4e5745758866d4",
+      "headRepository": "vcstuff/draft-ietf-oauth-status-list",
+      "headRefName": "c2bo/typo-types",
+      "headRefOid": "6fae779a953db20aeb18edceecd4acb4764b12b9",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJZ2aqs5piAeW",
+          "commit": {
+            "abbreviatedOid": "6fae779"
+          },
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-12-07T16:01:02Z",
+          "updatedAt": "2023-12-07T16:01:02Z",
           "comments": []
         }
       ]
