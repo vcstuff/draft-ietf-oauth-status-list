@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-12-10T01:01:43.255484+00:00",
+  "timestamp": "2023-12-12T00:58:18.938052+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -2009,7 +2009,7 @@
       "labels": [],
       "body": "Leif asked to leave some space for future revocation mechanisms as StatusList might be only one approach.\r\nThe Structure in the Referenced Token should convey some kind of type, that enables other mechanisms reusing the \"status\" claim.\r\n\r\nRelated to #21 \r\nRelated to #40 ",
       "createdAt": "2023-11-10T17:59:14Z",
-      "updatedAt": "2023-12-08T07:17:03Z",
+      "updatedAt": "2023-12-11T13:35:57Z",
       "closedAt": null,
       "comments": [
         {
@@ -2060,6 +2060,13 @@
           "body": "@paulbastian and @c2bo favoring Oliver's option and will make an PR",
           "createdAt": "2023-12-08T07:17:03Z",
           "updatedAt": "2023-12-08T07:17:03Z"
+        },
+        {
+          "author": "peppelinux",
+          "authorAssociation": "MEMBER",
+          "body": "I support Oliver's option as well",
+          "createdAt": "2023-12-11T13:35:32Z",
+          "updatedAt": "2023-12-11T13:35:32Z"
         }
       ]
     },
@@ -2075,7 +2082,7 @@
       "labels": [],
       "body": "`status` is not really a claim about a subject and is never selectively disclosed, so it would makes sense to make it a JWT header. It would also work well with the existing `crit` JOSE header that can then mark `status` as critical.\r\n\r\nSee https://github.com/oauth-wg/oauth-sd-jwt-vc/issues/192",
       "createdAt": "2023-12-06T20:51:53Z",
-      "updatedAt": "2023-12-08T15:07:17Z",
+      "updatedAt": "2023-12-11T13:33:57Z",
       "closedAt": null,
       "comments": [
         {
@@ -2088,9 +2095,9 @@
         {
           "author": "peppelinux",
           "authorAssociation": "MEMBER",
-          "body": "Using JSON serialization or COSE Sign Document (as mdoc cbor MSO) would give the benefit to allow the update of the status object without breaking the signature of the JWS.\r\n\r\nWhile having a compact-serialization not.\r\n\r\nI'd see benefits in having it in the unprotected header, while in the protected header not.\r\n\r\nI believe that there may be use cases or situations where the status key may be disclosable, then it makes sense to me to keep it in the payload and allow the issuers to make it disclosable or not.\r\n\r\na least, even if I really don't like this argument, there are some implementations that have issues with custom/unsupported header parameters. This may have huge impact on the implementation -> not a good argument, but something.\r\n\r\ndefinitively, I would like to have the status in the payload, as the credential type and anything in the payload related to the payload.",
+          "body": "Using JSON serialization or COSE Sign Document (as mdoc cbor MSO) would give the benefit to allow the update of the status object without breaking the signature of the JWS.\r\n\r\nWhile having a compact-serialization does not.\r\n\r\nI'd see benefits in having it in the unprotected header, while in the protected header not.\r\n\r\nI believe that there may be use cases or situations where the status key may be disclosable, then it makes sense to me to keep it in the payload and allow the issuers to make it disclosable or not.\r\n\r\na least, even if I really don't like this argument, there are some implementations that have issues with custom/unsupported header parameters. This may have huge impact on the implementation -> not a good argument, but something.\r\n\r\ndefinitively, I would like to have the status in the payload, as the credential type.",
           "createdAt": "2023-12-08T15:07:15Z",
-          "updatedAt": "2023-12-08T15:07:15Z"
+          "updatedAt": "2023-12-11T13:33:57Z"
         }
       ]
     }
