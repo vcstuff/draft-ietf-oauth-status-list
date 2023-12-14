@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-12-12T00:58:18.938052+00:00",
+  "timestamp": "2023-12-14T00:57:10.028339+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -5020,6 +5020,73 @@
           "createdAt": "2023-12-07T16:01:02Z",
           "updatedAt": "2023-12-07T16:01:02Z",
           "comments": []
+        }
+      ]
+    },
+    {
+      "number": 88,
+      "id": "PR_kwDOJZ2aqs5hxKU3",
+      "title": "add access token example",
+      "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/88",
+      "state": "OPEN",
+      "author": "c2bo",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "<!-- If this pull request closes an issue, please mention the issue number below -->\r\nCloses #82 \r\n\r\n## \ud83d\udcd1 Description\r\nAdds access token as an example use-case for status list.\r\n\r\n## Preview Link\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/c2bo/access-token/draft-ietf-oauth-status-list.html)",
+      "createdAt": "2023-12-12T09:00:20Z",
+      "updatedAt": "2023-12-12T13:04:00Z",
+      "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
+      "baseRefName": "main",
+      "baseRefOid": "5e89ba2bea20e16e8d6f1533bd4e5745758866d4",
+      "headRepository": "vcstuff/draft-ietf-oauth-status-list",
+      "headRefName": "c2bo/access-token",
+      "headRefOid": "53276553cdb2f92e3a4ae51eb74c54a79d84ca58",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJZ2aqs5p8T1W",
+          "commit": {
+            "abbreviatedOid": "5327655"
+          },
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-12-12T13:01:26Z",
+          "updatedAt": "2023-12-12T13:01:26Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "should these by informative?",
+              "createdAt": "2023-12-12T13:01:26Z",
+              "updatedAt": "2023-12-12T13:01:27Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5p8VBT",
+          "commit": {
+            "abbreviatedOid": "5327655"
+          },
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-12-12T13:04:00Z",
+          "updatedAt": "2023-12-12T13:04:00Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "The other use case for Issuer-Holder-Verifier is mentioned one paragraph further down. I think it makes sense to group them together",
+              "createdAt": "2023-12-12T13:04:00Z",
+              "updatedAt": "2023-12-12T13:04:01Z"
+            }
+          ]
         }
       ]
     }
