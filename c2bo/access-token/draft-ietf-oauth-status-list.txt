@@ -5,9 +5,9 @@
 Network Working Group                                          T. Looker
 Internet-Draft                                                     MATTR
 Intended status: Informational                                P. Bastian
-Expires: 14 June 2024                                                   
+Expires: 17 June 2024                                                   
                                                               C. Bormann
-                                                        12 December 2023
+                                                        15 December 2023
 
 
                            OAuth Status List
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 14 June 2024.
+   This Internet-Draft will expire on 17 June 2024.
 
 Copyright Notice
 
@@ -102,7 +102,9 @@ Table of Contents
    12. IANA Considerations
      12.1.  JSON Web Token Claims Registration
      12.2.  Media Type Registration
-   13. Normative References
+   13. References
+     13.1.  Normative References
+     13.2.  Informative References
    Acknowledgments
    Document History
    Authors' Addresses
@@ -115,13 +117,7 @@ Table of Contents
    semantics about the token can change over time, which are important
    to be able to communicate to relying parties in an interoperable
    manner, such as whether the token is considered invalidated or
-   suspended by its issuer.  A good example of such a case would be an
-   "access token" as defined in section 1.4 of [RFC6749] where validity
-   (after issuance, before expiration) is important meta information.  A
-   mechanism to gather this kind of information exists in the form of
-   Token Introspection [RFC7662], but requires direct interaction with
-   the issuer, whereas this specification defines a mechanism using
-   static information in the form of a status list.
+   suspended by its issuer.
 
    This document defines Status List representations in JWT and CWT
    formats that describe the individual statuses of multiple Referenced
@@ -138,6 +134,14 @@ Table of Contents
    Token may be used by an issuer in the Issuer-Holder-Verifier model to
    express the status of verifiable credentials (Referenced Tokens)
    issued by an issuer.
+
+   A good example for the usage of a status list would be an "access
+   token" as defined in section 1.4 of [RFC6749] where validity (after
+   issuance, before expiration) is important meta information.  A
+   mechanism to gather this kind of information exists in the form of
+   Token Introspection [RFC7662], but requires direct interaction with
+   the issuer, whereas this specification defines a mechanism using
+   static information in the form of a status list.
 
    The following diagram depicts the basic conceptual relationship.
 
@@ -761,7 +765,9 @@ Table of Contents
 
    *  Provisional registration?  No
 
-13.  Normative References
+13.  References
+
+13.1.  Normative References
 
    [RFC1950]  Deutsch, P. and J. Gailly, "ZLIB Compressed Data Format
               Specification version 3.3", RFC 1950,
@@ -789,10 +795,6 @@ Table of Contents
               Security (TLS)", RFC 6125, DOI 10.17487/RFC6125, March
               2011, <https://www.rfc-editor.org/rfc/rfc6125>.
 
-   [RFC6749]  Hardt, D., Ed., "The OAuth 2.0 Authorization Framework",
-              RFC 6749, DOI 10.17487/RFC6749, October 2012,
-              <https://www.rfc-editor.org/rfc/rfc6749>.
-
    [RFC7515]  Jones, M., Bradley, J., and N. Sakimura, "JSON Web
               Signature (JWS)", RFC 7515, DOI 10.17487/RFC7515, May
               2015, <https://www.rfc-editor.org/rfc/rfc7515>.
@@ -800,10 +802,6 @@ Table of Contents
    [RFC7519]  Jones, M., Bradley, J., and N. Sakimura, "JSON Web Token
               (JWT)", RFC 7519, DOI 10.17487/RFC7519, May 2015,
               <https://www.rfc-editor.org/rfc/rfc7519>.
-
-   [RFC7662]  Richer, J., Ed., "OAuth 2.0 Token Introspection",
-              RFC 7662, DOI 10.17487/RFC7662, October 2015,
-              <https://www.rfc-editor.org/rfc/rfc7662>.
 
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
@@ -822,6 +820,16 @@ Table of Contents
               Ed., "HTTP Caching", STD 98, RFC 9111,
               DOI 10.17487/RFC9111, June 2022,
               <https://www.rfc-editor.org/rfc/rfc9111>.
+
+13.2.  Informative References
+
+   [RFC6749]  Hardt, D., Ed., "The OAuth 2.0 Authorization Framework",
+              RFC 6749, DOI 10.17487/RFC6749, October 2012,
+              <https://www.rfc-editor.org/rfc/rfc6749>.
+
+   [RFC7662]  Richer, J., Ed., "OAuth 2.0 Token Introspection",
+              RFC 7662, DOI 10.17487/RFC7662, October 2015,
+              <https://www.rfc-editor.org/rfc/rfc7662>.
 
 Acknowledgments
 
