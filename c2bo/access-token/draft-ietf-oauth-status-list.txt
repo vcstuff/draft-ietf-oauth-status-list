@@ -5,9 +5,9 @@
 Network Working Group                                          T. Looker
 Internet-Draft                                                     MATTR
 Intended status: Informational                                P. Bastian
-Expires: 17 June 2024                                                   
+Expires: 18 June 2024                                                   
                                                               C. Bormann
-                                                        15 December 2023
+                                                        16 December 2023
 
 
                            OAuth Status List
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 17 June 2024.
+   This Internet-Draft will expire on 18 June 2024.
 
 Copyright Notice
 
@@ -130,20 +130,20 @@ Table of Contents
    references a Status List Token.  Status Lists may be composed for
    expressing a range of Status Types.  This document defines basic
    Status Types for the most common use cases as well as an
-   extensibility mechanism for custom Status Types.  The Status List
-   Token may be used by an issuer in the Issuer-Holder-Verifier model to
-   express the status of verifiable credentials (Referenced Tokens)
-   issued by an issuer.
+   extensibility mechanism for custom Status Types.
 
-   A good example for the usage of a status list would be an "access
-   token" as defined in section 1.4 of [RFC6749] where validity (after
+   An example for the usage of a Status List would be an "access token"
+   as defined in section 1.4 of [RFC6749] where validity (after
    issuance, before expiration) is important meta information.  A
    mechanism to gather this kind of information exists in the form of
    Token Introspection [RFC7662], but requires direct interaction with
    the issuer, whereas this specification defines a mechanism using
    static information in the form of a status list.
 
-   The following diagram depicts the basic conceptual relationship.
+   Another possible use case for the Status List is to express the
+   status of verifiable credentials (Referenced Tokens) issued by an
+   issuer in the Issuer-Holder-Verifier model.  The following diagram
+   depicts the basic conceptual relationship.
 
    +------------------+                    +-------------------+
    |                  |     References     |                   |

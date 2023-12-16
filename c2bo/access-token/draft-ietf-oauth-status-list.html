@@ -1031,7 +1031,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Looker, et al.</td>
-<td class="center">Expires 17 June 2024</td>
+<td class="center">Expires 18 June 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1044,12 +1044,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-oauth-status-list-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2023-12-15" class="published">15 December 2023</time>
+<time datetime="2023-12-16" class="published">16 December 2023</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-06-17">17 June 2024</time></dd>
+<dd class="expires"><time datetime="2024-06-18">18 June 2024</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1101,7 +1101,7 @@ The status list data structures themselves are also represented as JWTs or CWTs.
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 17 June 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 18 June 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1288,9 +1288,10 @@ The status list data structures themselves are also represented as JWTs or CWTs.
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
 <p id="section-1-1">JSON Web Tokens (JWTs) <span>[<a href="#RFC7519" class="cite xref">RFC7519</a>]</span> and CBOR Web Tokens (CWTs) <span>[<a href="#RFC8392" class="cite xref">RFC8392</a>]</span> as secure token formats, have vast possible applications. Some of these applications can involve issuing a token whereby certain semantics about the token can change over time, which are important to be able to communicate to relying parties in an interoperable manner, such as whether the token is considered invalidated or suspended by its issuer.<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2">This document defines Status List representations in JWT and CWT formats that describe the individual statuses of multiple Referenced Tokens, which themselves are also JWTs or CWTs. The statuses of all Referenced Tokens are conveyed via a bit array in the Status List. Each Referenced Token is allocated an index during issuance that represents its position within this bit array. The value of the bit(s) at this position correspond to the Referenced Token's status. The document also defines how an issuer of a Referenced Token references a Status List Token. Status Lists may be composed for expressing a range of Status Types. This document defines basic Status Types for the most common use cases as well as an extensibility mechanism for custom Status Types. The Status List Token may be used by an issuer in the Issuer-Holder-Verifier model to express the status of verifiable credentials (Referenced Tokens) issued by an issuer.<a href="#section-1-2" class="pilcrow">¶</a></p>
-<p id="section-1-3">A good example for the usage of a status list would be an "access token" as defined in section 1.4 of <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span> where validity (after issuance, before expiration) is important meta information. A mechanism to gather this kind of information exists in the form of Token Introspection <span>[<a href="#RFC7662" class="cite xref">RFC7662</a>]</span>, but requires direct interaction with the issuer, whereas this specification defines a mechanism using static information in the form of a status list.<a href="#section-1-3" class="pilcrow">¶</a></p>
-<p id="section-1-4">The following diagram depicts the basic conceptual relationship.<a href="#section-1-4" class="pilcrow">¶</a></p>
+<p id="section-1-2">This document defines Status List representations in JWT and CWT formats that describe the individual statuses of multiple Referenced Tokens, which themselves are also JWTs or CWTs. The statuses of all Referenced Tokens are conveyed via a bit array in the Status List. Each Referenced Token is allocated an index during issuance that represents its position within this bit array. The value of the bit(s) at this position correspond to the Referenced Token's status. The document also defines how an issuer of a Referenced Token references a Status List Token. Status Lists may be composed for expressing a range of Status Types. This document defines basic Status Types for the most common use cases as well as an extensibility mechanism for custom Status Types.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-3">An example for the usage of a Status List would be an "access token" as defined in section 1.4 of <span>[<a href="#RFC6749" class="cite xref">RFC6749</a>]</span> where validity (after issuance, before expiration) is important meta information. A mechanism to gather this kind of information exists in the form of Token Introspection <span>[<a href="#RFC7662" class="cite xref">RFC7662</a>]</span>, but requires direct interaction with the issuer, whereas this specification defines a mechanism using static information in the form of a status list.<a href="#section-1-3" class="pilcrow">¶</a></p>
+<p id="section-1-4">Another possible use case for the Status List is to express the status of verifiable credentials (Referenced Tokens) issued by an issuer in the Issuer-Holder-Verifier model.
+The following diagram depicts the basic conceptual relationship.<a href="#section-1-4" class="pilcrow">¶</a></p>
 <div class="alignLeft art-ascii-art art-text artwork" id="section-1-5">
 <pre>
 +------------------+                    +-------------------+
