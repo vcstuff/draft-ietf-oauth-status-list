@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-12-14T00:57:10.028339+00:00",
+  "timestamp": "2023-12-17T01:01:39.524815+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -1145,7 +1145,7 @@
       "id": "I_kwDOJZ2aqs5tceUV",
       "title": "Add claim for used compression algorithm",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/issues/50",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "c2bo",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [
@@ -1154,8 +1154,8 @@
       "labels": [],
       "body": "We should consider to add a claim into the status list token that describes the used compression algorithm. This would allow us to easily adopt other options for compression.",
       "createdAt": "2023-08-04T06:57:57Z",
-      "updatedAt": "2023-11-02T07:32:02Z",
-      "closedAt": null,
+      "updatedAt": "2023-12-16T21:56:00Z",
+      "closedAt": "2023-12-16T21:56:00Z",
       "comments": [
         {
           "author": "paulbastian",
@@ -5035,13 +5035,13 @@
       "labels": [],
       "body": "<!-- If this pull request closes an issue, please mention the issue number below -->\r\nCloses #82 \r\n\r\n## \ud83d\udcd1 Description\r\nAdds access token as an example use-case for status list.\r\n\r\n## Preview Link\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/c2bo/access-token/draft-ietf-oauth-status-list.html)",
       "createdAt": "2023-12-12T09:00:20Z",
-      "updatedAt": "2023-12-12T13:04:00Z",
+      "updatedAt": "2023-12-16T22:43:59Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "5e89ba2bea20e16e8d6f1533bd4e5745758866d4",
       "headRepository": "vcstuff/draft-ietf-oauth-status-list",
       "headRefName": "c2bo/access-token",
-      "headRefOid": "53276553cdb2f92e3a4ae51eb74c54a79d84ca58",
+      "headRefOid": "75dc61bd1bdf9dd2c125438289fa356c0c0d0b1f",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -5087,6 +5087,39 @@
               "updatedAt": "2023-12-12T13:04:01Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5qWXcy",
+          "commit": {
+            "abbreviatedOid": "61c86f5"
+          },
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-12-15T14:45:53Z",
+          "updatedAt": "2023-12-15T14:45:53Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "```suggestion\r\nThis document defines Status List representations in JWT and CWT formats that describe the individual statuses of multiple Referenced Tokens, which themselves are also JWTs or CWTs. The statuses of all Referenced Tokens are conveyed via a bit array in the Status List. Each Referenced Token is allocated an index during issuance that represents its position within this bit array. The value of the bit(s) at this position correspond to the Referenced Token's status. The document also defines how an issuer of a Referenced Token references a Status List Token. Status Lists may be composed for expressing a range of Status Types. This document defines basic Status Types for the most common use cases as well as an extensibility mechanism for custom Status Types.\r\n\r\nAn example for the usage of a Status List would be an \"access token\" as defined in section 1.4 of {{RFC6749}} where validity (after issuance, before expiration) is important meta information. A mechanism to gather this kind of information exists in the form of Token Introspection {{RFC7662}}, but requires direct interaction with the issuer, whereas this specification defines a mechanism using static information in the form of a status list.\r\n\r\nAnother possible use case for the Status List is to express the status of verifiable credentials (Referenced Tokens) issued by an issuer in the Issuer-Holder-Verifier model.\r\n```",
+              "createdAt": "2023-12-15T14:45:53Z",
+              "updatedAt": "2023-12-15T14:45:53Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5qacJY",
+          "commit": {
+            "abbreviatedOid": "75dc61b"
+          },
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-12-16T22:43:59Z",
+          "updatedAt": "2023-12-16T22:43:59Z",
+          "comments": []
         }
       ]
     }
