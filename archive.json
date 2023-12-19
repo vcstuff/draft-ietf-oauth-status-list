@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-12-17T01:01:39.524815+00:00",
+  "timestamp": "2023-12-19T00:57:34.257179+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -4069,7 +4069,7 @@
       "labels": [],
       "body": "<!-- If this pull request closes an issue, please mention the issue number below -->\r\nCloses #55\r\nCloses #56 \r\nCloses #41 \r\n\r\n## \ud83d\udcd1 Description\r\n<!-- Add a brief description of the pr -->\r\n\r\n- [x] change graphic in Introduction\r\n- [ ] update introduction text\r\n- [ ] update terminology\r\n- [ ] auto-generate status list encoding output\r\n- [ ] move some examples to annex?\r\n- [ ] auto-generate referenced token\r\n\r\n## Preview Link\r\n\r\n<!-- Update the link below to provide reviewers with a convenient link to view a rendered version of the PR-->\r\n<!-- In general the link should be of the form https://github.com/<repo-name>/<branch-name>/<draft-name>.html-->\r\n\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-looker-oauth-jwt-cwt-status-list/plain/draft-looker-oauth-jwt-cwt-status-list.html)",
       "createdAt": "2023-08-14T12:14:48Z",
-      "updatedAt": "2023-11-01T21:58:16Z",
+      "updatedAt": "2023-12-17T16:30:16Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "58c91091c080b59860732bea8bc95c140c304473",
@@ -4080,7 +4080,15 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Replaced by #89 . Pending close",
+          "createdAt": "2023-12-17T16:30:15Z",
+          "updatedAt": "2023-12-17T16:30:15Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOJZ2aqs5fKZ9p",
@@ -5122,6 +5130,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 89,
+      "id": "PR_kwDOJZ2aqs5iMNtq",
+      "title": "Restructure and Support for plain status list",
+      "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/89",
+      "state": "OPEN",
+      "author": "paulbastian",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "<!-- If this pull request closes an issue, please mention the issue number below -->\r\nCloses #56 \r\n\r\n## \ud83d\udcd1 Description\r\nAdds support for unsigned Status List retrieved via HTTP endpoint.\r\nAlso restructures the document to allow this.\r\n\r\nRemaining tasks:\r\n\r\n- [ ] Fix python example to provide Status List Object in 4.1\r\n- [ ] Fix python example in 5.1 to use the very same Status List Object from 4.1\r\n\r\n## Preview Link\r\n\r\n<!-- Update the link below to provide reviewers with a convenient link to view a rendered version of the PR-->\r\n<!-- In general the link should be of the form https://github.com/<repo-name>/<branch-name>/<draft-name>.html-->\r\n\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/56-add-option-for-plain-status-list-unsigned/draft-ietf-oauth-status-list.html)",
+      "createdAt": "2023-12-17T16:17:53Z",
+      "updatedAt": "2023-12-17T16:27:16Z",
+      "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
+      "baseRefName": "main",
+      "baseRefOid": "5e89ba2bea20e16e8d6f1533bd4e5745758866d4",
+      "headRepository": "vcstuff/draft-ietf-oauth-status-list",
+      "headRefName": "56-add-option-for-plain-status-list-unsigned",
+      "headRefOid": "edb4b3f5e092dcf779b2868f57d9756e1a30dca1",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
