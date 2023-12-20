@@ -5,9 +5,9 @@
 Network Working Group                                          T. Looker
 Internet-Draft                                                     MATTR
 Intended status: Informational                                P. Bastian
-Expires: 19 June 2024                                                   
+Expires: 22 June 2024                                                   
                                                               C. Bormann
-                                                        17 December 2023
+                                                        20 December 2023
 
 
                            OAuth Status List
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 19 June 2024.
+   This Internet-Draft will expire on 22 June 2024.
 
 Copyright Notice
 
@@ -284,7 +284,11 @@ Table of Contents
    Status List:
 
    byte_array = [0xb9, 0xa3]
-   encoded = "eNrbuRgAAhcBXQ"
+   encoded:
+   {
+     "bits": 1,
+     "lst": "eNrbuRgAAhcBXQ"
+   }
 
 4.2.  Status List in CBOR Format
 
@@ -363,8 +367,8 @@ Table of Contents
      "iat": 1686920170,
      "iss": "https://example.com",
      "status_list": {
-       "bits": 2,
-       "lst": "eNo76fITAAPfAgc"
+       "bits": 1,
+       "lst": "eNrbuRgAAhcBXQ"
      },
      "sub": "https://example.com/statuslists/1"
    }
@@ -560,7 +564,11 @@ Table of Contents
    list:
 
    byte_array = [0xc9, 0x44, 0xf9]
-   encoded = "eNo76fITAAPfAgc"
+   encoded:
+   {
+     "bits": 2,
+     "lst": "eNo76fITAAPfAgc"
+   }
 
 10.  Security Considerations
 
