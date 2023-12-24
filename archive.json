@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-12-21T00:56:37.127349+00:00",
+  "timestamp": "2023-12-24T01:00:21.791368+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -1756,9 +1756,17 @@
       "labels": [],
       "body": "https://mailarchive.ietf.org/arch/msg/oauth/hSOvzlKZTUJpI8ucB1CLNo5koqg/\r\n\r\n> The latest draft (i.e. draft-looker-oauth-jwt-cwt-status-list-latest) \r\n> which is available at :\r\n> https://vcstuff.github.io/draft-looker-oauth-jwt-cwt-status-list/draft-looker-oauth-jwt-cwt-status-list.html \r\n> \r\n> includes the following illustrative drawing:\r\n> \r\n> +------------------++-------------------+\r\n> ||References||\r\n> ||------------------->||\r\n> | Referenced Token || Status List Token |\r\n> |(JSON or CBOR)||(JWT or CWT)|\r\n> ||Describes Status||\r\n> ||<-------------------||\r\n> +------------------+ +-------------------+\r\n> \r\n> This drawing is not identical to the drawing of the referenced draft.\r\n> \r\n> On the left side, \"JSON or CBOR\" are mentioned instead of \"JWT or CWT\".\r\n> However, such change would indeed be appropriate (and in both rectangles \r\n> as explained below).\r\n\r\n> In section 4. of JWT [RFC7519] The text states:\r\n> \r\n>           The JWT Claims Set represents a JSON object whose members are \r\n> the claims conveyed by the JWT.\r\n> The Claim Names within a JWT Claims Set MUST be unique. JWT parsers MUST \r\n> either reject JWTs\r\n>           with duplicate Claim Names oruse a JSON parser that returns \r\n> only the lexically last duplicate member name (...).\r\n> \r\n> In [RFC8392] such sentence is not present which means that a Claim does \r\n> not need to be unique.\r\n> \r\n> However, in some applications, it might be useful to use JSON tokens \r\n> that contain several occurrences of the same claim within it.\r\n> In addition, the processing of such tokens would not necessarily need to \r\n> follow the description made in section 7 of [RFC7519], i.e. JWTs.\r\n> \r\n> As a first example, let us consider the case where the URI placed under \r\n> the \"status_list \" claim does not respond.\r\n> For resilience considerations, another URI should be defined. This can \r\n> be handled in two ways:\r\n> \r\n> - using a more complex claim structure for the \"status_list\" claim, or\r\n> \r\n> - allowing the inclusion of several \"status_list\" claims.\r\n> \r\n> As another example, currently the claim \"nationalities\" has been \r\n> registered by the IANA. See: https://www.iana.org/assignments/jwt/jwt.xhtml\r\n> \r\n> In order to support selective disclosure, the claim \"nationality\" should \r\n> be defined, so that two \"nationality\" claims can be present,\r\n> in order to allow bi-national users to choose which \"nationality\" \r\n> claim(s) to disclose, without disclosing that they have two nationality \r\n> claims.\r\n> \r\n>         Note: Using a different name for tokens supporting credentials, \r\n> e.g., JXT ot CXT (with the letter \"X\" different from the letter \"J\")\r\n>                  would address this problem.\r\n> \r\n> The abstract states:\r\n> \r\n> This specification defines status list data structures for representing \r\n> the status of JSON Web Tokens (JWTs) [RFC7519] and\r\n> CBOR Web Tokens (CWTs) [RFC8392]. The status list data structures \r\n> themselves are also represented as JWTs or CWTs.\r\n> \r\n> Both sentences imply restrictions since they limit the use of the \r\n> mechanism only to JWTs and CWTs.\r\n> \r\n> Limiting the use of the Status List mechanism to JWTs and CWTs would not \r\n> allow other forms of JSON or CBOR tokens\r\n> to take advantage of the mechanism described in this draft.\r\n> \r\n> The abstract should be modified to be able to support other forms of \r\n> JSON or CBOR tokens,\r\n> while JWTs and CWTs should be mentioned as examples.\r\n> \r\n> In order to allow future evolutions, the same kind of change should be \r\n> done for Status List Tokens.\r\n> \r\n> In order to allow for such a possibility, the title should include \"JSON \r\n> and CBOR\" rather than \"JWT and CWT\".\r\n> \r\n> *Proposed changes:*\r\n> \r\n> 1) Change proposal for the title of the document:\r\n> \r\n> JSON and CBOR encoded Status Lists\r\n> \r\n> 2) Change proposal for the Abstract:\r\n> \r\n> This specification defines status list data structures for representing \r\n> the status of JavaScript Object Notation (JSON) tokens [RFC8259] and\r\n>           of Concise Binary Object Representation (CBOR) tokens \r\n> [RFC7049] (see also [RFC8949]), */such as/* JSON Web Tokens (JWTs) \r\n> [RFC7519] and\r\n>           CBOR Web Tokens (CWTs) [RFC8392].\r\n> \r\n> The status list data structures themselves are represented as JSON \r\n> tokens or CBOR tokens.\r\n> \r\n> 3) The same kind of change should be done within the document, e.g. :\r\n> *\r\n> **+----------------------++----------------------+\r\n> ||References||\r\n> ||------------------->||\r\n> |Referenced Token||Status List Token|\r\n> | (JSON or CBOR token) || (JSON or CBOR token) |\r\n> ||Describes Status||\r\n> ||<-------------------||\r\n> +----------------------++----------------------+\r\n\r\n",
       "createdAt": "2023-10-22T18:43:19Z",
-      "updatedAt": "2023-10-22T18:47:14Z",
+      "updatedAt": "2023-12-21T20:22:08Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "c2bo",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Solved by #89 ",
+          "createdAt": "2023-12-21T20:22:07Z",
+          "updatedAt": "2023-12-21T20:22:07Z"
+        }
+      ]
     },
     {
       "number": 73,
@@ -4996,25 +5004,33 @@
       "id": "PR_kwDOJZ2aqs5hbSsf",
       "title": "Typo: status types list",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/87",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "c2bo",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "Adds a new line before the pre-defined status types so it renders properly as a list",
       "createdAt": "2023-12-07T14:02:27Z",
-      "updatedAt": "2023-12-07T16:01:02Z",
+      "updatedAt": "2023-12-21T20:18:02Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "5e89ba2bea20e16e8d6f1533bd4e5745758866d4",
       "headRepository": "vcstuff/draft-ietf-oauth-status-list",
       "headRefName": "c2bo/typo-types",
       "headRefOid": "6fae779a953db20aeb18edceecd4acb4764b12b9",
-      "closedAt": null,
+      "closedAt": "2023-12-21T20:18:02Z",
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
+      "comments": [
+        {
+          "author": "c2bo",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Fixed in #89 - closing this one",
+          "createdAt": "2023-12-21T20:18:02Z",
+          "updatedAt": "2023-12-21T20:18:02Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOJZ2aqs5piAeW",
@@ -5141,9 +5157,9 @@
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
-      "body": "<!-- If this pull request closes an issue, please mention the issue number below -->\r\nCloses #56 \r\n\r\n## \ud83d\udcd1 Description\r\nAdds support for unsigned Status List retrieved via HTTP endpoint.\r\nAlso restructures the document to allow this.\r\n\r\nRemaining tasks:\r\n\r\n- [x] Fix python example to provide Status List Object in 4.1\r\n- [x] Fix python example in 5.1 to use the very same Status List Object from 4.1\r\n\r\n## Preview Link\r\n\r\n<!-- Update the link below to provide reviewers with a convenient link to view a rendered version of the PR-->\r\n<!-- In general the link should be of the form https://github.com/<repo-name>/<branch-name>/<draft-name>.html-->\r\n\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/56-add-option-for-plain-status-list-unsigned/draft-ietf-oauth-status-list.html)",
+      "body": "<!-- If this pull request closes an issue, please mention the issue number below -->\r\nCloses #55\r\nCloses #56\r\nCloses #41\r\n\r\n## \ud83d\udcd1 Description\r\nAdds support for unsigned Status List retrieved via HTTP endpoint.\r\nAlso restructures the document to allow this.\r\n\r\nRemaining tasks:\r\n\r\n- [x] Fix python example to provide Status List Object in 4.1\r\n- [x] Fix python example in 5.1 to use the very same Status List Object from 4.1\r\n\r\n## Preview Link\r\n\r\n<!-- Update the link below to provide reviewers with a convenient link to view a rendered version of the PR-->\r\n<!-- In general the link should be of the form https://github.com/<repo-name>/<branch-name>/<draft-name>.html-->\r\n\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/56-add-option-for-plain-status-list-unsigned/draft-ietf-oauth-status-list.html)",
       "createdAt": "2023-12-17T16:17:53Z",
-      "updatedAt": "2023-12-20T11:09:12Z",
+      "updatedAt": "2023-12-22T10:19:06Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "5e89ba2bea20e16e8d6f1533bd4e5745758866d4",
@@ -5155,7 +5171,28 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJZ2aqs5q8DCV",
+          "commit": {
+            "abbreviatedOid": "7b3e8ac"
+          },
+          "author": "c2bo",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-12-22T08:18:57Z",
+          "updatedAt": "2023-12-22T10:19:06Z",
+          "comments": [
+            {
+              "originalPosition": 134,
+              "body": "```suggestion\r\nA Status List Token embeds the Status List into a token that is cryptographically signed and protects the integrity of the Status List. This allows for the Status List Token to be hosted by third parties or be transferred for offline use cases.\r\n```",
+              "createdAt": "2023-12-22T08:18:57Z",
+              "updatedAt": "2023-12-22T10:19:06Z"
+            }
+          ]
+        }
+      ]
     },
     {
       "number": 90,
@@ -5169,7 +5206,7 @@
       "labels": [],
       "body": "Establish a mechanism that allows for other revocation means in the Referenced Token as discussed in #85. The only thing i changed was to call the reference \"status_list\" but I am open to change it to \"status_bitstring\" if we think that is a better fit.\r\n\r\nCloses #85 \r\n\r\n## Preview Link\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/c2bo/status-reference/draft-ietf-oauth-status-list.html)",
       "createdAt": "2023-12-20T11:18:33Z",
-      "updatedAt": "2023-12-20T11:18:34Z",
+      "updatedAt": "2023-12-21T20:12:45Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "5e89ba2bea20e16e8d6f1533bd4e5745758866d4",
@@ -5180,8 +5217,30 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
-      "reviews": []
+      "comments": [
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Should we consider registering an IANA registry? As RFC7800 did here: https://www.rfc-editor.org/rfc/rfc7800.html#section-6.2",
+          "createdAt": "2023-12-21T20:07:42Z",
+          "updatedAt": "2023-12-21T20:12:45Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJZ2aqs5q6FtN",
+          "commit": {
+            "abbreviatedOid": "5aa3ace"
+          },
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "Looks good to me. Maybe merge after #89 ",
+          "createdAt": "2023-12-21T20:07:01Z",
+          "updatedAt": "2023-12-21T20:07:01Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
