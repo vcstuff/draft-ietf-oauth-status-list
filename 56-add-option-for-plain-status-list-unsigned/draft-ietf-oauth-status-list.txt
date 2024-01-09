@@ -5,9 +5,9 @@
 Network Working Group                                          T. Looker
 Internet-Draft                                                     MATTR
 Intended status: Informational                                P. Bastian
-Expires: 22 June 2024                                                   
+Expires: 12 July 2024                                                   
                                                               C. Bormann
-                                                        20 December 2023
+                                                          9 January 2024
 
 
                            OAuth Status List
@@ -48,11 +48,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 22 June 2024.
+   This Internet-Draft will expire on 12 July 2024.
 
 Copyright Notice
 
-   Copyright (c) 2023 IETF Trust and the persons identified as the
+   Copyright (c) 2024 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -297,9 +297,9 @@ Table of Contents
 5.  Status List Token
 
    A Status List Token embeds the Status List into a token that is
-   cryptographically signed and integrity protected.  Therefore. the
-   Status List Token may be hosted by third parties or be transferred
-   for offline use cases.
+   cryptographically signed and protects the integrity of the Status
+   List.  This allows for the Status List Token to be hosted by third
+   parties or be transferred for offline use cases.
 
    This section specifies Status List Tokens in Json Web Token (JWT) and
    Cbor Web Token (CWT) format.
