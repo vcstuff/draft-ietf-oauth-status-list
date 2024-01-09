@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-01-07T01:02:37.189703+00:00",
+  "timestamp": "2024-01-09T00:58:35.834286+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -5059,7 +5059,7 @@
       "labels": [],
       "body": "<!-- If this pull request closes an issue, please mention the issue number below -->\r\nCloses #82 \r\n\r\n## \ud83d\udcd1 Description\r\nAdds access token as an example use-case for status list.\r\n\r\n## Preview Link\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/c2bo/access-token/draft-ietf-oauth-status-list.html)",
       "createdAt": "2023-12-12T09:00:20Z",
-      "updatedAt": "2023-12-16T22:43:59Z",
+      "updatedAt": "2024-01-08T23:53:46Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "5e89ba2bea20e16e8d6f1533bd4e5745758866d4",
@@ -5144,6 +5144,26 @@
           "createdAt": "2023-12-16T22:43:59Z",
           "updatedAt": "2023-12-16T22:43:59Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5r5Zme",
+          "commit": {
+            "abbreviatedOid": "75dc61b"
+          },
+          "author": "tplooker",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-01-08T23:53:45Z",
+          "updatedAt": "2024-01-08T23:53:46Z",
+          "comments": [
+            {
+              "originalPosition": 16,
+              "body": "```suggestion\r\nAn example for the usage of a Status List is to manage the status of issued access tokens as defined in section 1.4 of {{RFC6749}}. Token Introspection {{RFC7662}} defines another way to determine the status of an issued access token, but it requires the party trying to validate an access tokens status to directly contact the token issuer, whereas the mechanism defined in this specification does not have this limitation.\r\n```",
+              "createdAt": "2024-01-08T23:53:46Z",
+              "updatedAt": "2024-01-08T23:53:46Z"
+            }
+          ]
         }
       ]
     },
@@ -5159,7 +5179,7 @@
       "labels": [],
       "body": "<!-- If this pull request closes an issue, please mention the issue number below -->\r\nCloses #55\r\nCloses #56\r\nCloses #41\r\n\r\n## \ud83d\udcd1 Description\r\nAdds support for unsigned Status List retrieved via HTTP endpoint.\r\nAlso restructures the document to allow this.\r\n\r\nRemaining tasks:\r\n\r\n- [x] Fix python example to provide Status List Object in 4.1\r\n- [x] Fix python example in 5.1 to use the very same Status List Object from 4.1\r\n\r\n## Preview Link\r\n\r\n<!-- Update the link below to provide reviewers with a convenient link to view a rendered version of the PR-->\r\n<!-- In general the link should be of the form https://github.com/<repo-name>/<branch-name>/<draft-name>.html-->\r\n\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/56-add-option-for-plain-status-list-unsigned/draft-ietf-oauth-status-list.html)",
       "createdAt": "2023-12-17T16:17:53Z",
-      "updatedAt": "2023-12-22T10:19:06Z",
+      "updatedAt": "2024-01-08T23:43:43Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "5e89ba2bea20e16e8d6f1533bd4e5745758866d4",
@@ -5191,6 +5211,26 @@
               "updatedAt": "2023-12-22T10:19:06Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5r5X6_",
+          "commit": {
+            "abbreviatedOid": "7b3e8ac"
+          },
+          "author": "tplooker",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-01-08T23:43:43Z",
+          "updatedAt": "2024-01-08T23:43:43Z",
+          "comments": [
+            {
+              "originalPosition": 56,
+              "body": "With the proposal of #90 we would need to re-word this to be a bit more abstract right? Given the status list might take a different form?",
+              "createdAt": "2024-01-08T23:43:43Z",
+              "updatedAt": "2024-01-08T23:43:43Z"
+            }
+          ]
         }
       ]
     },
@@ -5206,7 +5246,7 @@
       "labels": [],
       "body": "Establish a mechanism that allows for other revocation means in the Referenced Token as discussed in #85. The only thing i changed was to call the reference \"status_list\" but I am open to change it to \"status_bitstring\" if we think that is a better fit.\r\n\r\nCloses #85 \r\n\r\n## Preview Link\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/c2bo/status-reference/draft-ietf-oauth-status-list.html)",
       "createdAt": "2023-12-20T11:18:33Z",
-      "updatedAt": "2023-12-21T20:12:45Z",
+      "updatedAt": "2024-01-08T23:41:16Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "5e89ba2bea20e16e8d6f1533bd4e5745758866d4",
@@ -5239,6 +5279,26 @@
           "createdAt": "2023-12-21T20:07:01Z",
           "updatedAt": "2023-12-21T20:07:01Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5r5XfA",
+          "commit": {
+            "abbreviatedOid": "5aa3ace"
+          },
+          "author": "tplooker",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-01-08T23:41:16Z",
+          "updatedAt": "2024-01-08T23:41:16Z",
+          "comments": [
+            {
+              "originalPosition": 27,
+              "body": "If we make this a MUST then won't other future mechanisms only be additional rather than alternatives?",
+              "createdAt": "2024-01-08T23:41:16Z",
+              "updatedAt": "2024-01-08T23:41:16Z"
+            }
+          ]
         }
       ]
     },
@@ -5254,7 +5314,7 @@
       "labels": [],
       "body": "<!-- If this pull request closes an issue, please mention the issue number below -->\r\nCloses #77 \r\n\r\n## \ud83d\udcd1 Description\r\n<!-- Add a brief description of the pr -->\r\n\r\n<!-- You can also choose to add a list of changes and if they have been completed or not by using the markdown to-do list syntax\r\n- [ ] Not Completed\r\n- [x] Completed\r\n-->\r\n\r\n## Preview Link\r\n\r\n<!-- Update the link below to provide reviewers with a convenient link to view a rendered version of the PR-->\r\n<!-- In general the link should be of the form https://github.com/<repo-name>/<branch-name>/<draft-name>.html-->\r\n\r\n[click here for rendered preview of PR](https://github.com/<repo-name>/<branch-name>/<draft-name>.html)",
       "createdAt": "2023-12-29T17:59:17Z",
-      "updatedAt": "2024-01-05T19:45:26Z",
+      "updatedAt": "2024-01-08T23:39:59Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "5e89ba2bea20e16e8d6f1533bd4e5745758866d4",
@@ -5278,6 +5338,19 @@
           "body": "",
           "createdAt": "2024-01-05T19:45:26Z",
           "updatedAt": "2024-01-05T19:45:26Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5r5XQr",
+          "commit": {
+            "abbreviatedOid": "b58d0de"
+          },
+          "author": "tplooker",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-01-08T23:39:59Z",
+          "updatedAt": "2024-01-08T23:39:59Z",
           "comments": []
         }
       ]
