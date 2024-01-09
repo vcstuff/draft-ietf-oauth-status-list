@@ -10,7 +10,7 @@ Expires: 12 July 2024
                                                           9 January 2024
 
 
-                           OAuth Status List
+                           Token Status List
                   draft-ietf-oauth-status-list-latest
 
 Abstract
@@ -102,7 +102,9 @@ Table of Contents
    13. IANA Considerations
      13.1.  JSON Web Token Claims Registration
      13.2.  Media Type Registration
-   14. Normative References
+   14. References
+     14.1.  Normative References
+     14.2.  Informative References
    Acknowledgments
    Document History
    Authors' Addresses
@@ -131,11 +133,20 @@ Table of Contents
    Status Types for the most common use cases as well as an
    extensibility mechanism for custom Status Types.  The document also
    defines how an issuer of a Referenced Token references a Status List
-   (Token).  The Status List Token may be used by an issuer in the
-   Issuer-Holder-Verifier model to express the status of verifiable
-   credentials (Referenced Tokens) issued by an issuer.
+   (Token).
 
-   The following diagram depicts the basic conceptual relationship.
+   An example for the usage of a Status List is to manage the status of
+   issued access tokens as defined in section 1.4 of [RFC6749].  Token
+   Introspection [RFC7662] defines another way to determine the status
+   of an issued access token, but it requires the party trying to
+   validate an access tokens status to directly contact the token
+   issuer, whereas the mechanism defined in this specification does not
+   have this limitation.
+
+   Another possible use case for the Status List is to express the
+   status of verifiable credentials (Referenced Tokens) issued by an
+   issuer in the Issuer-Holder-Verifier model.  The following diagram
+   depicts the basic conceptual relationship.
 
    +-------------------+                  +------------------------+
    |                   | describes status |                        |
@@ -897,7 +908,9 @@ Table of Contents
 
    *  Provisional registration?  No
 
-14.  Normative References
+14.  References
+
+14.1.  Normative References
 
    [RFC1950]  Deutsch, P. and J. Gailly, "ZLIB Compressed Data Format
               Specification version 3.3", RFC 1950,
@@ -951,6 +964,16 @@ Table of Contents
               DOI 10.17487/RFC9111, June 2022,
               <https://www.rfc-editor.org/rfc/rfc9111>.
 
+14.2.  Informative References
+
+   [RFC6749]  Hardt, D., Ed., "The OAuth 2.0 Authorization Framework",
+              RFC 6749, DOI 10.17487/RFC6749, October 2012,
+              <https://www.rfc-editor.org/rfc/rfc6749>.
+
+   [RFC7662]  Richer, J., Ed., "OAuth 2.0 Token Introspection",
+              RFC 7662, DOI 10.17487/RFC7662, October 2015,
+              <https://www.rfc-editor.org/rfc/rfc7662>.
+
 Acknowledgments
 
    We would like to thank Brian Campbell, Filip Skokan, Francesco
@@ -971,6 +994,8 @@ Document History
    *  Changing compression from gzip to zlib
 
    *  Change typo in Status List Token sub claim description
+
+   *  Add access token as an example use-case
 
    -00
 
