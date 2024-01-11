@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-01-09T00:58:35.834286+00:00",
+  "timestamp": "2024-01-11T00:59:10.979855+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -1862,15 +1862,15 @@
       "id": "I_kwDOJZ2aqs50qhub",
       "title": "Rename draft to \"OAuth Token Status List\"?",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/issues/77",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "aaronpk",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "I noticed the draft was renamed from the name it previously had at the last IETF meeting where it was adopted. The previous name was \"JWT and CWT Status List\" and the new name is \"OAuth Status List\".\r\n\r\nI understand not wanting to have \"JWT\" and \"CWT\" in the name, but the new name is somewhat confusing, since it makes it sound like there is a status of OAuth itself somehow.\r\n\r\nI suggest renaming this to \"OAuth Token Status List\" to avoid confusion.",
       "createdAt": "2023-10-23T14:26:44Z",
-      "updatedAt": "2023-11-16T14:34:44Z",
-      "closedAt": null,
+      "updatedAt": "2024-01-09T12:06:01Z",
+      "closedAt": "2024-01-09T12:06:01Z",
       "comments": [
         {
           "author": "paulbastian",
@@ -1952,7 +1952,7 @@
       "id": "I_kwDOJZ2aqs52f5sZ",
       "title": "IETF 118: mention usecase for accesstokens",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/issues/82",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "paulbastian",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [
@@ -1961,8 +1961,8 @@
       "labels": [],
       "body": "Aaron says that there are zero mentions of the term access token and proposes to mention JWT accesstokens as a possible usecase",
       "createdAt": "2023-11-10T17:42:45Z",
-      "updatedAt": "2023-11-16T07:31:54Z",
-      "closedAt": null,
+      "updatedAt": "2024-01-09T12:17:41Z",
+      "closedAt": "2024-01-09T12:17:41Z",
       "comments": []
     },
     {
@@ -5052,24 +5052,26 @@
       "id": "PR_kwDOJZ2aqs5hxKU3",
       "title": "add access token example",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/88",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "c2bo",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "<!-- If this pull request closes an issue, please mention the issue number below -->\r\nCloses #82 \r\n\r\n## \ud83d\udcd1 Description\r\nAdds access token as an example use-case for status list.\r\n\r\n## Preview Link\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/c2bo/access-token/draft-ietf-oauth-status-list.html)",
       "createdAt": "2023-12-12T09:00:20Z",
-      "updatedAt": "2024-01-08T23:53:46Z",
+      "updatedAt": "2024-01-09T12:17:40Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "5e89ba2bea20e16e8d6f1533bd4e5745758866d4",
       "headRepository": "vcstuff/draft-ietf-oauth-status-list",
       "headRefName": "c2bo/access-token",
-      "headRefOid": "75dc61bd1bdf9dd2c125438289fa356c0c0d0b1f",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "92fa63aef9755ed517d2b2076e2e59a37ea73421",
+      "closedAt": "2024-01-09T12:17:40Z",
+      "mergedAt": "2024-01-09T12:17:40Z",
+      "mergedBy": "paulbastian",
+      "mergeCommit": {
+        "oid": "28e2ea69c33ce4ae3254bdc723906859b3ea3f8e"
+      },
       "comments": [],
       "reviews": [
         {
@@ -5179,13 +5181,13 @@
       "labels": [],
       "body": "<!-- If this pull request closes an issue, please mention the issue number below -->\r\nCloses #55\r\nCloses #56\r\nCloses #41\r\n\r\n## \ud83d\udcd1 Description\r\nAdds support for unsigned Status List retrieved via HTTP endpoint.\r\nAlso restructures the document to allow this.\r\n\r\nRemaining tasks:\r\n\r\n- [x] Fix python example to provide Status List Object in 4.1\r\n- [x] Fix python example in 5.1 to use the very same Status List Object from 4.1\r\n\r\n## Preview Link\r\n\r\n<!-- Update the link below to provide reviewers with a convenient link to view a rendered version of the PR-->\r\n<!-- In general the link should be of the form https://github.com/<repo-name>/<branch-name>/<draft-name>.html-->\r\n\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/56-add-option-for-plain-status-list-unsigned/draft-ietf-oauth-status-list.html)",
       "createdAt": "2023-12-17T16:17:53Z",
-      "updatedAt": "2024-01-08T23:43:43Z",
+      "updatedAt": "2024-01-09T12:29:25Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
-      "baseRefOid": "5e89ba2bea20e16e8d6f1533bd4e5745758866d4",
+      "baseRefOid": "28e2ea69c33ce4ae3254bdc723906859b3ea3f8e",
       "headRepository": "vcstuff/draft-ietf-oauth-status-list",
       "headRefName": "56-add-option-for-plain-status-list-unsigned",
-      "headRefOid": "7b3e8acc321a05818d49a5f8097ec4277e248782",
+      "headRefOid": "e5973ecf6339279cebf8d0023643d2ddc8d28faf",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -5231,6 +5233,26 @@
               "updatedAt": "2024-01-08T23:43:43Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5r8j0r",
+          "commit": {
+            "abbreviatedOid": "7b3e8ac"
+          },
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-01-09T12:16:15Z",
+          "updatedAt": "2024-01-09T12:16:15Z",
+          "comments": [
+            {
+              "originalPosition": 56,
+              "body": "we need to rebase #90 on top of this anyway and I would like to merge this beforehand. lets do the discussion in the updated PR then",
+              "createdAt": "2024-01-09T12:16:15Z",
+              "updatedAt": "2024-01-09T12:16:16Z"
+            }
+          ]
         }
       ]
     },
@@ -5246,7 +5268,7 @@
       "labels": [],
       "body": "Establish a mechanism that allows for other revocation means in the Referenced Token as discussed in #85. The only thing i changed was to call the reference \"status_list\" but I am open to change it to \"status_bitstring\" if we think that is a better fit.\r\n\r\nCloses #85 \r\n\r\n## Preview Link\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/c2bo/status-reference/draft-ietf-oauth-status-list.html)",
       "createdAt": "2023-12-20T11:18:33Z",
-      "updatedAt": "2024-01-08T23:41:16Z",
+      "updatedAt": "2024-01-09T12:25:06Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "5e89ba2bea20e16e8d6f1533bd4e5745758866d4",
@@ -5299,6 +5321,66 @@
               "updatedAt": "2024-01-08T23:41:16Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5r8iKF",
+          "commit": {
+            "abbreviatedOid": "5aa3ace"
+          },
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-01-09T12:11:58Z",
+          "updatedAt": "2024-01-09T12:11:58Z",
+          "comments": [
+            {
+              "originalPosition": 27,
+              "body": "this is only a MUST for the mechanism used in the specification. If Giuseppe wants to implement an OCSP-like mechanism than it would look mlike:\r\n```json\r\n\"status\" : {\r\n  \"new-mechanism-name\" : {\r\n    \"whatever-parameter\" : \"whatever-value\"\r\n  }\r\n}  \r\n```",
+              "createdAt": "2024-01-09T12:11:58Z",
+              "updatedAt": "2024-01-09T12:11:59Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5r8lEI",
+          "commit": {
+            "abbreviatedOid": "5aa3ace"
+          },
+          "author": "c2bo",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-01-09T12:19:13Z",
+          "updatedAt": "2024-01-09T12:19:14Z",
+          "comments": [
+            {
+              "originalPosition": 27,
+              "body": "Yeah, that was the intention. For this spec, the existence of `status_list` is a MUST, but other status mechanisms can reuse the `status` claim and define other behaviour depending on other claims within status.",
+              "createdAt": "2024-01-09T12:19:14Z",
+              "updatedAt": "2024-01-09T12:19:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5r8nXj",
+          "commit": {
+            "abbreviatedOid": "5aa3ace"
+          },
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-01-09T12:25:06Z",
+          "updatedAt": "2024-01-09T12:25:06Z",
+          "comments": [
+            {
+              "originalPosition": 27,
+              "body": "I think we may need some text to the introduction that explains this in more detail. However its more better to merge #89 first and then start working from there",
+              "createdAt": "2024-01-09T12:25:06Z",
+              "updatedAt": "2024-01-09T12:25:06Z"
+            }
+          ]
         }
       ]
     },
@@ -5307,24 +5389,26 @@
       "id": "PR_kwDOJZ2aqs5i8qRn",
       "title": "Rename  Draft Title",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/91",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "paulbastian",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "<!-- If this pull request closes an issue, please mention the issue number below -->\r\nCloses #77 \r\n\r\n## \ud83d\udcd1 Description\r\n<!-- Add a brief description of the pr -->\r\n\r\n<!-- You can also choose to add a list of changes and if they have been completed or not by using the markdown to-do list syntax\r\n- [ ] Not Completed\r\n- [x] Completed\r\n-->\r\n\r\n## Preview Link\r\n\r\n<!-- Update the link below to provide reviewers with a convenient link to view a rendered version of the PR-->\r\n<!-- In general the link should be of the form https://github.com/<repo-name>/<branch-name>/<draft-name>.html-->\r\n\r\n[click here for rendered preview of PR](https://github.com/<repo-name>/<branch-name>/<draft-name>.html)",
       "createdAt": "2023-12-29T17:59:17Z",
-      "updatedAt": "2024-01-08T23:39:59Z",
+      "updatedAt": "2024-01-09T12:06:00Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "5e89ba2bea20e16e8d6f1533bd4e5745758866d4",
       "headRepository": "vcstuff/draft-ietf-oauth-status-list",
       "headRefName": "77-rename-draft-to-oauth-token-status-list",
       "headRefOid": "b58d0de12e7428043d3f8a1a6e46b91ce04275ba",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-01-09T12:06:00Z",
+      "mergedAt": "2024-01-09T12:06:00Z",
+      "mergedBy": "paulbastian",
+      "mergeCommit": {
+        "oid": "bad9ef35ed98cbbf932dc0ca74618ccbaff9c315"
+      },
       "comments": [],
       "reviews": [
         {
