@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-01-11T00:59:10.979855+00:00",
+  "timestamp": "2024-01-14T01:02:55.098379+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -2108,6 +2108,22 @@
           "updatedAt": "2023-12-11T13:33:57Z"
         }
       ]
+    },
+    {
+      "number": 92,
+      "id": "I_kwDOJZ2aqs57vvYX",
+      "title": "relax definition of Referenced Token",
+      "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/issues/92",
+      "state": "OPEN",
+      "author": "paulbastian",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Referenced Token may not need to be CWT, to allow fitting this to mdoc. Referenced Token should as well be COSE-signed CBOR",
+      "createdAt": "2024-01-11T09:13:02Z",
+      "updatedAt": "2024-01-11T09:14:01Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
@@ -5181,13 +5197,13 @@
       "labels": [],
       "body": "<!-- If this pull request closes an issue, please mention the issue number below -->\r\nCloses #55\r\nCloses #56\r\nCloses #41\r\n\r\n## \ud83d\udcd1 Description\r\nAdds support for unsigned Status List retrieved via HTTP endpoint.\r\nAlso restructures the document to allow this.\r\n\r\nRemaining tasks:\r\n\r\n- [x] Fix python example to provide Status List Object in 4.1\r\n- [x] Fix python example in 5.1 to use the very same Status List Object from 4.1\r\n\r\n## Preview Link\r\n\r\n<!-- Update the link below to provide reviewers with a convenient link to view a rendered version of the PR-->\r\n<!-- In general the link should be of the form https://github.com/<repo-name>/<branch-name>/<draft-name>.html-->\r\n\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/56-add-option-for-plain-status-list-unsigned/draft-ietf-oauth-status-list.html)",
       "createdAt": "2023-12-17T16:17:53Z",
-      "updatedAt": "2024-01-09T12:29:25Z",
+      "updatedAt": "2024-01-11T07:28:48Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "28e2ea69c33ce4ae3254bdc723906859b3ea3f8e",
       "headRepository": "vcstuff/draft-ietf-oauth-status-list",
       "headRefName": "56-add-option-for-plain-status-list-unsigned",
-      "headRefOid": "e5973ecf6339279cebf8d0023643d2ddc8d28faf",
+      "headRefOid": "0c8bbced22fb93b7ee93954b79ffc0d27028d186",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -5251,6 +5267,86 @@
               "body": "we need to rebase #90 on top of this anyway and I would like to merge this beforehand. lets do the discussion in the updated PR then",
               "createdAt": "2024-01-09T12:16:15Z",
               "updatedAt": "2024-01-09T12:16:16Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5sKEv6",
+          "commit": {
+            "abbreviatedOid": "e5973ec"
+          },
+          "author": "tplooker",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-01-11T02:56:08Z",
+          "updatedAt": "2024-01-11T02:56:09Z",
+          "comments": [
+            {
+              "originalPosition": 164,
+              "body": "```suggestion\r\nThe following additional rules apply:\r\n```",
+              "createdAt": "2024-01-11T02:56:08Z",
+              "updatedAt": "2024-01-11T02:56:09Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5sKE98",
+          "commit": {
+            "abbreviatedOid": "e5973ec"
+          },
+          "author": "tplooker",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-01-11T02:57:26Z",
+          "updatedAt": "2024-01-11T02:57:26Z",
+          "comments": [
+            {
+              "originalPosition": 161,
+              "body": "Im unsure whether this layout of a bullet list of claims is any clearer then the number bullet points we had previously, any particular reason for this change?",
+              "createdAt": "2024-01-11T02:57:26Z",
+              "updatedAt": "2024-01-11T02:57:26Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5sLETg",
+          "commit": {
+            "abbreviatedOid": "e5973ec"
+          },
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-01-11T07:27:17Z",
+          "updatedAt": "2024-01-11T07:27:17Z",
+          "comments": [
+            {
+              "originalPosition": 161,
+              "body": "it allows to describe nested claims and shows more clearly the structure.\r\nTherefore its more dense making the document shorter and better to read imo",
+              "createdAt": "2024-01-11T07:27:17Z",
+              "updatedAt": "2024-01-11T07:27:17Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5sLFHo",
+          "commit": {
+            "abbreviatedOid": "e5973ec"
+          },
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-01-11T07:28:48Z",
+          "updatedAt": "2024-01-11T07:28:48Z",
+          "comments": [
+            {
+              "originalPosition": 161,
+              "body": "also it makes things more obvious when REQUIRED/OPTIONAL is the first word in the description",
+              "createdAt": "2024-01-11T07:28:48Z",
+              "updatedAt": "2024-01-11T07:28:48Z"
             }
           ]
         }
