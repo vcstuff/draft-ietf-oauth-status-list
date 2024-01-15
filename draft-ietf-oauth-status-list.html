@@ -1136,10 +1136,13 @@ The status list data structures themselves are also represented as JWTs or CWTs.
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1.2.1">
                 <p id="section-toc.1-1.1.2.1.1" class="keepWithNext"><a href="#section-1.1" class="auto internal xref">1.1</a>.  <a href="#name-rationale" class="internal xref">Rationale</a></p>
 </li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1.2.2">
+                <p id="section-toc.1-1.1.2.2.1" class="keepWithNext"><a href="#section-1.2" class="auto internal xref">1.2</a>.  <a href="#name-design-considerations" class="internal xref">Design Considerations</a></p>
+</li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
-            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-conventions-and-definitions" class="internal xref">Conventions and Definitions</a></p>
+            <p id="section-toc.1-1.2.1"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-conventions-and-definitions" class="internal xref">Conventions and Definitions</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
             <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-terminology" class="internal xref">Terminology</a></p>
@@ -1318,7 +1321,38 @@ The following diagram depicts the basic conceptual relationship.<a href="#sectio
 <a href="#section-1.1" class="section-number selfRef">1.1. </a><a href="#name-rationale" class="section-name selfRef">Rationale</a>
         </h3>
 <p id="section-1.1-1">Revocation mechanisms are an essential part for most identity ecosystems. In the past, revocation of X.509 TLS certificates has been proven difficult. Traditional certificate revocation lists (CRLs) have limited scalability; Online Certificate Status Protocol (OCSP) has additional privacy risks, since the client is leaking the requested website to a third party. OCSP stapling is addressing some of these problems at the cost of less up-to-date data. Modern approaches use accumulator-based revocation registries and Zero-Knowledge-Proofs to accommodate for this privacy gap, but face scalability issues again.<a href="#section-1.1-1" class="pilcrow">¶</a></p>
-<p id="section-1.1-2">This specification seeks to find a balance between scalability, security, and privacy by minimizing the status information to mere bits (often a single bit) and compressing the resulting binary data. Thereby, a Status List may contain statuses of 100,000 or more Referenced Tokens, but still remain relatively small. Placing large amounts of Referenced Tokens into the same list also enables herd privacy relative to the Issuer.<a href="#section-1.1-2" class="pilcrow">¶</a></p>
+<p id="section-1.1-2">This specification seeks to find a balance between scalability, security, and privacy by minimizing the status information to mere bits (often a single bit) and compressing the resulting binary data. Thereby, a Status List may contain statuses of many thousands or millions Referenced Tokens while remaining as small as possible. Placing large amounts of Referenced Tokens into the same list also enables herd privacy relative to the Issuer.<a href="#section-1.1-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="design-considerations">
+<section id="section-1.2">
+        <h3 id="name-design-considerations">
+<a href="#section-1.2" class="section-number selfRef">1.2. </a><a href="#name-design-considerations" class="section-name selfRef">Design Considerations</a>
+        </h3>
+<p id="section-1.2-1">The decisions taken in this specification aim to achieve the following design goals:<a href="#section-1.2-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-1.2-2.1">
+            <p id="section-1.2-2.1.1">the specification shall favor a simple and easy to understand concept<a href="#section-1.2-2.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.2-2.2">
+            <p id="section-1.2-2.2.1">the specification shall be easy, fast and secure to implement in all major programming languages<a href="#section-1.2-2.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.2-2.3">
+            <p id="section-1.2-2.3.1">the specification shall be optimized to support the most common use cases and avoid unneccessary complexity of corner cases<a href="#section-1.2-2.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.2-2.4">
+            <p id="section-1.2-2.4.1">the Status List shall scale up to millions of tokens to support large scale government or enterprise use cases<a href="#section-1.2-2.4.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.2-2.5">
+            <p id="section-1.2-2.5.1">the Status List shall enable caching policies and offline support<a href="#section-1.2-2.5.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.2-2.6">
+            <p id="section-1.2-2.6.1">the specification shall support JSON and CBOR based tokens<a href="#section-1.2-2.6.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-1.2-2.7">
+            <p id="section-1.2-2.7.1">the specification shall not specify key resolution or trust frameworks<a href="#section-1.2-2.7.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
 </section>
 </div>
 </section>
@@ -2275,50 +2309,39 @@ Torsten Lodderstedt<a href="#appendix-A-1" class="pilcrow">¶</a></p>
       <h2 id="name-document-history">
 <a href="#name-document-history" class="section-name selfRef">Document History</a>
       </h2>
-<p id="appendix-B-1">-01<a href="#appendix-B-1" class="pilcrow">¶</a></p>
+<p id="appendix-B-1">-01
+* add design consideration to the introduction
+* restructure the sections of this document
+* add option to return an unsigned Status List
+* Changing compression from gzip to zlib
+* Change typo in Status List Token sub claim description
+* Add access token as an example use-case<a href="#appendix-B-1" class="pilcrow">¶</a></p>
+<p id="appendix-B-2">-00<a href="#appendix-B-2" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="appendix-B-2.1">
-          <p id="appendix-B-2.1.1">restructure the sections of this document<a href="#appendix-B-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="appendix-B-3.1">
+          <p id="appendix-B-3.1.1">Initial draft after working group adoption<a href="#appendix-B-3.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-B-2.2">
-          <p id="appendix-B-2.2.1">add option to return an unsigned Status List<a href="#appendix-B-2.2.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-B-3.2">
+          <p id="appendix-B-3.2.1">update acknowledgments<a href="#appendix-B-3.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-B-2.3">
-          <p id="appendix-B-2.3.1">Changing compression from gzip to zlib<a href="#appendix-B-2.3.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-B-3.3">
+          <p id="appendix-B-3.3.1">renamed Verifier to Relying Party<a href="#appendix-B-3.3.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-B-2.4">
-          <p id="appendix-B-2.4.1">Change typo in Status List Token sub claim description<a href="#appendix-B-2.4.1" class="pilcrow">¶</a></p>
-</li>
-        <li class="normal" id="appendix-B-2.5">
-          <p id="appendix-B-2.5.1">Add access token as an example use-case<a href="#appendix-B-2.5.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-B-3.4">
+          <p id="appendix-B-3.4.1">added IANA consideration<a href="#appendix-B-3.4.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="appendix-B-3">-00<a href="#appendix-B-3" class="pilcrow">¶</a></p>
+<p id="appendix-B-4">[draft-ietf-oauth-status-list ]<a href="#appendix-B-4" class="pilcrow">¶</a></p>
+<p id="appendix-B-5">-01<a href="#appendix-B-5" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="appendix-B-4.1">
-          <p id="appendix-B-4.1.1">Initial draft after working group adoption<a href="#appendix-B-4.1.1" class="pilcrow">¶</a></p>
-</li>
-        <li class="normal" id="appendix-B-4.2">
-          <p id="appendix-B-4.2.1">update acknowledgments<a href="#appendix-B-4.2.1" class="pilcrow">¶</a></p>
-</li>
-        <li class="normal" id="appendix-B-4.3">
-          <p id="appendix-B-4.3.1">renamed Verifier to Relying Party<a href="#appendix-B-4.3.1" class="pilcrow">¶</a></p>
-</li>
-        <li class="normal" id="appendix-B-4.4">
-          <p id="appendix-B-4.4.1">added IANA consideration<a href="#appendix-B-4.4.1" class="pilcrow">¶</a></p>
+<li class="normal" id="appendix-B-6.1">
+          <p id="appendix-B-6.1.1">Applied editorial improvements suggested by Michael Jones.<a href="#appendix-B-6.1.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="appendix-B-5">[draft-ietf-oauth-status-list ]<a href="#appendix-B-5" class="pilcrow">¶</a></p>
-<p id="appendix-B-6">-01<a href="#appendix-B-6" class="pilcrow">¶</a></p>
+<p id="appendix-B-7">-00<a href="#appendix-B-7" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="appendix-B-7.1">
-          <p id="appendix-B-7.1.1">Applied editorial improvements suggested by Michael Jones.<a href="#appendix-B-7.1.1" class="pilcrow">¶</a></p>
-</li>
-      </ul>
-<p id="appendix-B-8">-00<a href="#appendix-B-8" class="pilcrow">¶</a></p>
-<ul class="normal">
-<li class="normal" id="appendix-B-9.1">
-          <p id="appendix-B-9.1.1">Initial draft<a href="#appendix-B-9.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="appendix-B-8.1">
+          <p id="appendix-B-8.1.1">Initial draft<a href="#appendix-B-8.1.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 </section>
