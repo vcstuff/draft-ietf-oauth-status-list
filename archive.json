@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-01-14T01:02:55.098379+00:00",
+  "timestamp": "2024-01-16T00:58:23.999635+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -879,7 +879,7 @@
       "id": "I_kwDOJZ2aqs5rNHtH",
       "title": "Use zlib instead of Gzip?",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/issues/39",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "paulbastian",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [
@@ -888,8 +888,8 @@
       "labels": [],
       "body": "Gzip is for files and uses zlib internally",
       "createdAt": "2023-07-11T10:15:27Z",
-      "updatedAt": "2023-10-20T09:22:26Z",
-      "closedAt": null,
+      "updatedAt": "2024-01-15T08:14:56Z",
+      "closedAt": "2024-01-15T08:14:56Z",
       "comments": [
         {
           "author": "paulbastian",
@@ -911,6 +911,13 @@
           "body": "add recommendation for BEST_COMPRESSION mode",
           "createdAt": "2023-10-06T06:55:28Z",
           "updatedAt": "2023-10-06T06:55:28Z"
+        },
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Solved in #80 ",
+          "createdAt": "2024-01-15T08:14:56Z",
+          "updatedAt": "2024-01-15T08:14:56Z"
         }
       ]
     },
@@ -952,15 +959,15 @@
       "id": "I_kwDOJZ2aqs5rRDt8",
       "title": "Does Status List need to be signed as JWT?",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/issues/41",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "paulbastian",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "@bc-pi questions whether Status List needs to be signed as a JWT and what are the arguments for doing so",
       "createdAt": "2023-07-11T19:34:19Z",
-      "updatedAt": "2023-08-23T06:47:33Z",
-      "closedAt": null,
+      "updatedAt": "2024-01-15T07:07:13Z",
+      "closedAt": "2024-01-15T07:07:13Z",
       "comments": [
         {
           "author": "bc-pi",
@@ -1277,7 +1284,7 @@
       "id": "I_kwDOJZ2aqs5ttgYW",
       "title": "add small section on Design Considerations",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/issues/54",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "paulbastian",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [
@@ -1286,8 +1293,8 @@
       "labels": [],
       "body": "",
       "createdAt": "2023-08-08T06:25:52Z",
-      "updatedAt": "2023-10-20T09:22:13Z",
-      "closedAt": null,
+      "updatedAt": "2024-01-15T07:10:52Z",
+      "closedAt": "2024-01-15T07:10:52Z",
       "comments": [
         {
           "author": "paulbastian",
@@ -1348,15 +1355,15 @@
       "id": "I_kwDOJZ2aqs5tySPI",
       "title": "Add option for plain status list (unsigned)",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/issues/56",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "paulbastian",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2023-08-08T19:16:47Z",
-      "updatedAt": "2023-08-08T19:16:47Z",
-      "closedAt": null,
+      "updatedAt": "2024-01-15T07:07:13Z",
+      "closedAt": "2024-01-15T07:07:13Z",
       "comments": []
     },
     {
@@ -1733,16 +1740,24 @@
       "id": "I_kwDOJZ2aqs50dWog",
       "title": "Base64 encoding of StatusList should be JSON-specific, CBOR should use binary Status List",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/issues/69",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "paulbastian",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "              don't think base64url-encoding makes sense here now that this part 4.1 is only describing the list independent of JSON/CBOR\r\n\r\n_Originally posted by @bc-pi in https://github.com/vcstuff/draft-looker-oauth-jwt-cwt-status-list/pull/57#discussion_r1306192838_\r\n            ",
       "createdAt": "2023-10-20T09:02:11Z",
-      "updatedAt": "2023-10-20T09:02:11Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2024-01-15T08:15:52Z",
+      "closedAt": "2024-01-15T08:15:51Z",
+      "comments": [
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Solved in #89 ",
+          "createdAt": "2024-01-15T08:15:51Z",
+          "updatedAt": "2024-01-15T08:15:51Z"
+        }
+      ]
     },
     {
       "number": 72,
@@ -2121,7 +2136,47 @@
       "labels": [],
       "body": "Referenced Token may not need to be CWT, to allow fitting this to mdoc. Referenced Token should as well be COSE-signed CBOR",
       "createdAt": "2024-01-11T09:13:02Z",
-      "updatedAt": "2024-01-11T09:14:01Z",
+      "updatedAt": "2024-01-15T07:54:21Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "discussed in editors call:\r\nadd: other cryptographically signed containers, like JWS or COSE_Sign_1, implementations must take additional care of verification rules\r\nproceed registration of CWT claims\r\nregister CBOR tags for usage other than CWT",
+          "createdAt": "2024-01-15T07:54:20Z",
+          "updatedAt": "2024-01-15T07:54:20Z"
+        }
+      ]
+    },
+    {
+      "number": 93,
+      "id": "I_kwDOJZ2aqs58EMwo",
+      "title": "Consider adding an implementation consideration around using private relay style protocols for status list access",
+      "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/issues/93",
+      "state": "OPEN",
+      "author": "tplooker",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "In order to mitigate issuers being able to track verifiers when retrieving a status list, consider adding an implementation consideration to recommend usage of a private relay protocol like [Oblivious HTTP](https://datatracker.ietf.org/doc/html/draft-ietf-ohai-ohttp).",
+      "createdAt": "2024-01-15T08:14:41Z",
+      "updatedAt": "2024-01-15T08:14:41Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 94,
+      "id": "I_kwDOJZ2aqs58HqFW",
+      "title": "DEFLATE in ZLIB",
+      "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/issues/94",
+      "state": "OPEN",
+      "author": "bc-pi",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "maybe adjust the language around DEFLATE and ZLIB per [this thread](https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/80/files#diff-2347c539b523e10cc060407bc8a517b0764d5a8da0b237be9899e1348dcd63c8R134) \r\n\r\n\r\n\r\n\r\n_Originally posted by @bc-pi in https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/80#discussion_r1452588980_\r\n            ",
+      "createdAt": "2024-01-15T16:45:46Z",
+      "updatedAt": "2024-01-15T16:52:11Z",
       "closedAt": null,
       "comments": []
     }
@@ -3976,7 +4031,7 @@
       "labels": [],
       "body": "## \ud83d\udcd1 Description\r\nadds support for `ttl` instructions for consumers/verifiers - this is important, especially with signed lists to separate the requirement to sign and reissue from when a client or cdn needs to fetch a fresh copy of the list",
       "createdAt": "2023-08-02T18:46:01Z",
-      "updatedAt": "2023-11-16T09:25:05Z",
+      "updatedAt": "2024-01-15T08:25:03Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "70e860b9cd190741593d92cd0b8e27394137bda9",
@@ -4043,6 +4098,13 @@
           "body": "> If you duplicate the information, the list can be delivered by the holder in an internet denied environment.\r\n> \r\n> Assuming the verifier has network, or had network, might make sense for some use cases... Other use cases might assume burnt in trust roots and no network ever.\r\n\r\nPerhaps I am missing something but in my mind the caching information is not relevant for the verifier, only for the system fetching the updates (if they are separate entities). The verifier has `iat` and `exp` to figure out if status list should be trusted/used. The entity fetching the updates needs the information when to try fetching again for possible updates.\r\n\r\nWould you be up for a short call on this topic so we can better understand your point of view?",
           "createdAt": "2023-11-16T09:25:04Z",
           "updatedAt": "2023-11-16T09:25:04Z"
+        },
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "As we integrated a mechanism to enable Caching over the HTTP Cache-Control mechanism, we dot not see a need to add or duplicate this information to the data of the Status List Token.\r\nPending close without any further feedback.",
+          "createdAt": "2024-01-15T08:25:02Z",
+          "updatedAt": "2024-01-15T08:25:02Z"
         }
       ],
       "reviews": [
@@ -4086,21 +4148,21 @@
       "id": "PR_kwDOJZ2aqs5X4Gpj",
       "title": "Add option for Plain Status List and reorder document",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/57",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "paulbastian",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "<!-- If this pull request closes an issue, please mention the issue number below -->\r\nCloses #55\r\nCloses #56 \r\nCloses #41 \r\n\r\n## \ud83d\udcd1 Description\r\n<!-- Add a brief description of the pr -->\r\n\r\n- [x] change graphic in Introduction\r\n- [ ] update introduction text\r\n- [ ] update terminology\r\n- [ ] auto-generate status list encoding output\r\n- [ ] move some examples to annex?\r\n- [ ] auto-generate referenced token\r\n\r\n## Preview Link\r\n\r\n<!-- Update the link below to provide reviewers with a convenient link to view a rendered version of the PR-->\r\n<!-- In general the link should be of the form https://github.com/<repo-name>/<branch-name>/<draft-name>.html-->\r\n\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-looker-oauth-jwt-cwt-status-list/plain/draft-looker-oauth-jwt-cwt-status-list.html)",
       "createdAt": "2023-08-14T12:14:48Z",
-      "updatedAt": "2023-12-17T16:30:16Z",
+      "updatedAt": "2024-01-15T07:11:44Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "58c91091c080b59860732bea8bc95c140c304473",
       "headRepository": "vcstuff/draft-ietf-oauth-status-list",
       "headRefName": "plain",
       "headRefOid": "9c5c4499de9ea3f05c61bdaa780067ab5553abc9",
-      "closedAt": null,
+      "closedAt": "2024-01-15T07:11:44Z",
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
@@ -4603,24 +4665,26 @@
       "id": "PR_kwDOJZ2aqs5deH-g",
       "title": "design considerations",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/75",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "paulbastian",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "<!-- If this pull request closes an issue, please mention the issue number below -->\r\nCloses #54 \r\n\r\n## \ud83d\udcd1 Description\r\nThis PR adds a section on design considerations.\r\n\r\n<!-- You can also choose to add a list of changes and if they have been completed or not by using the markdown to-do list syntax\r\n- [ ] Not Completed\r\n- [x] Completed\r\n-->\r\n\r\n## Preview Link\r\n\r\n<!-- Update the link below to provide reviewers with a convenient link to view a rendered version of the PR-->\r\n<!-- In general the link should be of the form https://github.com/<repo-name>/<branch-name>/<draft-name>.html-->\r\n\r\n[click here for rendered preview of PR](https://github.com/<repo-name>/<branch-name>/<draft-name>.html)",
       "createdAt": "2023-10-22T19:38:19Z",
-      "updatedAt": "2023-12-08T07:30:37Z",
+      "updatedAt": "2024-01-15T07:10:51Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
-      "baseRefOid": "2323f53751e542f5edf5448fa4f522693f1b09aa",
+      "baseRefOid": "2e8e7aec6b757263d9fe356dc0f3815ffc5dd177",
       "headRepository": "vcstuff/draft-ietf-oauth-status-list",
       "headRefName": "pb/introduction",
-      "headRefOid": "e9a108277d528958bf4381f030c8f0bc28394da7",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "bdf7337845c9557cbeef4e7bbec28f587907d10f",
+      "closedAt": "2024-01-15T07:10:51Z",
+      "mergedAt": "2024-01-15T07:10:51Z",
+      "mergedBy": "paulbastian",
+      "mergeCommit": {
+        "oid": "8bf472ac4e3b6aaca67cc5f789aaa4984ed0969c"
+      },
       "comments": [
         {
           "author": "paulbastian",
@@ -4717,6 +4781,19 @@
               "updatedAt": "2023-11-16T15:55:36Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5si2qt",
+          "commit": {
+            "abbreviatedOid": "e9a1082"
+          },
+          "author": "tplooker",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-01-15T07:08:24Z",
+          "updatedAt": "2024-01-15T07:08:24Z",
+          "comments": []
         }
       ]
     },
@@ -4842,7 +4919,7 @@
       "labels": [],
       "body": "Closes #67 and #39.\r\n\r\n## \ud83d\udcd1 Description\r\nSwitches to zlib instead of gzip encoding and adds the recommendation to use the best available compression.\r\n\r\n## Preview Link\r\n[click here for rendered preview of PR](https://github.com/<repo-name>/<branch-name>/<draft-name>.html)",
       "createdAt": "2023-11-01T19:22:50Z",
-      "updatedAt": "2023-11-16T08:47:52Z",
+      "updatedAt": "2024-01-15T16:47:49Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "85fa6f499ae1ec612552c428e5ef77d2d1260e50",
@@ -4895,6 +4972,106 @@
           "createdAt": "2023-11-16T08:17:02Z",
           "updatedAt": "2023-11-16T08:17:02Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5sl6hV",
+          "commit": {
+            "abbreviatedOid": "e393142"
+          },
+          "author": "bc-pi",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-01-15T15:14:10Z",
+          "updatedAt": "2024-01-15T15:14:10Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "I'm not sure I understand \"compressed using the \"DEFLATE\" {{RFC1951}} compression method and stored using the \"ZLIB\" {{RFC1950}} data format\" and not sure I understand well enough to even ask appropriate questions. Does this say to compress twice, once with DEFLATE only and once with ZLIB? That sounds silly but could easily be read that way. Or like what does \"stored\" mean in this context? Stored where? This should be about data format for exchange between parties. Whereas storage typically implies something internal (which wouldn't be in scope for the interchange format). I would expect this draft to clearly specify one compression method. This reads like two compressions. The code below suggests that ZLIB is being used - shouldn't the text reflect that? I know zlib does use DEFLATE internally and that is confusing things but indicating them both with an \"and\" is further confusing. \r\n\r\n",
+              "createdAt": "2024-01-15T15:14:10Z",
+              "updatedAt": "2024-01-15T15:14:10Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5smJhb",
+          "commit": {
+            "abbreviatedOid": "e393142"
+          },
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-01-15T15:49:58Z",
+          "updatedAt": "2024-01-15T15:49:58Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "So Zlib is using Deflate as the compression method internally and zlib is more of a data format wrapping the result. \"stored\" may indeed be confusing here, is \"encoded\" better? Do you think its better not to reference Deflate as its referenced by Zlib RFC?\r\n\r\nSome implementations may not offer the choice for the compression level, so I think that was the idea to not mandate the level of compression. Although we don't have extensive experience with many programming languages yet.",
+              "createdAt": "2024-01-15T15:49:58Z",
+              "updatedAt": "2024-01-15T15:49:58Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5smOk7",
+          "commit": {
+            "abbreviatedOid": "e393142"
+          },
+          "author": "bc-pi",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-01-15T16:02:09Z",
+          "updatedAt": "2024-01-15T16:02:09Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "> Do you think its better not to reference Deflate as its referenced by Zlib RFC?\r\n\r\nYeah, that's probably how I would have tried to write it. But in https://www.rfc-editor.org/rfc/rfc9110.html#section-18.6 and https://www.rfc-editor.org/rfc/rfc9112.html#section-12.3 HTTP uses language like the following, which makes more sense to me and is probably an example worth following. \r\n\r\n> \"deflate\" compressed data ([RFC1951]) inside the \"zlib\" data format ([RFC1950])\r\n",
+              "createdAt": "2024-01-15T16:02:09Z",
+              "updatedAt": "2024-01-15T16:02:09Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5smdI-",
+          "commit": {
+            "abbreviatedOid": "e393142"
+          },
+          "author": "bc-pi",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-01-15T16:43:14Z",
+          "updatedAt": "2024-01-15T16:43:14Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "The wording is tricky (for me anyway!) but maybe something like this kinda following the language example from HTTP conveys the intent here more clearly: \r\n\r\n```suggestion\r\n2. The complete byte array is compressed using DEFLATE {{RFC1951}} inside the ZLIB {{RFC1950}} data format. Implementations are RECOMMENDED to use the highest compression level available.\r\n```\r\n\r\nmaybe... ",
+              "createdAt": "2024-01-15T16:43:14Z",
+              "updatedAt": "2024-01-15T16:43:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5smeuP",
+          "commit": {
+            "abbreviatedOid": "e393142"
+          },
+          "author": "bc-pi",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-01-15T16:47:49Z",
+          "updatedAt": "2024-01-15T16:47:49Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "This PR has been merged already so I created issue #94 for this ",
+              "createdAt": "2024-01-15T16:47:49Z",
+              "updatedAt": "2024-01-15T16:48:02Z"
+            }
+          ]
         }
       ]
     },
@@ -5190,24 +5367,26 @@
       "id": "PR_kwDOJZ2aqs5iMNtq",
       "title": "Restructure and Support for plain status list",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/89",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "paulbastian",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "<!-- If this pull request closes an issue, please mention the issue number below -->\r\nCloses #55\r\nCloses #56\r\nCloses #41\r\n\r\n## \ud83d\udcd1 Description\r\nAdds support for unsigned Status List retrieved via HTTP endpoint.\r\nAlso restructures the document to allow this.\r\n\r\nRemaining tasks:\r\n\r\n- [x] Fix python example to provide Status List Object in 4.1\r\n- [x] Fix python example in 5.1 to use the very same Status List Object from 4.1\r\n\r\n## Preview Link\r\n\r\n<!-- Update the link below to provide reviewers with a convenient link to view a rendered version of the PR-->\r\n<!-- In general the link should be of the form https://github.com/<repo-name>/<branch-name>/<draft-name>.html-->\r\n\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/56-add-option-for-plain-status-list-unsigned/draft-ietf-oauth-status-list.html)",
       "createdAt": "2023-12-17T16:17:53Z",
-      "updatedAt": "2024-01-11T07:28:48Z",
+      "updatedAt": "2024-01-15T07:11:17Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "28e2ea69c33ce4ae3254bdc723906859b3ea3f8e",
       "headRepository": "vcstuff/draft-ietf-oauth-status-list",
       "headRefName": "56-add-option-for-plain-status-list-unsigned",
       "headRefOid": "0c8bbced22fb93b7ee93954b79ffc0d27028d186",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-01-15T07:07:12Z",
+      "mergedAt": "2024-01-15T07:07:11Z",
+      "mergedBy": "paulbastian",
+      "mergeCommit": {
+        "oid": "2e8e7aec6b757263d9fe356dc0f3815ffc5dd177"
+      },
       "comments": [],
       "reviews": [
         {
@@ -5349,6 +5528,19 @@
               "updatedAt": "2024-01-11T07:28:48Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5si2Hv",
+          "commit": {
+            "abbreviatedOid": "0c8bbce"
+          },
+          "author": "tplooker",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-01-15T07:06:03Z",
+          "updatedAt": "2024-01-15T07:06:03Z",
+          "comments": []
         }
       ]
     },
