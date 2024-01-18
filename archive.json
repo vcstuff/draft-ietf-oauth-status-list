@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-01-16T00:58:23.999635+00:00",
+  "timestamp": "2024-01-18T00:58:00.858334+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -2176,9 +2176,24 @@
       "labels": [],
       "body": "maybe adjust the language around DEFLATE and ZLIB per [this thread](https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/80/files#diff-2347c539b523e10cc060407bc8a517b0764d5a8da0b237be9899e1348dcd63c8R134) \r\n\r\n\r\n\r\n\r\n_Originally posted by @bc-pi in https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/80#discussion_r1452588980_\r\n            ",
       "createdAt": "2024-01-15T16:45:46Z",
-      "updatedAt": "2024-01-15T16:52:11Z",
+      "updatedAt": "2024-01-16T14:10:17Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "c2bo",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Copied over, to have everything in the issue here:\r\nThis is the current text:\r\n> The complete byte array is compressed using the \"DEFLATE\" {{RFC1951}} compression method and stored using the \"ZLIB\" {{RFC1950}} data format. Implementations are RECOMMENDED to use the highest compression level available.\r\n\r\nThis is the proposal:\r\n>The complete byte array is compressed using DEFLATE {{RFC1951}} inside the ZLIB {{RFC1950}} data format. Implementations are RECOMMENDED to use the highest compression level available.\r\n\r\nI agree that the current text is a bit weird and I wasn't really sure how to formulate it better when writing it.\r\n\r\n",
+          "createdAt": "2024-01-16T13:11:52Z",
+          "updatedAt": "2024-01-16T13:11:52Z"
+        },
+        {
+          "author": "bc-pi",
+          "authorAssociation": "NONE",
+          "body": "More context copied over via Screenshot:\r\n\r\n![Screenshot 2024-01-16 at 7 08 02 AM](https://github.com/vcstuff/draft-ietf-oauth-status-list/assets/71398439/f559cb78-2cb9-49f8-9a0b-c8c210de8644)\r\n",
+          "createdAt": "2024-01-16T14:09:43Z",
+          "updatedAt": "2024-01-16T14:10:17Z"
+        }
+      ]
     }
   ],
   "pulls": [
