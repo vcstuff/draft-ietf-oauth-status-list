@@ -78,7 +78,6 @@ Table of Contents
      5.2.  Status List Token in CWT Format
    6.  Referenced Token
      6.1.  Referenced Token in JWT Format
-       6.1.1.  Status Claim Format
    7.  Status Types
      7.1.  Status Types Values
    8.  Verification and Processing
@@ -445,30 +444,6 @@ Table of Contents
        }
      }
    }
-
-6.1.1.  Status Claim Format
-
-   The following rules apply to validating the "status" (status) claim
-
-   1.  The claim value MUST be a valid JSON object.
-
-   2.  The claim value object MUST contain a member called "status_list"
-       that signals that status checks for this token can be done using
-       the status list mechanism defined in this document.  For the
-       "status_list" object, the following rules apply:
-
-       1.  The claim value MUST be a valid JSON object.
-
-       2.  The claim value object MUST contain an "idx" (index) member
-           with a numeric value that represents the index to check for
-           status information in the Status List for the current JWT.
-           The value of this member MUST be a non-negative number,
-           containing a value of zero or greater.
-
-       3.  The claim value object MUST contain a "uri" member with a
-           string value that identifies the Status List containing the
-           status information for the JWT.  The value of this member
-           MUST be a uri conforming to [RFC3986].
 
 7.  Status Types
 

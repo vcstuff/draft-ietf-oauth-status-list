@@ -1171,11 +1171,6 @@ The status list data structures themselves are also represented as JWTs or CWTs.
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.1">
                 <p id="section-toc.1-1.6.2.1.1"><a href="#section-6.1" class="auto internal xref">6.1</a>.  <a href="#name-referenced-token-in-jwt-for" class="internal xref">Referenced Token in JWT Format</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.1.2.1">
-                    <p id="section-toc.1-1.6.2.1.2.1.1"><a href="#section-6.1.1" class="auto internal xref">6.1.1</a>.  <a href="#name-status-claim-format" class="internal xref">Status Claim Format</a></p>
-</li>
-                </ul>
 </li>
             </ul>
 </li>
@@ -1604,33 +1599,6 @@ encoded:
   }
 }
 </pre><a href="#section-6.1-6" class="pilcrow">¶</a>
-</div>
-<div id="jwt-referenced-token-status">
-<section id="section-6.1.1">
-          <h4 id="name-status-claim-format">
-<a href="#section-6.1.1" class="section-number selfRef">6.1.1. </a><a href="#name-status-claim-format" class="section-name selfRef">Status Claim Format</a>
-          </h4>
-<p id="section-6.1.1-1">The following rules apply to validating the "status" (status) claim<a href="#section-6.1.1-1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal type-1" id="section-6.1.1-2">
-<li id="section-6.1.1-2.1">
-              <p id="section-6.1.1-2.1.1">The claim value <span class="bcp14">MUST</span> be a valid JSON object.<a href="#section-6.1.1-2.1.1" class="pilcrow">¶</a></p>
-</li>
-            <li id="section-6.1.1-2.2">
-              <p id="section-6.1.1-2.2.1">The claim value object <span class="bcp14">MUST</span> contain a member called "status_list" that signals that status checks for this token can be done using the status list mechanism defined in this document. For the "status_list" object, the following rules apply:<a href="#section-6.1.1-2.2.1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal type-1" id="section-6.1.1-2.2.2">
-<li id="section-6.1.1-2.2.2.1">
-                  <p id="section-6.1.1-2.2.2.1.1">The claim value <span class="bcp14">MUST</span> be a valid JSON object.<a href="#section-6.1.1-2.2.2.1.1" class="pilcrow">¶</a></p>
-</li>
-                <li id="section-6.1.1-2.2.2.2">
-                  <p id="section-6.1.1-2.2.2.2.1">The claim value object <span class="bcp14">MUST</span> contain an "idx" (index) member with a numeric value that represents the index to check for status information in the Status List for the current JWT. The value of this member <span class="bcp14">MUST</span> be a non-negative number, containing a value of zero or greater.<a href="#section-6.1.1-2.2.2.2.1" class="pilcrow">¶</a></p>
-</li>
-                <li id="section-6.1.1-2.2.2.3">
-                  <p id="section-6.1.1-2.2.2.3.1">The claim value object <span class="bcp14">MUST</span> contain a "uri" member with a string value that identifies the Status List containing the status information for the JWT. The value of this member <span class="bcp14">MUST</span> be a uri conforming to <span>[<a href="#RFC3986" class="cite xref">RFC3986</a>]</span>.<a href="#section-6.1.1-2.2.2.3.1" class="pilcrow">¶</a></p>
-</li>
-              </ol>
-</li>
-          </ol>
-</section>
 </div>
 </section>
 </div>
