@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-01-18T00:58:00.858334+00:00",
+  "timestamp": "2024-01-21T01:03:10.035868+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -57,6 +57,11 @@
       "name": "-01",
       "description": "",
       "color": "0052cc"
+    },
+    {
+      "name": "dependencies",
+      "description": "Pull requests that update a dependency file",
+      "color": "0366d6"
     }
   ],
   "issues": [
@@ -5571,13 +5576,13 @@
       "labels": [],
       "body": "Establish a mechanism that allows for other revocation means in the Referenced Token as discussed in #85. The only thing i changed was to call the reference \"status_list\" but I am open to change it to \"status_bitstring\" if we think that is a better fit.\r\n\r\nCloses #85 \r\n\r\n## Preview Link\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/c2bo/status-reference/draft-ietf-oauth-status-list.html)",
       "createdAt": "2023-12-20T11:18:33Z",
-      "updatedAt": "2024-01-09T12:25:06Z",
+      "updatedAt": "2024-01-19T16:11:20Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
-      "baseRefOid": "5e89ba2bea20e16e8d6f1533bd4e5745758866d4",
+      "baseRefOid": "8bf472ac4e3b6aaca67cc5f789aaa4984ed0969c",
       "headRepository": "vcstuff/draft-ietf-oauth-status-list",
       "headRefName": "c2bo/status-reference",
-      "headRefOid": "5aa3ace7f06efc80c424af19bc694bfb9f70804d",
+      "headRefOid": "75116f3680c20f46f4eb804796e247b892582cf8",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -5589,6 +5594,20 @@
           "body": "Should we consider registering an IANA registry? As RFC7800 did here: https://www.rfc-editor.org/rfc/rfc7800.html#section-6.2",
           "createdAt": "2023-12-21T20:07:42Z",
           "updatedAt": "2023-12-21T20:12:45Z"
+        },
+        {
+          "author": "c2bo",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "This changed quite a bit with the recent bigger PR (and had some merge conflicts) -> please check again :/ @paulbastian @tplooker ",
+          "createdAt": "2024-01-19T14:13:54Z",
+          "updatedAt": "2024-01-19T14:13:54Z"
+        },
+        {
+          "author": "c2bo",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I'll add a small section as an introduction / to explain the `status` expansion idea (similar to `cnf` claim) over the weekend",
+          "createdAt": "2024-01-19T14:15:50Z",
+          "updatedAt": "2024-01-19T14:15:50Z"
         }
       ],
       "reviews": [
@@ -5684,6 +5703,26 @@
               "updatedAt": "2024-01-09T12:25:06Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5tQKgz",
+          "commit": {
+            "abbreviatedOid": "523c053"
+          },
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "Changes look good so far",
+          "createdAt": "2024-01-19T15:02:24Z",
+          "updatedAt": "2024-01-19T15:02:50Z",
+          "comments": [
+            {
+              "originalPosition": 18,
+              "body": "Maybe swap the order of Uri and idx?",
+              "createdAt": "2024-01-19T15:02:24Z",
+              "updatedAt": "2024-01-19T15:02:50Z"
+            }
+          ]
         }
       ]
     },
@@ -5741,6 +5780,42 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 95,
+      "id": "PR_kwDOJZ2aqs5kkAqK",
+      "title": "Bump jwcrypto from 1.4.2 to 1.5.1 in /src",
+      "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/95",
+      "state": "CLOSED",
+      "author": "dependabot",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [
+        "dependencies"
+      ],
+      "body": "Bumps [jwcrypto](https://github.com/latchset/jwcrypto) from 1.4.2 to 1.5.1.\n<details>\n<summary>Release notes</summary>\n<p><em>Sourced from <a href=\"https://github.com/latchset/jwcrypto/releases\">jwcrypto's releases</a>.</em></p>\n<blockquote>\n<h2>Version 1.5.1 - Security Release</h2>\n<p>This is a minor security release to fix a potential DoS for applications that allow the use of symmetric keys with pbkdf2.</p>\n<h2>What's Changed</h2>\n<ul>\n<li>Fix X22519 import/export from PEM by <a href=\"https://github.com/achamayou\"><code>@\u200bachamayou</code></a> in <a href=\"https://redirect.github.com/latchset/jwcrypto/pull/334\">latchset/jwcrypto#334</a></li>\n<li>Read the Docs now requires a config file by <a href=\"https://github.com/simo5\"><code>@\u200bsimo5</code></a> in <a href=\"https://redirect.github.com/latchset/jwcrypto/pull/335\">latchset/jwcrypto#335</a></li>\n<li>chore: refactor for removing pdb symbols by <a href=\"https://github.com/peppelinux\"><code>@\u200bpeppelinux</code></a> in <a href=\"https://redirect.github.com/latchset/jwcrypto/pull/330\">latchset/jwcrypto#330</a></li>\n<li>Fix potential DoS issue with p2c header by <a href=\"https://github.com/simo5\"><code>@\u200bsimo5</code></a> in <a href=\"https://redirect.github.com/latchset/jwcrypto/pull/336\">latchset/jwcrypto#336</a></li>\n</ul>\n<h2>New Contributors</h2>\n<ul>\n<li><a href=\"https://github.com/achamayou\"><code>@\u200bachamayou</code></a> made their first contribution in <a href=\"https://redirect.github.com/latchset/jwcrypto/pull/334\">latchset/jwcrypto#334</a></li>\n<li><a href=\"https://github.com/peppelinux\"><code>@\u200bpeppelinux</code></a> made their first contribution in <a href=\"https://redirect.github.com/latchset/jwcrypto/pull/330\">latchset/jwcrypto#330</a></li>\n</ul>\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/latchset/jwcrypto/compare/v1.5.0...v1.5.1\">https://github.com/latchset/jwcrypto/compare/v1.5.0...v1.5.1</a></p>\n<h2>v1.5.0</h2>\n<p>Version 1.5</p>\n<p>Minor bugfixes and the addition of Brainpool curves.\nAs mentioned in the commit: &quot;The use of these algorithms is specified solely by the gematik GmbH \u2013 National Digital Health Agency - for use in german e-health applications&quot;</p>\n<p>This version also raises the minimum Cryptography version required to 3.4 and the minimum python version tested to 3.7</p>\n<h2>What's Changed</h2>\n<ul>\n<li>Raising the bar for minimum pyca/cryptography by <a href=\"https://github.com/simo5\"><code>@\u200bsimo5</code></a> in <a href=\"https://redirect.github.com/latchset/jwcrypto/pull/306\">latchset/jwcrypto#306</a></li>\n<li>Fix typos with codespell by <a href=\"https://github.com/cclauss\"><code>@\u200bcclauss</code></a> in <a href=\"https://redirect.github.com/latchset/jwcrypto/pull/307\">latchset/jwcrypto#307</a></li>\n<li>Add codespell checks in CI by <a href=\"https://github.com/simo5\"><code>@\u200bsimo5</code></a> in <a href=\"https://redirect.github.com/latchset/jwcrypto/pull/308\">latchset/jwcrypto#308</a></li>\n<li>Add Brainpool EC-curves support by <a href=\"https://github.com/spilikin\"><code>@\u200bspilikin</code></a> in <a href=\"https://redirect.github.com/latchset/jwcrypto/pull/309\">latchset/jwcrypto#309</a></li>\n<li>Fix error message by <a href=\"https://github.com/Cito\"><code>@\u200bCito</code></a> in <a href=\"https://redirect.github.com/latchset/jwcrypto/pull/318\">latchset/jwcrypto#318</a></li>\n<li>Fix  assorted CI issue by <a href=\"https://github.com/simo5\"><code>@\u200bsimo5</code></a> in <a href=\"https://redirect.github.com/latchset/jwcrypto/pull/319\">latchset/jwcrypto#319</a></li>\n<li>Better support for algorithms that have different input keysize requirement by <a href=\"https://github.com/simo5\"><code>@\u200bsimo5</code></a> in <a href=\"https://redirect.github.com/latchset/jwcrypto/pull/324\">latchset/jwcrypto#324</a></li>\n</ul>\n<h2>New Contributors</h2>\n<ul>\n<li><a href=\"https://github.com/spilikin\"><code>@\u200bspilikin</code></a> made their first contribution in <a href=\"https://redirect.github.com/latchset/jwcrypto/pull/309\">latchset/jwcrypto#309</a></li>\n<li><a href=\"https://github.com/Cito\"><code>@\u200bCito</code></a> made their first contribution in <a href=\"https://redirect.github.com/latchset/jwcrypto/pull/318\">latchset/jwcrypto#318</a></li>\n</ul>\n<p><strong>Full Changelog</strong>: <a href=\"https://github.com/latchset/jwcrypto/compare/v1.4.2...v1.5.0\">https://github.com/latchset/jwcrypto/compare/v1.4.2...v1.5.0</a></p>\n</blockquote>\n</details>\n<details>\n<summary>Commits</summary>\n<ul>\n<li><a href=\"https://github.com/latchset/jwcrypto/commit/8ae0df6538b8d8aa52e82105ec5132d289ad9ddd\"><code>8ae0df6</code></a> Version 1.5.1</li>\n<li><a href=\"https://github.com/latchset/jwcrypto/commit/066d13f2dbac3c0be7aa2a3023189980d56b86ab\"><code>066d13f</code></a> Update Security Policy</li>\n<li><a href=\"https://github.com/latchset/jwcrypto/commit/d2655d370586cb830e49acfb450f87598da60be8\"><code>d2655d3</code></a> Fix potential DoS issue with p2c header</li>\n<li><a href=\"https://github.com/latchset/jwcrypto/commit/6ee0e8915a22f2aed5346ec8a0116ce1cc64349a\"><code>6ee0e89</code></a> chore: arg renamed</li>\n<li><a href=\"https://github.com/latchset/jwcrypto/commit/d64536b102049c6b08bd8ce155a6bf578c653bfa\"><code>d64536b</code></a> chore: refactor for removing pdb symbols</li>\n<li><a href=\"https://github.com/latchset/jwcrypto/commit/ac40895d57422ec4e93cd7c53d430b532448687d\"><code>ac40895</code></a> Read the Docs now requires a config file</li>\n<li><a href=\"https://github.com/latchset/jwcrypto/commit/4c900198a25bbe0c71a9d3a09c8c378920f40887\"><code>4c90019</code></a> Fix X25519 import/export from PEM</li>\n<li><a href=\"https://github.com/latchset/jwcrypto/commit/41fb08a00ad2a36a1d85bf77ad973b31144ef9f2\"><code>41fb08a</code></a> Version 1.5</li>\n<li><a href=\"https://github.com/latchset/jwcrypto/commit/db1f9f4535fb8d9900aec8f31bef11f298e50f5d\"><code>db1f9f4</code></a> Add test to generate key with algorithm</li>\n<li><a href=\"https://github.com/latchset/jwcrypto/commit/e08cbf162aff952923eaaa4993669cf22bd26fd0\"><code>e08cbf1</code></a> Use separate input_keysize property</li>\n<li>Additional commits viewable in <a href=\"https://github.com/latchset/jwcrypto/compare/v1.4.2...v1.5.1\">compare view</a></li>\n</ul>\n</details>\n<br />\n\n\n[![Dependabot compatibility score](https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=jwcrypto&package-manager=pip&previous-version=1.4.2&new-version=1.5.1)](https://docs.github.com/en/github/managing-security-vulnerabilities/about-dependabot-security-updates#about-compatibility-scores)\n\nDependabot will resolve any conflicts with this PR as long as you don't alter it yourself. You can also trigger a rebase manually by commenting `@dependabot rebase`.\n\n[//]: # (dependabot-automerge-start)\n[//]: # (dependabot-automerge-end)\n\n---\n\n<details>\n<summary>Dependabot commands and options</summary>\n<br />\n\nYou can trigger Dependabot actions by commenting on this PR:\n- `@dependabot rebase` will rebase this PR\n- `@dependabot recreate` will recreate this PR, overwriting any edits that have been made to it\n- `@dependabot merge` will merge this PR after your CI passes on it\n- `@dependabot squash and merge` will squash and merge this PR after your CI passes on it\n- `@dependabot cancel merge` will cancel a previously requested merge and block automerging\n- `@dependabot reopen` will reopen this PR if it is closed\n- `@dependabot close` will close this PR and stop Dependabot recreating it. You can achieve the same result by closing it manually\n- `@dependabot show <dependency name> ignore conditions` will show all of the ignore conditions of the specified dependency\n- `@dependabot ignore this major version` will close this PR and stop Dependabot creating any more for this major version (unless you reopen the PR or upgrade to it yourself)\n- `@dependabot ignore this minor version` will close this PR and stop Dependabot creating any more for this minor version (unless you reopen the PR or upgrade to it yourself)\n- `@dependabot ignore this dependency` will close this PR and stop Dependabot creating any more for this dependency (unless you reopen the PR or upgrade to it yourself)\nYou can disable automated security fix PRs for this repo from the [Security Alerts page](https://github.com/vcstuff/draft-ietf-oauth-status-list/network/alerts).\n\n</details>",
+      "createdAt": "2024-01-19T15:59:28Z",
+      "updatedAt": "2024-01-19T16:09:06Z",
+      "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
+      "baseRefName": "main",
+      "baseRefOid": "8bf472ac4e3b6aaca67cc5f789aaa4984ed0969c",
+      "headRepository": "vcstuff/draft-ietf-oauth-status-list",
+      "headRefName": "dependabot/pip/src/jwcrypto-1.5.1",
+      "headRefOid": "da48ba5a50c4165285350ef34212f6abdc193d05",
+      "closedAt": "2024-01-19T16:08:57Z",
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "dependabot",
+          "authorAssociation": "NONE",
+          "body": "OK, I won't notify you again about this release, but will get in touch when a new version is available. If you'd rather skip all updates until the next major or minor version, let me know by commenting `@dependabot ignore this major version` or `@dependabot ignore this minor version`.\n\nIf you change your mind, just re-open this PR and I'll resolve any conflicts on it.",
+          "createdAt": "2024-01-19T16:08:59Z",
+          "updatedAt": "2024-01-19T16:08:59Z"
+        }
+      ],
+      "reviews": []
     }
   ]
 }
