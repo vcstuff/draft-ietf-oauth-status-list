@@ -5,9 +5,9 @@
 Network Working Group                                          T. Looker
 Internet-Draft                                                     MATTR
 Intended status: Informational                                P. Bastian
-Expires: 22 July 2024                                                   
+Expires: 25 July 2024                                                   
                                                               C. Bormann
-                                                         19 January 2024
+                                                         22 January 2024
 
 
                            Token Status List
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 22 July 2024.
+   This Internet-Draft will expire on 25 July 2024.
 
 Copyright Notice
 
@@ -186,6 +186,12 @@ Table of Contents
    Placing large amounts of Referenced Tokens into the same list also
    enables herd privacy relative to the Issuer.
 
+   There will likely be different mechanisms to convey token/credential
+   status information in the foreseeable future depending on specific
+   use-cases and their requirements.  The way this information is
+   transported in the token is defined with possible re-use or extension
+   in mind.
+
 1.2.  Design Considerations
 
    The decisions taken in this specification aim to achieve the
@@ -209,6 +215,10 @@ Table of Contents
 
    *  the specification shall not specify key resolution or trust
       frameworks
+
+   *  the specification shall design a mechanism to convey information
+      about the validity status of a token/credential that can be re-
+      used/expanded upon
 
 2.  Conventions and Definitions
 
@@ -431,7 +441,7 @@ Table of Contents
       the referenced Status List Token.
 
    *  status: REQUIRED.  The status (status) claim MUST specify a JSON
-      Object that contains a reference to a status mechanism.
+      Object that contains at least one reference to a status mechanism.
 
       -  status_list: REQUIRED when the status list mechanism defined in
          this specification is used.  It contains a reference to a
@@ -736,8 +746,8 @@ Table of Contents
 
    *  Claim Name: status
 
-   *  Claim Description: Reference to a status list containing up-to-
-      date status information on the JWT.
+   *  Claim Description: Reference to a status or validity mechanism
+      containing up-to-date status information on the JWT.
 
    *  Change Controller: IETF
 
