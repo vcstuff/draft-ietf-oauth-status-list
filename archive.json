@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-01-21T01:03:10.035868+00:00",
+  "timestamp": "2024-01-23T00:59:50.262556+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -5576,13 +5576,13 @@
       "labels": [],
       "body": "Establish a mechanism that allows for other revocation means in the Referenced Token as discussed in #85. The only thing i changed was to call the reference \"status_list\" but I am open to change it to \"status_bitstring\" if we think that is a better fit.\r\n\r\nCloses #85 \r\n\r\n## Preview Link\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/c2bo/status-reference/draft-ietf-oauth-status-list.html)",
       "createdAt": "2023-12-20T11:18:33Z",
-      "updatedAt": "2024-01-19T16:11:20Z",
+      "updatedAt": "2024-01-22T11:29:14Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "8bf472ac4e3b6aaca67cc5f789aaa4984ed0969c",
       "headRepository": "vcstuff/draft-ietf-oauth-status-list",
       "headRefName": "c2bo/status-reference",
-      "headRefOid": "75116f3680c20f46f4eb804796e247b892582cf8",
+      "headRefOid": "21dc0f1324f072c7a95b7bb33867e7217cc94517",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
