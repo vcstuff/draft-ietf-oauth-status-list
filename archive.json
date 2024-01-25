@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-01-23T00:59:50.262556+00:00",
+  "timestamp": "2024-01-25T00:59:57.052021+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -2197,6 +2197,37 @@
           "body": "More context copied over via Screenshot:\r\n\r\n![Screenshot 2024-01-16 at 7 08 02 AM](https://github.com/vcstuff/draft-ietf-oauth-status-list/assets/71398439/f559cb78-2cb9-49f8-9a0b-c8c210de8644)\r\n",
           "createdAt": "2024-01-16T14:09:43Z",
           "updatedAt": "2024-01-16T14:10:17Z"
+        }
+      ]
+    },
+    {
+      "number": 96,
+      "id": "I_kwDOJZ2aqs589PFS",
+      "title": "Consider including next update time claim for Status List",
+      "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/issues/96",
+      "state": "OPEN",
+      "author": "awoie",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "To provide guidance for caching it might make sense to include a next update time in the status list. Or does `exp` provide this guidance?",
+      "createdAt": "2024-01-23T16:05:20Z",
+      "updatedAt": "2024-01-24T17:47:18Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "c2bo",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "That information should be conveyed using http caching information:\r\n> If caching is required (e.g., to enable the use of alternative mechanisms for hosting, like Content Delivery Networks), the control of the caching mechanism SHOULD be implemented using the standard HTTP Cache-Control as defined in {{RFC9111}}.\r\n\r\nMy understanding would be that `exp` provides the validity of the information (can this information be trusted/used for a verification/validation) and http caching information signals when the system should attempt to retrieve the information again. For this case the `expires` header from RFC9111 (https://datatracker.ietf.org/doc/html/rfc9111#section-5.3) would signal when the system fetching the status list tries to update again.\r\n\r\nWe have a TODO in the text right now to properly explain this mechanism:\r\n> [10.2. ](https://vcstuff.github.io/draft-ietf-oauth-status-list/draft-ietf-oauth-status-list.html#section-10.2)[Cached and Stale status lists](https://vcstuff.github.io/draft-ietf-oauth-status-list/draft-ietf-oauth-status-list.html#name-cached-and-stale-status-lis)\r\nTODO consumers/Relying Party of the status list should be aware if they fetch the up-to-date data",
+          "createdAt": "2024-01-24T04:42:32Z",
+          "updatedAt": "2024-01-24T17:47:18Z"
+        },
+        {
+          "author": "awoie",
+          "authorAssociation": "NONE",
+          "body": "Perhaps we can keep this issue until we have the language in the caching section.",
+          "createdAt": "2024-01-24T14:35:14Z",
+          "updatedAt": "2024-01-24T14:35:14Z"
         }
       ]
     }
