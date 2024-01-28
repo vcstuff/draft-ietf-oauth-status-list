@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-01-25T00:59:57.052021+00:00",
+  "timestamp": "2024-01-28T00:57:33.227514+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -2141,7 +2141,7 @@
       "labels": [],
       "body": "Referenced Token may not need to be CWT, to allow fitting this to mdoc. Referenced Token should as well be COSE-signed CBOR",
       "createdAt": "2024-01-11T09:13:02Z",
-      "updatedAt": "2024-01-15T07:54:21Z",
+      "updatedAt": "2024-01-25T08:51:17Z",
       "closedAt": null,
       "comments": [
         {
@@ -2150,6 +2150,13 @@
           "body": "discussed in editors call:\r\nadd: other cryptographically signed containers, like JWS or COSE_Sign_1, implementations must take additional care of verification rules\r\nproceed registration of CWT claims\r\nregister CBOR tags for usage other than CWT",
           "createdAt": "2024-01-15T07:54:20Z",
           "updatedAt": "2024-01-15T07:54:20Z"
+        },
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "discussed in editors call:\r\njson/cbor Referenced Token rules should align\r\nadd cbor CDDL to apply for mdoc and revisit JSON Referenced Token\r\nrevisit issuer requirements and make sure they could be x509 based",
+          "createdAt": "2024-01-25T08:51:16Z",
+          "updatedAt": "2024-01-25T08:51:16Z"
         }
       ]
     },
