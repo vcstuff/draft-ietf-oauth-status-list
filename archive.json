@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-01-30T00:54:24.015064+00:00",
+  "timestamp": "2024-02-01T00:57:03.610569+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -5614,7 +5614,7 @@
       "labels": [],
       "body": "Establish a mechanism that allows for other revocation means in the Referenced Token as discussed in #85. The only thing i changed was to call the reference \"status_list\" but I am open to change it to \"status_bitstring\" if we think that is a better fit.\r\n\r\nCloses #85 \r\n\r\n## Preview Link\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/c2bo/status-reference/draft-ietf-oauth-status-list.html)",
       "createdAt": "2023-12-20T11:18:33Z",
-      "updatedAt": "2024-01-22T11:29:14Z",
+      "updatedAt": "2024-01-31T08:27:08Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "8bf472ac4e3b6aaca67cc5f789aaa4984ed0969c",
@@ -5646,6 +5646,13 @@
           "body": "I'll add a small section as an introduction / to explain the `status` expansion idea (similar to `cnf` claim) over the weekend",
           "createdAt": "2024-01-19T14:15:50Z",
           "updatedAt": "2024-01-19T14:15:50Z"
+        },
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I think the text in the introduction is a little weird. I checked what 7800 wrote:\n\n> Other members of the \"cnf\"\n   object may be defined because a proof-of-possession key may not be\n   the only means of confirming the authenticity of the token\n\n> This specification establishes the IANA \"JWT Confirmation Methods\"\n   registry for these members in Section 6.2 and registers the members\n   defined by this specification.  Other specifications can register\n   other members used for confirmation, including other members for\n   conveying proof-of-possession keys using different key representations.\n\nI think the text may be more subtle along this lines. I would omit \"we expect more in the future\" which doesn't age well in a standard and be more neutral, just saying that we establish a registry for other mechanisms?\n",
+          "createdAt": "2024-01-31T08:27:08Z",
+          "updatedAt": "2024-01-31T08:27:08Z"
         }
       ],
       "reviews": [
@@ -5761,6 +5768,19 @@
               "updatedAt": "2024-01-19T15:02:50Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5ucrY-",
+          "commit": {
+            "abbreviatedOid": "21dc0f1"
+          },
+          "author": "tplooker",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-01-31T06:59:21Z",
+          "updatedAt": "2024-01-31T06:59:21Z",
+          "comments": []
         }
       ]
     },
@@ -5854,6 +5874,46 @@
         }
       ],
       "reviews": []
+    },
+    {
+      "number": 97,
+      "id": "PR_kwDOJZ2aqs5lic3i",
+      "title": "added newline to fix rendering for history",
+      "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/97",
+      "state": "OPEN",
+      "author": "c2bo",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "## \ud83d\udcd1 Description\r\nfixes the rendering of the last history (01)\r\n\r\n## Preview Link\r\n\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/c2bo/history-rendering/draft-ietf-oauth-status-list.html)",
+      "createdAt": "2024-01-31T07:52:02Z",
+      "updatedAt": "2024-01-31T08:04:26Z",
+      "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
+      "baseRefName": "main",
+      "baseRefOid": "8bf472ac4e3b6aaca67cc5f789aaa4984ed0969c",
+      "headRepository": "vcstuff/draft-ietf-oauth-status-list",
+      "headRefName": "c2bo/history-rendering",
+      "headRefOid": "54e767a7bc52cb1f33b3d7cab5842aa5234f4607",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJZ2aqs5udBLg",
+          "commit": {
+            "abbreviatedOid": "54e767a"
+          },
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-01-31T08:04:26Z",
+          "updatedAt": "2024-01-31T08:04:26Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
