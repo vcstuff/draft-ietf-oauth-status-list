@@ -5,9 +5,9 @@
 Network Working Group                                          T. Looker
 Internet-Draft                                                     MATTR
 Intended status: Informational                                P. Bastian
-Expires: 25 July 2024                                                   
+Expires: 5 August 2024                                                  
                                                               C. Bormann
-                                                         22 January 2024
+                                                         2 February 2024
 
 
                            Token Status List
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 July 2024.
+   This Internet-Draft will expire on 5 August 2024.
 
 Copyright Notice
 
@@ -78,7 +78,8 @@ Table of Contents
      5.1.  Status List Token in JWT Format
      5.2.  Status List Token in CWT Format
    6.  Referenced Token
-     6.1.  Referenced Token in JWT Format
+     6.1.  Status Claim
+     6.2.  Referenced Token in JWT Format
    7.  Status Types
      7.1.  Status Types Values
    8.  Verification and Processing
@@ -102,7 +103,8 @@ Table of Contents
    12. Implementation Considerations
    13. IANA Considerations
      13.1.  JSON Web Token Claims Registration
-     13.2.  Media Type Registration
+     13.2.  JWT Confirmation Methods Registry
+     13.3.  Media Type Registration
    14. References
      14.1.  Normative References
      14.2.  Informative References
@@ -186,11 +188,11 @@ Table of Contents
    Placing large amounts of Referenced Tokens into the same list also
    enables herd privacy relative to the Issuer.
 
-   There will likely be different mechanisms to convey token/credential
-   status information in the foreseeable future depending on specific
-   use-cases and their requirements.  The way this information is
-   transported in the token is defined with possible re-use or extension
-   in mind.
+   This specification establishes the IANA "Status Mechanism Methods"
+   registry for status mechanism in and registers the members defined by
+   this specification.  Other specifications can register other members
+   used for confirmation, including other members for conveying proof-
+   of-possession keys using different key representations.
 
 1.2.  Design Considerations
 
@@ -425,7 +427,18 @@ Table of Contents
 
 6.  Referenced Token
 
-6.1.  Referenced Token in JWT Format
+6.1.  Status Claim
+
+   By including a "status" claim in a JWT, the issuer of the JWT
+   declares that the credential is referencing a mechanism to retrieve
+   status information about this credential.  The claim contains members
+   used to reference to a status list as defined in this specification.
+   Other members of the "status" object may be defined because status
+   list means to check the status of a credential.  This is analogous to
+   "cnf" claim in Section 3.1 of [RFC7800] in which different
+   authenticity confirmation methods can be included.
+
+6.2.  Referenced Token in JWT Format
 
    The Referenced Token MUST be encoded as a "JSON Web Token (JWT)"
    according to [RFC7519].
@@ -751,8 +764,7 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): [[ (#referenced-token-jwt) of this
-      specification ]]
+   *  Specification Document(s): Section 6.1 of this specification
 
 
 
@@ -763,10 +775,16 @@ Table of Contents
 
    *  Change Controller: IETF
 
-   *  Specification Document(s): [[ (#status-list-json) of this
-      specification ]]
+   *  Specification Document(s): Section 4.1 of this specification
 
-13.2.  Media Type Registration
+13.2.  JWT Confirmation Methods Registry
+
+   This specification establishes the IANA "Status Mechanism Methods"
+   registry for JWT "status" member values.  The registry records the
+   status mechanism method member and a reference to the specification
+   that defines it.
+
+13.3.  Media Type Registration
 
    This section requests registration of the following media types
    [@RFC2046] in the "Media Types" registry [@IANA.MediaTypes] in the
@@ -1014,6 +1032,11 @@ Table of Contents
    [RFC7662]  Richer, J., Ed., "OAuth 2.0 Token Introspection",
               RFC 7662, DOI 10.17487/RFC7662, October 2015,
               <https://www.rfc-editor.org/rfc/rfc7662>.
+
+   [RFC7800]  Jones, M., Bradley, J., and H. Tschofenig, "Proof-of-
+              Possession Key Semantics for JSON Web Tokens (JWTs)",
+              RFC 7800, DOI 10.17487/RFC7800, April 2016,
+              <https://www.rfc-editor.org/rfc/rfc7800>.
 
 Acknowledgments
 
