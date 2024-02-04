@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-01T00:57:03.610569+00:00",
+  "timestamp": "2024-02-04T00:58:21.050166+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -5614,13 +5614,13 @@
       "labels": [],
       "body": "Establish a mechanism that allows for other revocation means in the Referenced Token as discussed in #85. The only thing i changed was to call the reference \"status_list\" but I am open to change it to \"status_bitstring\" if we think that is a better fit.\r\n\r\nCloses #85 \r\n\r\n## Preview Link\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/c2bo/status-reference/draft-ietf-oauth-status-list.html)",
       "createdAt": "2023-12-20T11:18:33Z",
-      "updatedAt": "2024-01-31T08:27:08Z",
+      "updatedAt": "2024-02-02T15:02:27Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "8bf472ac4e3b6aaca67cc5f789aaa4984ed0969c",
       "headRepository": "vcstuff/draft-ietf-oauth-status-list",
       "headRefName": "c2bo/status-reference",
-      "headRefOid": "21dc0f1324f072c7a95b7bb33867e7217cc94517",
+      "headRefOid": "066b9abd41fa8e363f0527beb64241683d1ad910",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -5653,6 +5653,20 @@
           "body": "I think the text in the introduction is a little weird. I checked what 7800 wrote:\n\n> Other members of the \"cnf\"\n   object may be defined because a proof-of-possession key may not be\n   the only means of confirming the authenticity of the token\n\n> This specification establishes the IANA \"JWT Confirmation Methods\"\n   registry for these members in Section 6.2 and registers the members\n   defined by this specification.  Other specifications can register\n   other members used for confirmation, including other members for\n   conveying proof-of-possession keys using different key representations.\n\nI think the text may be more subtle along this lines. I would omit \"we expect more in the future\" which doesn't age well in a standard and be more neutral, just saying that we establish a registry for other mechanisms?\n",
           "createdAt": "2024-01-31T08:27:08Z",
           "updatedAt": "2024-01-31T08:27:08Z"
+        },
+        {
+          "author": "c2bo",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "> I think the text in the introduction is a little weird. I checked what 7800 wrote:\r\n> \r\n> > Other members of the \"cnf\"\r\n> > object may be defined because a proof-of-possession key may not be\r\n> > the only means of confirming the authenticity of the token\r\n> \r\n> > This specification establishes the IANA \"JWT Confirmation Methods\"\r\n> > registry for these members in Section 6.2 and registers the members\r\n> > defined by this specification.  Other specifications can register\r\n> > other members used for confirmation, including other members for\r\n> > conveying proof-of-possession keys using different key representations.\r\n> \r\n> I think the text may be more subtle along this lines. I would omit \"we expect more in the future\" which doesn't age well in a standard and be more neutral, just saying that we establish a registry for other mechanisms?\r\n\r\nSounds reasonable - i will propose a change",
+          "createdAt": "2024-02-01T13:37:46Z",
+          "updatedAt": "2024-02-01T13:37:46Z"
+        },
+        {
+          "author": "c2bo",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I changed the text and realized that the IANA text in general needs some work, could you please re-review the current state? I am not super happy with this version but imho let's go with something like this for the time being and revisit a bit later (and fix all of the IANA related things).",
+          "createdAt": "2024-02-02T14:35:35Z",
+          "updatedAt": "2024-02-02T15:02:27Z"
         }
       ],
       "reviews": [
@@ -5781,6 +5795,26 @@
           "createdAt": "2024-01-31T06:59:21Z",
           "updatedAt": "2024-01-31T06:59:21Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5uy1AT",
+          "commit": {
+            "abbreviatedOid": "523c053"
+          },
+          "author": "c2bo",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-02-02T09:52:14Z",
+          "updatedAt": "2024-02-02T09:52:14Z",
+          "comments": [
+            {
+              "originalPosition": 18,
+              "body": "Current ordering is alphabetical which matches the examples and what afaik most json libraries will generate - that was my main intention for this ordering",
+              "createdAt": "2024-02-02T09:52:14Z",
+              "updatedAt": "2024-02-02T09:52:14Z"
+            }
+          ]
         }
       ]
     },
