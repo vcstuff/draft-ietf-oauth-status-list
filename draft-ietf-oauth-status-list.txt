@@ -5,9 +5,9 @@
 Network Working Group                                          T. Looker
 Internet-Draft                                                     MATTR
 Intended status: Informational                                P. Bastian
-Expires: 18 July 2024                                                   
+Expires: 8 August 2024                                                  
                                                               C. Bormann
-                                                         15 January 2024
+                                                         5 February 2024
 
 
                            Token Status List
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 18 July 2024.
+   This Internet-Draft will expire on 8 August 2024.
 
 Copyright Notice
 
@@ -1010,11 +1010,19 @@ Acknowledgments
 
 Document History
 
-   -01 * add design consideration to the introduction * restructure the
-   sections of this document * add option to return an unsigned Status
-   List * Changing compression from gzip to zlib * Change typo in Status
-   List Token sub claim description * Add access token as an example
-   use-case
+   -01
+
+   *  add design consideration to the introduction
+
+   *  restructure the sections of this document
+
+   *  add option to return an unsigned Status List
+
+   *  Changing compression from gzip to zlib
+
+   *  Change typo in Status List Token sub claim description
+
+   *  Add access token as an example use-case
 
    -00
 
