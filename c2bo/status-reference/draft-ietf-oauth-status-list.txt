@@ -80,6 +80,7 @@ Table of Contents
    6.  Referenced Token
      6.1.  Status Claim
      6.2.  Referenced Token in JWT Format
+     6.3.  Referenced Token in CWT/CBOR Format
    7.  Status Types
      7.1.  Status Types Values
    8.  Verification and Processing
@@ -494,6 +495,10 @@ Table of Contents
      }
    }
 
+6.3.  Referenced Token in CWT/CBOR Format
+
+   TBD
+
 7.  Status Types
 
    This document defines potential statuses of Referenced Tokens as
@@ -755,8 +760,8 @@ Table of Contents
 13.1.  JSON Web Token Claims Registration
 
    This specification requests registration of the following Claims in
-   the IANA "JSON Web Token Claims" registry [@IANA.JWT] established by
-   [@!RFC7519].
+   the IANA "JSON Web Token Claims" registry [IANA.JWT] established by
+   [RFC7519].
 
 13.1.1.  Registry Contents
 
@@ -1000,6 +1005,8 @@ Table of Contents
 
 14.1.  Normative References
 
+   [IANA.JWT] "*** BROKEN REFERENCE ***".
+
    [RFC1950]  Deutsch, P. and J. Gailly, "ZLIB Compressed Data Format
               Specification version 3.3", RFC 1950,
               DOI 10.17487/RFC1950, May 1996,
@@ -1078,12 +1085,22 @@ Acknowledgments
 
 Document History
 
-   -01 * add design consideration to the introduction * Change status
-   claim to in referenced token to allow re-use for other mechanisms *
-   restructure the sections of this document * add option to return an
-   unsigned Status List * Changing compression from gzip to zlib *
-   Change typo in Status List Token sub claim description * Add access
-   token as an example use-case
+   -01
+
+   *  add design consideration to the introduction
+
+   *  Change status claim to in referenced token to allow re-use for
+      other mechanisms
+
+   *  restructure the sections of this document
+
+   *  add option to return an unsigned Status List
+
+   *  Changing compression from gzip to zlib
+
+   *  Change typo in Status List Token sub claim description
+
+   *  Add access token as an example use-case
 
    -00
 
@@ -1095,7 +1112,7 @@ Document History
 
    *  added IANA consideration
 
-   [draft-ietf-oauth-status-list ]
+   [ draft-ietf-oauth-status-list ]
 
    -01
 

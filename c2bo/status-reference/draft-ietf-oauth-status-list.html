@@ -1178,6 +1178,9 @@ The status list data structures themselves are also represented as JWTs or CWTs.
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.2">
                 <p id="section-toc.1-1.6.2.2.1"><a href="#section-6.2" class="auto internal xref">6.2</a>.  <a href="#name-referenced-token-in-jwt-for" class="internal xref">Referenced Token in JWT Format</a></p>
 </li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.3">
+                <p id="section-toc.1-1.6.2.3.1"><a href="#section-6.3" class="auto internal xref">6.3</a>.  <a href="#name-referenced-token-in-cwt-cbo" class="internal xref">Referenced Token in CWT/CBOR Format</a></p>
+</li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
@@ -1667,6 +1670,14 @@ encoded:
 </div>
 </section>
 </div>
+<div id="referenced-token-cwt">
+<section id="section-6.3">
+        <h3 id="name-referenced-token-in-cwt-cbo">
+<a href="#section-6.3" class="section-number selfRef">6.3. </a><a href="#name-referenced-token-in-cwt-cbo" class="section-name selfRef">Referenced Token in CWT/CBOR Format</a>
+        </h3>
+<p id="section-6.3-1">TBD<a href="#section-6.3-1" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 <div id="status-types">
@@ -1955,7 +1966,7 @@ TODO evaluate deifnition of Status List Provider?
 <a href="#section-13.1" class="section-number selfRef">13.1. </a><a href="#name-json-web-token-claims-regis" class="section-name selfRef">JSON Web Token Claims Registration</a>
         </h3>
 <p id="section-13.1-1">This specification requests registration of the following Claims in the
-IANA "JSON Web Token Claims" registry [@IANA.JWT] established by [@!RFC7519].<a href="#section-13.1-1" class="pilcrow">¶</a></p>
+IANA "JSON Web Token Claims" registry <span>[<a href="#IANA.JWT" class="cite xref">IANA.JWT</a>]</span> established by <span>[<a href="#RFC7519" class="cite xref">RFC7519</a>]</span>.<a href="#section-13.1-1" class="pilcrow">¶</a></p>
 <div id="registry-contents">
 <section id="section-13.1.1">
           <h4 id="name-registry-contents">
@@ -2309,6 +2320,10 @@ in [@RFC6838].<a href="#section-13.3-1" class="pilcrow">¶</a></p>
 <a href="#section-14.1" class="section-number selfRef">14.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
         </h3>
 <dl class="references">
+<dt id="IANA.JWT">[IANA.JWT]</dt>
+        <dd>
+<span class="refTitle">"*** BROKEN REFERENCE ***"</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC1950">[RFC1950]</dt>
         <dd>
 <span class="refAuthor">Deutsch, P.</span> and <span class="refAuthor">J. Gailly</span>, <span class="refTitle">"ZLIB Compressed Data Format Specification version 3.3"</span>, <span class="seriesInfo">RFC 1950</span>, <span class="seriesInfo">DOI 10.17487/RFC1950</span>, <time datetime="1996-05" class="refDate">May 1996</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc1950">https://www.rfc-editor.org/rfc/rfc1950</a>&gt;</span>. </dd>
@@ -2403,40 +2418,56 @@ Torsten Lodderstedt<a href="#appendix-A-1" class="pilcrow">¶</a></p>
       <h2 id="name-document-history">
 <a href="#name-document-history" class="section-name selfRef">Document History</a>
       </h2>
-<p id="appendix-B-1">-01
-* add design consideration to the introduction
-* Change status claim to in referenced token to allow re-use for other mechanisms
-* restructure the sections of this document
-* add option to return an unsigned Status List
-* Changing compression from gzip to zlib
-* Change typo in Status List Token sub claim description
-* Add access token as an example use-case<a href="#appendix-B-1" class="pilcrow">¶</a></p>
-<p id="appendix-B-2">-00<a href="#appendix-B-2" class="pilcrow">¶</a></p>
+<p id="appendix-B-1">-01<a href="#appendix-B-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="appendix-B-3.1">
-          <p id="appendix-B-3.1.1">Initial draft after working group adoption<a href="#appendix-B-3.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="appendix-B-2.1">
+          <p id="appendix-B-2.1.1">add design consideration to the introduction<a href="#appendix-B-2.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-B-3.2">
-          <p id="appendix-B-3.2.1">update acknowledgments<a href="#appendix-B-3.2.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-B-2.2">
+          <p id="appendix-B-2.2.1">Change status claim to in referenced token to allow re-use for other mechanisms<a href="#appendix-B-2.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-B-3.3">
-          <p id="appendix-B-3.3.1">renamed Verifier to Relying Party<a href="#appendix-B-3.3.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-B-2.3">
+          <p id="appendix-B-2.3.1">restructure the sections of this document<a href="#appendix-B-2.3.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="appendix-B-3.4">
-          <p id="appendix-B-3.4.1">added IANA consideration<a href="#appendix-B-3.4.1" class="pilcrow">¶</a></p>
+        <li class="normal" id="appendix-B-2.4">
+          <p id="appendix-B-2.4.1">add option to return an unsigned Status List<a href="#appendix-B-2.4.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-B-2.5">
+          <p id="appendix-B-2.5.1">Changing compression from gzip to zlib<a href="#appendix-B-2.5.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-B-2.6">
+          <p id="appendix-B-2.6.1">Change typo in Status List Token sub claim description<a href="#appendix-B-2.6.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-B-2.7">
+          <p id="appendix-B-2.7.1">Add access token as an example use-case<a href="#appendix-B-2.7.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="appendix-B-4">[draft-ietf-oauth-status-list ]<a href="#appendix-B-4" class="pilcrow">¶</a></p>
-<p id="appendix-B-5">-01<a href="#appendix-B-5" class="pilcrow">¶</a></p>
+<p id="appendix-B-3">-00<a href="#appendix-B-3" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="appendix-B-6.1">
-          <p id="appendix-B-6.1.1">Applied editorial improvements suggested by Michael Jones.<a href="#appendix-B-6.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="appendix-B-4.1">
+          <p id="appendix-B-4.1.1">Initial draft after working group adoption<a href="#appendix-B-4.1.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-B-4.2">
+          <p id="appendix-B-4.2.1">update acknowledgments<a href="#appendix-B-4.2.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-B-4.3">
+          <p id="appendix-B-4.3.1">renamed Verifier to Relying Party<a href="#appendix-B-4.3.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-B-4.4">
+          <p id="appendix-B-4.4.1">added IANA consideration<a href="#appendix-B-4.4.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
-<p id="appendix-B-7">-00<a href="#appendix-B-7" class="pilcrow">¶</a></p>
+<p id="appendix-B-5">[ draft-ietf-oauth-status-list ]<a href="#appendix-B-5" class="pilcrow">¶</a></p>
+<p id="appendix-B-6">-01<a href="#appendix-B-6" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="appendix-B-8.1">
-          <p id="appendix-B-8.1.1">Initial draft<a href="#appendix-B-8.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="appendix-B-7.1">
+          <p id="appendix-B-7.1.1">Applied editorial improvements suggested by Michael Jones.<a href="#appendix-B-7.1.1" class="pilcrow">¶</a></p>
+</li>
+      </ul>
+<p id="appendix-B-8">-00<a href="#appendix-B-8" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="appendix-B-9.1">
+          <p id="appendix-B-9.1.1">Initial draft<a href="#appendix-B-9.1.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 </section>
