@@ -79,6 +79,7 @@ Table of Contents
      5.2.  Status List Token in CWT Format
    6.  Referenced Token
      6.1.  Referenced Token in JWT Format
+     6.2.  Referenced Token in CWT/CBOR Format
    7.  Status Types
      7.1.  Status Types Values
    8.  Verification and Processing
@@ -463,6 +464,10 @@ Table of Contents
        "uri": "https://example.com/statuslists/1"
      }
    }
+
+6.2.  Referenced Token in CWT/CBOR Format
+
+   TBD
 
 7.  Status Types
 
