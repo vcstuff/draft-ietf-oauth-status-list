@@ -5,9 +5,9 @@
 Network Working Group                                          T. Looker
 Internet-Draft                                                     MATTR
 Intended status: Informational                                P. Bastian
-Expires: 5 August 2024                                                  
+Expires: 8 August 2024                                                  
                                                               C. Bormann
-                                                         2 February 2024
+                                                         5 February 2024
 
 
                            Token Status List
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 August 2024.
+   This Internet-Draft will expire on 8 August 2024.
 
 Copyright Notice
 
@@ -189,10 +189,9 @@ Table of Contents
    enables herd privacy relative to the Issuer.
 
    This specification establishes the IANA "Status Mechanism Methods"
-   registry for status mechanism in and registers the members defined by
+   registry for status mechanism and registers the members defined by
    this specification.  Other specifications can register other members
-   used for confirmation, including other members for conveying proof-
-   of-possession keys using different key representations.
+   used for status retrieval.
 
 1.2.  Design Considerations
 
@@ -218,9 +217,9 @@ Table of Contents
    *  the specification shall not specify key resolution or trust
       frameworks
 
-   *  the specification shall design a mechanism to convey information
-      about the validity status of a token/credential that can be re-
-      used/expanded upon
+   *  the specification shall design an extension point to convey
+      information about the status of a token that can be re-used by
+      other mechanisms
 
 2.  Conventions and Definitions
 
