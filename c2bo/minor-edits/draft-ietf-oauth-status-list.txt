@@ -1088,6 +1088,8 @@ Document History
 
    -01
 
+   *  Rename title of the draft
+
    *  add design consideration to the introduction
 
    *  Change status claim to in referenced token to allow re-use for
