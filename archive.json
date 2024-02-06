@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-04T00:58:21.050166+00:00",
+  "timestamp": "2024-02-06T00:54:09.868145+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -5614,13 +5614,13 @@
       "labels": [],
       "body": "Establish a mechanism that allows for other revocation means in the Referenced Token as discussed in #85. The only thing i changed was to call the reference \"status_list\" but I am open to change it to \"status_bitstring\" if we think that is a better fit.\r\n\r\nCloses #85 \r\n\r\n## Preview Link\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/c2bo/status-reference/draft-ietf-oauth-status-list.html)",
       "createdAt": "2023-12-20T11:18:33Z",
-      "updatedAt": "2024-02-02T15:02:27Z",
+      "updatedAt": "2024-02-05T14:37:14Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
-      "baseRefOid": "8bf472ac4e3b6aaca67cc5f789aaa4984ed0969c",
+      "baseRefOid": "7844a82ff77920fe7f41b5b55d6e0d89a989f1c6",
       "headRepository": "vcstuff/draft-ietf-oauth-status-list",
       "headRefName": "c2bo/status-reference",
-      "headRefOid": "066b9abd41fa8e363f0527beb64241683d1ad910",
+      "headRefOid": "3fcdf5d864724a025dc989a2340c20fbcd93b417",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -5815,6 +5815,77 @@
               "updatedAt": "2024-02-02T09:52:14Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5u9O9F",
+          "commit": {
+            "abbreviatedOid": "066b9ab"
+          },
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2024-02-04T19:31:54Z",
+          "updatedAt": "2024-02-05T10:45:20Z",
+          "comments": [
+            {
+              "originalPosition": 12,
+              "body": "```suggestion\nThis specification establishes the IANA \"Status Mechanism Methods\" registry for status mechanism and registers the members defined by this specification. Other specifications can register other members used for status retrieval.\n```\n",
+              "createdAt": "2024-02-04T19:31:54Z",
+              "updatedAt": "2024-02-05T10:45:20Z"
+            },
+            {
+              "originalPosition": 21,
+              "body": "```suggestion\n* the specification shall design an extension point to convey information about the status of a token that can be re-used by other mechanisms\n```\n",
+              "createdAt": "2024-02-04T19:33:34Z",
+              "updatedAt": "2024-02-05T10:45:20Z"
+            },
+            {
+              "originalPosition": 40,
+              "body": "it seems this is in the wrong chapter?",
+              "createdAt": "2024-02-05T10:39:23Z",
+              "updatedAt": "2024-02-05T10:45:20Z"
+            },
+            {
+              "originalPosition": 40,
+              "body": "```suggestion\r\nBy including a \"status\" claim in a Referenced Token, the issuer is referencing a mechanism to retrieve status information about this Referenced Token. The claim contains members used to reference to a status list as defined in this specification. Other members of the \"status\" object may be defined by other specifications. This is analogous to \"cnf\" claim in Section 3.1 of {{RFC7800}} in which different authenticity confirmation methods can be included.\r\n```\r\nmake it more general",
+              "createdAt": "2024-02-05T10:45:01Z",
+              "updatedAt": "2024-02-05T10:45:20Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5vBKJ-",
+          "commit": {
+            "abbreviatedOid": "066b9ab"
+          },
+          "author": "c2bo",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-02-05T12:06:35Z",
+          "updatedAt": "2024-02-05T12:06:35Z",
+          "comments": [
+            {
+              "originalPosition": 40,
+              "body": "I formulated this for JWT specifically as a starting point. This is similar to the JWT cnf registry. My current understanding is that we need to define 2 registries for \"status\" - one for JWT and one for CWT.\r\nI guess I should adjust the title to match it - let's discuss in the editors call about this issue imho.",
+              "createdAt": "2024-02-05T12:06:35Z",
+              "updatedAt": "2024-02-05T12:06:35Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5vCqYu",
+          "commit": {
+            "abbreviatedOid": "3fcdf5d"
+          },
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-02-05T14:37:14Z",
+          "updatedAt": "2024-02-05T14:37:14Z",
+          "comments": []
         }
       ]
     },
@@ -5914,24 +5985,26 @@
       "id": "PR_kwDOJZ2aqs5lic3i",
       "title": "added newline to fix rendering for history",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/97",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "c2bo",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "## \ud83d\udcd1 Description\r\nfixes the rendering of the last history (01)\r\n\r\n## Preview Link\r\n\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/c2bo/history-rendering/draft-ietf-oauth-status-list.html)",
       "createdAt": "2024-01-31T07:52:02Z",
-      "updatedAt": "2024-01-31T08:04:26Z",
+      "updatedAt": "2024-02-05T10:04:30Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "8bf472ac4e3b6aaca67cc5f789aaa4984ed0969c",
       "headRepository": "vcstuff/draft-ietf-oauth-status-list",
       "headRefName": "c2bo/history-rendering",
       "headRefOid": "54e767a7bc52cb1f33b3d7cab5842aa5234f4607",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-02-05T10:04:30Z",
+      "mergedAt": "2024-02-05T10:04:30Z",
+      "mergedBy": "paulbastian",
+      "mergeCommit": {
+        "oid": "f4ad8f7f796f67285a7562e54641a273173a33a0"
+      },
       "comments": [],
       "reviews": [
         {
@@ -5945,6 +6018,48 @@
           "body": "",
           "createdAt": "2024-01-31T08:04:26Z",
           "updatedAt": "2024-01-31T08:04:26Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 98,
+      "id": "PR_kwDOJZ2aqs5mAXiP",
+      "title": "Add placeholder for cbor-based referenced tokens",
+      "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/98",
+      "state": "MERGED",
+      "author": "paulbastian",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "see title",
+      "createdAt": "2024-02-05T10:48:36Z",
+      "updatedAt": "2024-02-05T12:25:11Z",
+      "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
+      "baseRefName": "main",
+      "baseRefOid": "f4ad8f7f796f67285a7562e54641a273173a33a0",
+      "headRepository": "vcstuff/draft-ietf-oauth-status-list",
+      "headRefName": "referenced-token-cbor",
+      "headRefOid": "c2807c8e3b23124da90bcaf42c8eb77dfcf41e10",
+      "closedAt": "2024-02-05T12:25:02Z",
+      "mergedAt": "2024-02-05T12:25:02Z",
+      "mergedBy": "paulbastian",
+      "mergeCommit": {
+        "oid": "7844a82ff77920fe7f41b5b55d6e0d89a989f1c6"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJZ2aqs5vBK4Z",
+          "commit": {
+            "abbreviatedOid": "c2807c8"
+          },
+          "author": "c2bo",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-02-05T12:07:15Z",
+          "updatedAt": "2024-02-05T12:07:15Z",
           "comments": []
         }
       ]
