@@ -209,7 +209,7 @@ Table of Contents
       all major programming languages
 
    *  the specification shall be optimized to support the most common
-      use cases and avoid unneccessary complexity of corner cases
+      use cases and avoid unnecessary complexity of corner cases
 
    *  the Status List shall scale up to millions of tokens to support
       large scale government or enterprise use cases
@@ -594,6 +594,8 @@ Table of Contents
 
 8.4.  Validation Rules
 
+   TBD
+
 9.  Further Examples
 
 9.1.  Status List Token with 2-Bit Status Values in JWT format
@@ -709,7 +711,7 @@ Table of Contents
    "index" of the Referenced Token to request the Status List again at a
    later time.  By doing so regularly, the Relying Party may create a
    profile of the Referenced Token's validity status.  This behaviour
-   may be inteded as a feature, e.g. for a KYC process that requires
+   may be intended as a feature, e.g. for a KYC process that requires
    regular validity checks, but might also be abused in cases where this
    is not intended and unknown to the Holder, e.g. profiling the
    suspension of a driving license or checking the employment status of
@@ -727,7 +729,7 @@ Table of Contents
    such that Holders can use individual tokens for specific Relying
    Parties.  In this case, every Referenced Token MUST have a dedicated
    Status List entry.  Revoking batch issued Referenced Tokens might
-   reveal this correlation lateron.
+   reveal this correlation later on.
 
    To avoid information leakage by the values of "uri" and "index",
    Issuers are RECOMMENDED to:
@@ -737,16 +739,15 @@ Table of Contents
    *  use decoy or dead entries to obfuscate the real number of
       Referenced Tokens within a Status List
 
-   *  choose to deploy and utilize multiple Status Lists
-      simulantaniously
+   *  choose to deploy and utilize multiple Status Lists simultaneously
 
 11.5.  Third Party Hosting
 
    TODO elaborate on increased privacy if the status list is hosted by a
-   third party instead of the issuer reducing tracking possiblities TODO
-   evaluate deifnition of Status List Provider?  An entity that hosts
-   the Status List as a resource for potential Relying Parties.  The
-   Status List Provider may be the issuer of the Status List but may
+   third party instead of the issuer reducing tracking possibilities
+   TODO evaluate definition of Status List Provider?  An entity that
+   hosts the Status List as a resource for potential Relying Parties.
+   The Status List Provider may be the issuer of the Status List but may
    also be outsourced to a trusted third party.
 
 12.  Implementation Considerations
@@ -1087,10 +1088,14 @@ Document History
 
    -01
 
+   *  Rename title of the draft
+
    *  add design consideration to the introduction
 
    *  Change status claim to in referenced token to allow re-use for
       other mechanisms
+
+   *  Add IANA Registry for status mechanisms
 
    *  restructure the sections of this document
 

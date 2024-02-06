@@ -1361,7 +1361,7 @@ The following diagram depicts the basic conceptual relationship.<a href="#sectio
             <p id="section-1.2-2.2.1">the specification shall be easy, fast and secure to implement in all major programming languages<a href="#section-1.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.2-2.3">
-            <p id="section-1.2-2.3.1">the specification shall be optimized to support the most common use cases and avoid unneccessary complexity of corner cases<a href="#section-1.2-2.3.1" class="pilcrow">¶</a></p>
+            <p id="section-1.2-2.3.1">the specification shall be optimized to support the most common use cases and avoid unnecessary complexity of corner cases<a href="#section-1.2-2.3.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-1.2-2.4">
             <p id="section-1.2-2.4.1">the Status List shall scale up to millions of tokens to support large scale government or enterprise use cases<a href="#section-1.2-2.4.1" class="pilcrow">¶</a></p>
@@ -1780,7 +1780,8 @@ In the case of "application/statuslist+cwt", the response <span class="bcp14">MU
 <section id="section-8.4">
         <h3 id="name-validation-rules">
 <a href="#section-8.4" class="section-number selfRef">8.4. </a><a href="#name-validation-rules" class="section-name selfRef">Validation Rules</a>
-      </h3>
+        </h3>
+<p id="section-8.4-1">TBD<a href="#section-8.4-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1911,7 +1912,7 @@ encoded:
         <h3 id="name-relying-party-tracking">
 <a href="#section-11.3" class="section-number selfRef">11.3. </a><a href="#name-relying-party-tracking" class="section-name selfRef">Relying Party tracking</a>
         </h3>
-<p id="section-11.3-1">Once the Relying Party gets the Referenced Token, this enables him to request the Status List to validate the status of the Token through the provided "uri" property and look up the corresponding "index". However, the Relying Party may persistently store the "uri" and "index" of the Referenced Token to request the Status List again at a later time. By doing so regularly, the Relying Party may create a profile of the Referenced Token's validity status. This behaviour may be inteded as a feature, e.g. for a KYC process that requires regular validity checks, but might also be abused in cases where this is not intended and unknown to the Holder, e.g. profiling the suspension of a driving license or checking the employment status of an employee credential. This behaviour could be constrained by adding authorization rules to the Status List, see <a href="#security-authorization" class="auto internal xref">Section 10.3</a>.<a href="#section-11.3-1" class="pilcrow">¶</a></p>
+<p id="section-11.3-1">Once the Relying Party gets the Referenced Token, this enables him to request the Status List to validate the status of the Token through the provided "uri" property and look up the corresponding "index". However, the Relying Party may persistently store the "uri" and "index" of the Referenced Token to request the Status List again at a later time. By doing so regularly, the Relying Party may create a profile of the Referenced Token's validity status. This behaviour may be intended as a feature, e.g. for a KYC process that requires regular validity checks, but might also be abused in cases where this is not intended and unknown to the Holder, e.g. profiling the suspension of a driving license or checking the employment status of an employee credential. This behaviour could be constrained by adding authorization rules to the Status List, see <a href="#security-authorization" class="auto internal xref">Section 10.3</a>.<a href="#section-11.3-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="correlation-risks-and-tracking">
@@ -1920,7 +1921,7 @@ encoded:
 <a href="#section-11.4" class="section-number selfRef">11.4. </a><a href="#name-correlation-risks-and-track" class="section-name selfRef">Correlation Risks and Tracking</a>
         </h3>
 <p id="section-11.4-1">Colluding Issuers and Relying Parties have the possibility to identify the usage of credentials of a particular Holder, as the Referenced Token contains unique, trackable data.<a href="#section-11.4-1" class="pilcrow">¶</a></p>
-<p id="section-11.4-2">To avoid privacy risks for colluding Relying Parties, it is recommended that Issuers use batch issuance to issue multiple tokens, such that Holders can use individual tokens for specific Relying Parties. In this case, every Referenced Token <span class="bcp14">MUST</span> have a dedicated Status List entry. Revoking batch issued Referenced Tokens might reveal this correlation lateron.<a href="#section-11.4-2" class="pilcrow">¶</a></p>
+<p id="section-11.4-2">To avoid privacy risks for colluding Relying Parties, it is recommended that Issuers use batch issuance to issue multiple tokens, such that Holders can use individual tokens for specific Relying Parties. In this case, every Referenced Token <span class="bcp14">MUST</span> have a dedicated Status List entry. Revoking batch issued Referenced Tokens might reveal this correlation later on.<a href="#section-11.4-2" class="pilcrow">¶</a></p>
 <p id="section-11.4-3">To avoid information leakage by the values of "uri" and "index", Issuers are <span class="bcp14">RECOMMENDED</span> to:<a href="#section-11.4-3" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-11.4-4.1">
@@ -1930,7 +1931,7 @@ encoded:
             <p id="section-11.4-4.2.1">use decoy or dead entries to obfuscate the real number of Referenced Tokens within a Status List<a href="#section-11.4-4.2.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-11.4-4.3">
-            <p id="section-11.4-4.3.1">choose to deploy and utilize multiple Status Lists simulantaniously<a href="#section-11.4-4.3.1" class="pilcrow">¶</a></p>
+            <p id="section-11.4-4.3.1">choose to deploy and utilize multiple Status Lists simultaneously<a href="#section-11.4-4.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -1940,8 +1941,8 @@ encoded:
         <h3 id="name-third-party-hosting">
 <a href="#section-11.5" class="section-number selfRef">11.5. </a><a href="#name-third-party-hosting" class="section-name selfRef">Third Party Hosting</a>
         </h3>
-<p id="section-11.5-1">TODO elaborate on increased privacy if the status list is hosted by a third party instead of the issuer reducing tracking possiblities
-TODO evaluate deifnition of Status List Provider?
+<p id="section-11.5-1">TODO elaborate on increased privacy if the status list is hosted by a third party instead of the issuer reducing tracking possibilities
+TODO evaluate definition of Status List Provider?
  An entity that hosts the Status List as a resource for potential Relying Parties. The Status List Provider may be the issuer of the Status List but may also be outsourced to a trusted third party.<a href="#section-11.5-1" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -2421,25 +2422,31 @@ Torsten Lodderstedt<a href="#appendix-A-1" class="pilcrow">¶</a></p>
 <p id="appendix-B-1">-01<a href="#appendix-B-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="appendix-B-2.1">
-          <p id="appendix-B-2.1.1">add design consideration to the introduction<a href="#appendix-B-2.1.1" class="pilcrow">¶</a></p>
+          <p id="appendix-B-2.1.1">Rename title of the draft<a href="#appendix-B-2.1.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-B-2.2">
-          <p id="appendix-B-2.2.1">Change status claim to in referenced token to allow re-use for other mechanisms<a href="#appendix-B-2.2.1" class="pilcrow">¶</a></p>
+          <p id="appendix-B-2.2.1">add design consideration to the introduction<a href="#appendix-B-2.2.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-B-2.3">
-          <p id="appendix-B-2.3.1">restructure the sections of this document<a href="#appendix-B-2.3.1" class="pilcrow">¶</a></p>
+          <p id="appendix-B-2.3.1">Change status claim to in referenced token to allow re-use for other mechanisms<a href="#appendix-B-2.3.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-B-2.4">
-          <p id="appendix-B-2.4.1">add option to return an unsigned Status List<a href="#appendix-B-2.4.1" class="pilcrow">¶</a></p>
+          <p id="appendix-B-2.4.1">Add IANA Registry for status mechanisms<a href="#appendix-B-2.4.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-B-2.5">
-          <p id="appendix-B-2.5.1">Changing compression from gzip to zlib<a href="#appendix-B-2.5.1" class="pilcrow">¶</a></p>
+          <p id="appendix-B-2.5.1">restructure the sections of this document<a href="#appendix-B-2.5.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-B-2.6">
-          <p id="appendix-B-2.6.1">Change typo in Status List Token sub claim description<a href="#appendix-B-2.6.1" class="pilcrow">¶</a></p>
+          <p id="appendix-B-2.6.1">add option to return an unsigned Status List<a href="#appendix-B-2.6.1" class="pilcrow">¶</a></p>
 </li>
         <li class="normal" id="appendix-B-2.7">
-          <p id="appendix-B-2.7.1">Add access token as an example use-case<a href="#appendix-B-2.7.1" class="pilcrow">¶</a></p>
+          <p id="appendix-B-2.7.1">Changing compression from gzip to zlib<a href="#appendix-B-2.7.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-B-2.8">
+          <p id="appendix-B-2.8.1">Change typo in Status List Token sub claim description<a href="#appendix-B-2.8.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-B-2.9">
+          <p id="appendix-B-2.9.1">Add access token as an example use-case<a href="#appendix-B-2.9.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 <p id="appendix-B-3">-00<a href="#appendix-B-3" class="pilcrow">¶</a></p>
