@@ -278,7 +278,7 @@ Table of Contents
        bit ("7").  All bits of the byte array at a particular index are
        set to a status value.
 
-   3.  The byte array is compressed with DEFLATE [RFC1951] using the
+   3.  The byte array is compressed using DEFLATE [RFC1951] with the
        ZLIB [RFC1950] data format.  Implementations are RECOMMENDED to
        use the highest compression level available.
 
