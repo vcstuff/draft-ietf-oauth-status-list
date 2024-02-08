@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-06T00:54:09.868145+00:00",
+  "timestamp": "2024-02-08T00:53:44.769839+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -140,7 +140,7 @@
       "labels": [],
       "body": "As described in the title, detail the CWT representation of the status list which is complementary to the JWT representation.",
       "createdAt": "2023-05-18T06:10:35Z",
-      "updatedAt": "2023-07-11T16:42:32Z",
+      "updatedAt": "2024-02-06T07:39:32Z",
       "closedAt": null,
       "comments": [
         {
@@ -637,17 +637,15 @@
       "id": "I_kwDOJZ2aqs5oC0TD",
       "title": "Title / Future Proofness for other formats than bitarrays",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/issues/21",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "paulbastian",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
-      "labels": [
-        "-02"
-      ],
+      "labels": [],
       "body": "I'm wondering whether\r\na) this document shall always only be about status list using bitarrays/bitstrings\r\nor\r\nb) we want to leave a window open to enable other forms of storage\r\n\r\nIn case of a) it could make sense to name bit array in the title of the document.\r\nIn case of b) it could make sense to add a field that reference the existing mechanism",
       "createdAt": "2023-06-07T10:23:03Z",
-      "updatedAt": "2023-11-01T11:52:51Z",
-      "closedAt": null,
+      "updatedAt": "2024-02-06T07:39:52Z",
+      "closedAt": "2024-02-06T07:39:20Z",
       "comments": [
         {
           "author": "mprorock",
@@ -662,6 +660,13 @@
           "body": "Linked to #77 ",
           "createdAt": "2023-11-01T11:52:51Z",
           "updatedAt": "2023-11-01T11:52:51Z"
+        },
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Solved by #85 ",
+          "createdAt": "2024-02-06T07:39:20Z",
+          "updatedAt": "2024-02-06T07:39:20Z"
         }
       ]
     },
@@ -752,12 +757,10 @@
       "author": "Sakurann",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
-      "labels": [
-        "-02"
-      ],
+      "labels": [],
       "body": "remaining issue from PR #20. \r\n\r\nalternatives are \"referencing token\".",
       "createdAt": "2023-06-13T19:20:19Z",
-      "updatedAt": "2023-09-21T09:06:06Z",
+      "updatedAt": "2024-02-06T07:39:58Z",
       "closedAt": null,
       "comments": [
         {
@@ -935,12 +938,10 @@
       "author": "paulbastian",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
-      "labels": [
-        "-02"
-      ],
+      "labels": [],
       "body": "@tlodderstedt propoeses to:\r\n\r\n- rename `status` to something shorter\r\n- rename `uri` to `slt` (status list token)",
       "createdAt": "2023-07-11T19:31:30Z",
-      "updatedAt": "2023-07-17T08:07:58Z",
+      "updatedAt": "2024-02-06T07:40:24Z",
       "closedAt": null,
       "comments": [
         {
@@ -1436,7 +1437,7 @@
       "labels": [],
       "body": "batch issued credentials might be revealed in an status list update, which might correlate the related referenced tokens/credentials",
       "createdAt": "2023-08-23T09:22:23Z",
-      "updatedAt": "2023-10-20T09:14:46Z",
+      "updatedAt": "2024-02-06T07:37:50Z",
       "closedAt": null,
       "comments": [
         {
@@ -2030,15 +2031,15 @@
       "id": "I_kwDOJZ2aqs52f_c5",
       "title": "IETF 118: Establish a mechanism that allows for other revocation means in the Referenced Token",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/issues/85",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "paulbastian",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "Leif asked to leave some space for future revocation mechanisms as StatusList might be only one approach.\r\nThe Structure in the Referenced Token should convey some kind of type, that enables other mechanisms reusing the \"status\" claim.\r\n\r\nRelated to #21 \r\nRelated to #40 ",
       "createdAt": "2023-11-10T17:59:14Z",
-      "updatedAt": "2023-12-11T13:35:57Z",
-      "closedAt": null,
+      "updatedAt": "2024-02-06T07:04:45Z",
+      "closedAt": "2024-02-06T07:04:45Z",
       "comments": [
         {
           "author": "paulbastian",
@@ -2141,7 +2142,7 @@
       "labels": [],
       "body": "Referenced Token may not need to be CWT, to allow fitting this to mdoc. Referenced Token should as well be COSE-signed CBOR",
       "createdAt": "2024-01-11T09:13:02Z",
-      "updatedAt": "2024-01-25T08:51:17Z",
+      "updatedAt": "2024-02-06T07:35:46Z",
       "closedAt": null,
       "comments": [
         {
@@ -2188,7 +2189,7 @@
       "labels": [],
       "body": "maybe adjust the language around DEFLATE and ZLIB per [this thread](https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/80/files#diff-2347c539b523e10cc060407bc8a517b0764d5a8da0b237be9899e1348dcd63c8R134) \r\n\r\n\r\n\r\n\r\n_Originally posted by @bc-pi in https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/80#discussion_r1452588980_\r\n            ",
       "createdAt": "2024-01-15T16:45:46Z",
-      "updatedAt": "2024-01-16T14:10:17Z",
+      "updatedAt": "2024-02-06T07:35:19Z",
       "closedAt": null,
       "comments": [
         {
@@ -2219,7 +2220,7 @@
       "labels": [],
       "body": "To provide guidance for caching it might make sense to include a next update time in the status list. Or does `exp` provide this guidance?",
       "createdAt": "2024-01-23T16:05:20Z",
-      "updatedAt": "2024-01-24T17:47:18Z",
+      "updatedAt": "2024-02-06T07:35:11Z",
       "closedAt": null,
       "comments": [
         {
@@ -5607,24 +5608,26 @@
       "id": "PR_kwDOJZ2aqs5iddwc",
       "title": "Establish a mechanism that allows for other revocation means in the Referenced Token",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/90",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "c2bo",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "Establish a mechanism that allows for other revocation means in the Referenced Token as discussed in #85. The only thing i changed was to call the reference \"status_list\" but I am open to change it to \"status_bitstring\" if we think that is a better fit.\r\n\r\nCloses #85 \r\n\r\n## Preview Link\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/c2bo/status-reference/draft-ietf-oauth-status-list.html)",
       "createdAt": "2023-12-20T11:18:33Z",
-      "updatedAt": "2024-02-05T14:37:14Z",
+      "updatedAt": "2024-02-06T07:05:04Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "7844a82ff77920fe7f41b5b55d6e0d89a989f1c6",
       "headRepository": "vcstuff/draft-ietf-oauth-status-list",
       "headRefName": "c2bo/status-reference",
       "headRefOid": "3fcdf5d864724a025dc989a2340c20fbcd93b417",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-02-06T07:04:44Z",
+      "mergedAt": "2024-02-06T07:04:44Z",
+      "mergedBy": "paulbastian",
+      "mergeCommit": {
+        "oid": "6eaf6e59123cdb213902a3602b55cbac9d50120e"
+      },
       "comments": [
         {
           "author": "paulbastian",
@@ -5886,6 +5889,19 @@
           "createdAt": "2024-02-05T14:37:14Z",
           "updatedAt": "2024-02-05T14:37:14Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5vIICu",
+          "commit": {
+            "abbreviatedOid": "3fcdf5d"
+          },
+          "author": "tplooker",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-02-06T06:57:53Z",
+          "updatedAt": "2024-02-06T06:57:53Z",
+          "comments": []
         }
       ]
     },
@@ -6060,6 +6076,88 @@
           "body": "",
           "createdAt": "2024-02-05T12:07:15Z",
           "updatedAt": "2024-02-05T12:07:15Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 99,
+      "id": "PR_kwDOJZ2aqs5mG6F3",
+      "title": "Editorial changes + fix codeowners",
+      "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/99",
+      "state": "MERGED",
+      "author": "c2bo",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Some spelling fixes\r\nAdd IANA registry to history\r\nadd myself to codeowners\r\n\r\n[click here for rendered preview of PR](https://vcstuff.github.io/draft-ietf-oauth-status-list/c2bo/minor-edits/draft-ietf-oauth-status-list.html)",
+      "createdAt": "2024-02-06T07:17:08Z",
+      "updatedAt": "2024-02-06T07:19:00Z",
+      "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
+      "baseRefName": "main",
+      "baseRefOid": "6eaf6e59123cdb213902a3602b55cbac9d50120e",
+      "headRepository": "vcstuff/draft-ietf-oauth-status-list",
+      "headRefName": "c2bo/minor-edits",
+      "headRefOid": "2c62e90bf5374d25b20bcc6d8c0ef8b03015dd4c",
+      "closedAt": "2024-02-06T07:18:56Z",
+      "mergedAt": "2024-02-06T07:18:56Z",
+      "mergedBy": "paulbastian",
+      "mergeCommit": {
+        "oid": "abe3214cd79226c9735ab8a62401242af61dbbc6"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJZ2aqs5vIOWp",
+          "commit": {
+            "abbreviatedOid": "2c62e90"
+          },
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-02-06T07:18:48Z",
+          "updatedAt": "2024-02-06T07:18:48Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 100,
+      "id": "PR_kwDOJZ2aqs5mSC7M",
+      "title": "clarifying deflate/zlib",
+      "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/100",
+      "state": "OPEN",
+      "author": "paulbastian",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Closes #94 ",
+      "createdAt": "2024-02-07T16:20:46Z",
+      "updatedAt": "2024-02-07T19:22:16Z",
+      "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
+      "baseRefName": "main",
+      "baseRefOid": "abe3214cd79226c9735ab8a62401242af61dbbc6",
+      "headRepository": "vcstuff/draft-ietf-oauth-status-list",
+      "headRefName": "94-deflate-in-zlib",
+      "headRefOid": "768e84a3e6508cb8afa84a68ce418b55480ff065",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJZ2aqs5vYJCf",
+          "commit": {
+            "abbreviatedOid": "768e84a"
+          },
+          "author": "c2bo",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-02-07T19:22:16Z",
+          "updatedAt": "2024-02-07T19:22:16Z",
           "comments": []
         }
       ]
