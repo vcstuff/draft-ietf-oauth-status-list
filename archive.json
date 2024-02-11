@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-08T00:53:44.769839+00:00",
+  "timestamp": "2024-02-11T00:58:25.307074+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -791,9 +791,17 @@
       "labels": [],
       "body": "If a verifier wants all statuslists for a specific type of Referenced Token, e.g. for offlien caching, then it would be handy, if the issuer provides a API endpoint to get those in one call, e.g. as an array.",
       "createdAt": "2023-06-15T07:39:24Z",
-      "updatedAt": "2023-06-15T07:39:24Z",
+      "updatedAt": "2024-02-09T14:20:02Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "ideas from discussion with Oliver and Martijn:\r\n\r\n- <fulldns-with-path>/<bucket>/<individual status list token>, and <fulldns-with-path>/<bucket> provides a list of all URLs like a web directory\r\n- well-known path\r\n- additional URL inside the status_list claim\r\n- URL provided by the Issuer metadata",
+          "createdAt": "2024-02-09T14:20:01Z",
+          "updatedAt": "2024-02-09T14:20:01Z"
+        }
+      ]
     },
     {
       "number": 28,
@@ -2220,7 +2228,7 @@
       "labels": [],
       "body": "To provide guidance for caching it might make sense to include a next update time in the status list. Or does `exp` provide this guidance?",
       "createdAt": "2024-01-23T16:05:20Z",
-      "updatedAt": "2024-02-06T07:35:11Z",
+      "updatedAt": "2024-02-08T20:54:50Z",
       "closedAt": null,
       "comments": [
         {
@@ -2236,6 +2244,20 @@
           "body": "Perhaps we can keep this issue until we have the language in the caching section.",
           "createdAt": "2024-01-24T14:35:14Z",
           "updatedAt": "2024-01-24T14:35:14Z"
+        },
+        {
+          "author": "awoie",
+          "authorAssociation": "NONE",
+          "body": "Would it make sense to add this if we assume the verifier is not fetching the status list themselves but only gets the status list from some other component? in that case, the reader would not have the caching info.",
+          "createdAt": "2024-02-08T14:08:55Z",
+          "updatedAt": "2024-02-08T14:08:55Z"
+        },
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Yes, this issue keep coming up again and the given situation is a good reason to revisit this discussion.\r\nHowever, we still need HTTP Cache for the unsigned Status List option",
+          "createdAt": "2024-02-08T20:54:49Z",
+          "updatedAt": "2024-02-08T20:54:49Z"
         }
       ]
     }
