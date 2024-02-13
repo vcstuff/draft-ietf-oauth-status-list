@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-11T00:58:25.307074+00:00",
+  "timestamp": "2024-02-13T00:54:43.561887+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -47,16 +47,6 @@
       "name": "wontfix",
       "description": "This will not be worked on",
       "color": "ffffff"
-    },
-    {
-      "name": "-02",
-      "description": "",
-      "color": "fef2c0"
-    },
-    {
-      "name": "-01",
-      "description": "",
-      "color": "0052cc"
     },
     {
       "name": "dependencies",
@@ -119,9 +109,7 @@
       "author": "tplooker",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
-      "labels": [
-        "-02"
-      ],
+      "labels": [],
       "body": "We need to document end to end the validation procedure for a JWT and CWT referencing a status list including resolution of the status list, validation of the status list and how to get the status information for the JWT referencing the status list.",
       "createdAt": "2023-05-18T06:09:52Z",
       "updatedAt": "2023-10-06T06:50:12Z",
@@ -594,9 +582,7 @@
       "author": "tlodderstedt",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
-      "labels": [
-        "-02"
-      ],
+      "labels": [],
       "body": "I did a first review of this draft. As a newbie to the topic, I found the following issues:\r\n\r\n- I miss a description of the fundamental concept, i.e. the status list itself is a JWT (issued by the same issuer issuing the JWTs), the status list JWT is obtained from a URL hosted by that issuer or another party, the link between the JWT and its status list is provided through data in the JWT. I suggest to add this in the Introduction (or an Overview) section. \r\n- When reading Section 3.1. for the first time I was confused whether it describes the status list JWT or the JWT referring to the status list. I think it is the latter and it should be clear to the reader on first sight. \r\n- I  think the order of definition should be changed. Right now, I'm supposed to understand how a status list JWT is used in a JWT without even knowing what that status list JWT is. I suggest to change order: 1) Overview of the concepts, 2) specify status list JWT (structure and where/how to obtain), 3) embedding in a JWT (syntax, processing rules, ...). ",
       "createdAt": "2023-05-28T10:28:05Z",
       "updatedAt": "2023-07-17T06:35:02Z",
@@ -703,9 +689,7 @@
       "author": "paulbastian",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
-      "labels": [
-        "-02"
-      ],
+      "labels": [],
       "body": "              > umm I thought we agreed to remove the concept of the \"typ\" attribute.. so no `revocation-list` and no `suspention-status-list`.\r\n\r\nBut I assume the Status List Token will have a `typ` JOSE header to properly distinguish it from other JWTs, right?\r\n\r\n_Originally posted by @tlodderstedt in https://github.com/vcstuff/draft-looker-jwt-cwt-status-list/issues/17#issuecomment-1584372077_\r\n            ",
       "createdAt": "2023-06-12T15:25:01Z",
       "updatedAt": "2023-11-01T08:59:04Z",
