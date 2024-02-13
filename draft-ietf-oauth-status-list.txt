@@ -5,9 +5,9 @@
 Network Working Group                                          T. Looker
 Internet-Draft                                                     MATTR
 Intended status: Informational                                P. Bastian
-Expires: 9 August 2024                                                  
+Expires: 16 August 2024                                                 
                                                               C. Bormann
-                                                         6 February 2024
+                                                        13 February 2024
 
 
                            Token Status List
@@ -48,7 +48,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 9 August 2024.
+   This Internet-Draft will expire on 16 August 2024.
 
 Copyright Notice
 
@@ -278,10 +278,9 @@ Table of Contents
        bit ("7").  All bits of the byte array at a particular index are
        set to a status value.
 
-   3.  The complete byte array is compressed using the "DEFLATE"
-       [RFC1951] compression method and stored using the "ZLIB"
-       [RFC1950] data format.  Implementations are RECOMMENDED to use
-       the highest compression level available.
+   3.  The byte array is compressed using DEFLATE [RFC1951] with the
+       ZLIB [RFC1950] data format.  Implementations are RECOMMENDED to
+       use the highest compression level available.
 
    The following example illustrates a Status List that represents the
    statuses of 16 Referenced Tokens, requiring 16 bits (2 bytes) for the
@@ -1085,6 +1084,10 @@ Acknowledgments
    specification.
 
 Document History
+
+   -02
+
+   *  clarify Deflate / zlib compression
 
    -01
 
