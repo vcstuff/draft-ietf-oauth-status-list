@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-13T00:54:43.561887+00:00",
+  "timestamp": "2024-02-15T00:54:42.413400+00:00",
   "repo": "vcstuff/draft-ietf-oauth-status-list",
   "labels": [
     {
@@ -124,11 +124,13 @@
       "state": "OPEN",
       "author": "tplooker",
       "authorAssociation": "COLLABORATOR",
-      "assignees": [],
+      "assignees": [
+        "awoie"
+      ],
       "labels": [],
       "body": "As described in the title, detail the CWT representation of the status list which is complementary to the JWT representation.",
       "createdAt": "2023-05-18T06:10:35Z",
-      "updatedAt": "2024-02-06T07:39:32Z",
+      "updatedAt": "2024-02-13T08:07:29Z",
       "closedAt": null,
       "comments": [
         {
@@ -2130,11 +2132,13 @@
       "state": "OPEN",
       "author": "paulbastian",
       "authorAssociation": "CONTRIBUTOR",
-      "assignees": [],
+      "assignees": [
+        "c2bo"
+      ],
       "labels": [],
       "body": "Referenced Token may not need to be CWT, to allow fitting this to mdoc. Referenced Token should as well be COSE-signed CBOR",
       "createdAt": "2024-01-11T09:13:02Z",
-      "updatedAt": "2024-02-06T07:35:46Z",
+      "updatedAt": "2024-02-13T08:06:28Z",
       "closedAt": null,
       "comments": [
         {
@@ -2150,6 +2154,13 @@
           "body": "discussed in editors call:\r\njson/cbor Referenced Token rules should align\r\nadd cbor CDDL to apply for mdoc and revisit JSON Referenced Token\r\nrevisit issuer requirements and make sure they could be x509 based",
           "createdAt": "2024-01-25T08:51:16Z",
           "updatedAt": "2024-01-25T08:51:16Z"
+        },
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "editors call:\r\n\r\n- limit to \"cryptographically secured containers\"\r\n- RECOMMENDED JOSE/COSE, but not limited to\r\n- relax MUST on `iss` in Referenced Token to MAY, when present it needs to be checked, they should match\r\n- relax MUST on `iss` in Status List Token to MAY, when present it needs to be checked, they should match\r\n- do we mandate the issuer of Referenced Token is the same entity issuing the Status List?",
+          "createdAt": "2024-02-13T07:50:07Z",
+          "updatedAt": "2024-02-13T07:50:07Z"
         }
       ]
     },
@@ -2174,15 +2185,15 @@
       "id": "I_kwDOJZ2aqs58HqFW",
       "title": "DEFLATE in ZLIB",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/issues/94",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "bc-pi",
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
       "body": "maybe adjust the language around DEFLATE and ZLIB per [this thread](https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/80/files#diff-2347c539b523e10cc060407bc8a517b0764d5a8da0b237be9899e1348dcd63c8R134) \r\n\r\n\r\n\r\n\r\n_Originally posted by @bc-pi in https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/80#discussion_r1452588980_\r\n            ",
       "createdAt": "2024-01-15T16:45:46Z",
-      "updatedAt": "2024-02-06T07:35:19Z",
-      "closedAt": null,
+      "updatedAt": "2024-02-13T07:25:44Z",
+      "closedAt": "2024-02-13T07:25:44Z",
       "comments": [
         {
           "author": "c2bo",
@@ -2208,11 +2219,13 @@
       "state": "OPEN",
       "author": "awoie",
       "authorAssociation": "NONE",
-      "assignees": [],
+      "assignees": [
+        "tplooker"
+      ],
       "labels": [],
       "body": "To provide guidance for caching it might make sense to include a next update time in the status list. Or does `exp` provide this guidance?",
       "createdAt": "2024-01-23T16:05:20Z",
-      "updatedAt": "2024-02-08T20:54:50Z",
+      "updatedAt": "2024-02-13T08:07:14Z",
       "closedAt": null,
       "comments": [
         {
@@ -2242,6 +2255,13 @@
           "body": "Yes, this issue keep coming up again and the given situation is a good reason to revisit this discussion.\r\nHowever, we still need HTTP Cache for the unsigned Status List option",
           "createdAt": "2024-02-08T20:54:49Z",
           "updatedAt": "2024-02-08T20:54:49Z"
+        },
+        {
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "editors call:\r\n\r\n- after exp token must be refreshed\r\n- after ttl token may be refreshed\r\n- duration vs point of time\r\n- it should be a caching signal (like DNS), i.e. duration -> distribute caching/avoid spikes\r\n- take fetching time as start interval instead of iat?\r\n- information of ttl is informational, Verifiers may still recheck whenever say want",
+          "createdAt": "2024-02-13T07:27:46Z",
+          "updatedAt": "2024-02-13T07:27:46Z"
         }
       ]
     }
@@ -4092,11 +4112,13 @@
       "state": "OPEN",
       "author": "mprorock",
       "authorAssociation": "NONE",
-      "assignees": [],
+      "assignees": [
+        "tplooker"
+      ],
       "labels": [],
       "body": "## \ud83d\udcd1 Description\r\nadds support for `ttl` instructions for consumers/verifiers - this is important, especially with signed lists to separate the requirement to sign and reissue from when a client or cdn needs to fetch a fresh copy of the list",
       "createdAt": "2023-08-02T18:46:01Z",
-      "updatedAt": "2024-01-15T08:25:03Z",
+      "updatedAt": "2024-02-13T08:08:30Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "70e860b9cd190741593d92cd0b8e27394137bda9",
@@ -4204,6 +4226,19 @@
           "body": "",
           "createdAt": "2023-08-04T21:26:26Z",
           "updatedAt": "2023-08-04T21:26:26Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5v4got",
+          "commit": {
+            "abbreviatedOid": "b0947c3"
+          },
+          "author": "paulbastian",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "From our latest thoughts, we are again considering to integrate this: https://github.com/vcstuff/draft-ietf-oauth-status-list/issues/96",
+          "createdAt": "2024-02-13T08:08:30Z",
+          "updatedAt": "2024-02-13T08:08:30Z",
           "comments": []
         }
       ]
@@ -6133,24 +6168,26 @@
       "id": "PR_kwDOJZ2aqs5mSC7M",
       "title": "clarifying deflate/zlib",
       "url": "https://github.com/vcstuff/draft-ietf-oauth-status-list/pull/100",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "paulbastian",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "Closes #94 ",
       "createdAt": "2024-02-07T16:20:46Z",
-      "updatedAt": "2024-02-07T19:22:16Z",
+      "updatedAt": "2024-02-13T07:25:42Z",
       "baseRepository": "vcstuff/draft-ietf-oauth-status-list",
       "baseRefName": "main",
       "baseRefOid": "abe3214cd79226c9735ab8a62401242af61dbbc6",
       "headRepository": "vcstuff/draft-ietf-oauth-status-list",
       "headRefName": "94-deflate-in-zlib",
       "headRefOid": "768e84a3e6508cb8afa84a68ce418b55480ff065",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-02-13T07:25:42Z",
+      "mergedAt": "2024-02-13T07:25:42Z",
+      "mergedBy": "c2bo",
+      "mergeCommit": {
+        "oid": "f960404e4f3745885434566cad9c6a6dff42f19e"
+      },
       "comments": [],
       "reviews": [
         {
@@ -6164,6 +6201,19 @@
           "body": "",
           "createdAt": "2024-02-07T19:22:16Z",
           "updatedAt": "2024-02-07T19:22:16Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJZ2aqs5v4NUH",
+          "commit": {
+            "abbreviatedOid": "768e84a"
+          },
+          "author": "tplooker",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-02-13T07:12:10Z",
+          "updatedAt": "2024-02-13T07:12:10Z",
           "comments": []
         }
       ]
